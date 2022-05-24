@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :consultations
+  has_many :daycares
   validate :name_validations
 
   enum category: {
