@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :reviews
-  has_many :consultations
-  has_many :daycares
+  has_many :consultations, dependent: :destroy
+  has_many :daycares, dependent: :destroy
   enum category: {
     client: 1,
     supplier: 2
