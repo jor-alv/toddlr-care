@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validate :name_validations
 
-  enum status: {
-    parent: 1,
-    admin: 2
+  enum category: {
+    client: 1,
+    supplier: 2
   }
-  
+
   def name_validations
     if first_name.present? && last_name.present?
       validates :first_name, :last_name, presence: true

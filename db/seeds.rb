@@ -1,1 +1,1 @@
-puts 'Seed are being sown...'
+puts 'Seeds are being sown...'
