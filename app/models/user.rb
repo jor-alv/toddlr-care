@@ -4,9 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum status: {
-    pending: 1,
-    confirmed: 2,
-    cancelled: 3,
-    archived: 4
+    parent: 1,
+    admin: 2
   }
 end
