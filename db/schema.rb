@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_24_160436) do
-
+ActiveRecord::Schema.define(version: 2022_05_24_184428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daycares", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.float "rating"
+    t.text "description"
+    t.integer "price"
+    t.integer "number_of_openings"
+    t.date "opening_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
