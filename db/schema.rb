@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_24_204955) do
+ActiveRecord::Schema.define(version: 2022_05_24_205724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2022_05_24_204955) do
     t.bigint "daycare_id", null: false
     t.index ["client_id"], name: "index_consultations_on_client_id"
     t.index ["daycare_id"], name: "index_consultations_on_daycare_id"
+  end
+
+  create_table "daycare_tags", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "daycare_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["daycare_id"], name: "index_daycare_tags_on_daycare_id"
+    t.index ["tag_id"], name: "index_daycare_tags_on_tag_id"
   end
 
   create_table "daycares", force: :cascade do |t|
@@ -74,6 +83,8 @@ ActiveRecord::Schema.define(version: 2022_05_24_204955) do
 
   add_foreign_key "consultations", "daycares"
   add_foreign_key "consultations", "users", column: "client_id"
+  add_foreign_key "daycare_tags", "daycares"
+  add_foreign_key "daycare_tags", "tags"
   add_foreign_key "daycares", "users", column: "supplier_id"
   add_foreign_key "reviews", "daycares"
   add_foreign_key "reviews", "users", column: "client_id"
