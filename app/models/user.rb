@@ -3,9 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validate :first_last_company_name
+  validate :name_validations
 
-  def first_last_company_name
+  enum status: {
+    parent: 1,
+    admin: 2
+  }
+  
+  def name_validations
     if first_name.present? && last_name.present?
       validates :first_name, :last_name, presence: true
       validates :company_name, absence: true
