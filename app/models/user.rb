@@ -6,20 +6,8 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :consultations
   has_many :daycares
-  validate :name_validations
-
   enum category: {
     client: 1,
     supplier: 2
   }
-
-  def name_validations
-    if first_name.present? && last_name.present?
-      validates :first_name, :last_name, presence: true
-      validates :company_name, absence: true
-    else
-      validates :company_name, presence: true
-      validates :first_name, :last_name, absence: true
-    end
-  end
 end

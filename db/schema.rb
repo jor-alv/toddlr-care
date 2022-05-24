@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_24_200741) do
+ActiveRecord::Schema.define(version: 2022_05_24_201055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2022_05_24_200741) do
     t.date "opening_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "supplier_id", null: false
+    t.index ["supplier_id"], name: "index_daycares_on_supplier_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_05_24_200741) do
 
   add_foreign_key "consultations", "daycares"
   add_foreign_key "consultations", "users", column: "client_id"
+  add_foreign_key "daycares", "users", column: "supplier_id"
   add_foreign_key "reviews", "daycares"
   add_foreign_key "reviews", "users", column: "client_id"
 end
