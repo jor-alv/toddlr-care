@@ -37,6 +37,9 @@ gem 'pundit'
 # Geocoder
 gem 'geocoder'
 
+# PG search
+gem 'pg_search', '~> 2.3.0'
+
 # Faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
