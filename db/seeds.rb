@@ -1,9 +1,9 @@
-puts 'Seeds are being sown...'
+puts 'Previous seeds are being destroyed...'
 
-# Daycare.create(name: "ABC Little School")
-# Daycare.create(name: "XYZ Little School")
-# Daycare.create(name: "MTL Little School")
+Daycare.destroy_all
+User.destroy_all
 
+puts 'New seeds are being created...'
 
 Daycare.destroy_all
 User.destroy_all
@@ -14,10 +14,8 @@ User.destroy_all
                last_name: Faker::Name.last_name,
                password: "123456",
                company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
-               category: 2
-              )
+               category: 2)
 end
-
 
 User.all.each do |user|
   3.times do
@@ -26,7 +24,6 @@ User.all.each do |user|
                     supplier_id: user.id,
                     number_of_openings: rand(1..5),
                     price: rand(100..500),
-                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}"
-                    )
+                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
   end
 end
