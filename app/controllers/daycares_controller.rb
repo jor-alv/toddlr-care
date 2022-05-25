@@ -3,7 +3,11 @@ class DaycaresController < ApplicationController
   before_action :set_daycare, only: %i[show]
 
   def index
-    @daycares = policy_scope(Daycare)
+    if params[:query].present?
+      @daycares = policy_scope(Daycare).search_by_name_address_price(params[:query])
+    else
+      @daycares = policy_scope(Daycare)
+    end
 
     @markers = @daycares.geocoded.map do |daycare|
       {
