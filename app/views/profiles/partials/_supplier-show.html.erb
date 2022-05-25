@@ -1,0 +1,25 @@
+<h1>Hello, <%= current_user.company_name %></h1>
+
+<%# Display profile photo here %>
+
+<h2>Your bio:</h2>
+<p><%= current_user.bio %></p>
+
+<%# Tabs to access daycares, consultations and add a daycare (default to daycares) %>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href=<% render 'profiles/partials/tabs/daycares-tab'%>>Your daycares</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Consultations</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href=<% render 'profiles/partials/tabs/pending-tab'%>> Pending</a></li>
+      <li><a class="dropdown-item" href=<% render'profiles/partials/tabs/confirmed-tab'%>>Upcoming</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href= <% render 'profiles/partials/tabs/all-consultations'%>>All</a></li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Add new daycare</a>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+<h2>Your daycares:</h2>
+
+<% current_user.daycares.each do |daycare| %>
+  <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
+  <p><%= daycare.address %></p>
+  <p>$<%= daycare.price %>per week</p>
+  <p><%= daycare.description %></p>
+  <p>Openings: <%= daycare.number_of_openings %></p>
+<% end %>
