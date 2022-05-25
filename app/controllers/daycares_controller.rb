@@ -1,6 +1,6 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_shorty, only: %i[show]
+  before_action :set_daycare, only: %i[show]
 
   def index
     @daycares = policy_scope(Daycare)
