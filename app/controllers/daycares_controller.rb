@@ -1,6 +1,6 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_shorty, only: %i[show]
+  before_action :set_daycare, only: %i[show]
 
   def index
     @daycares = policy_scope(Daycare)  
@@ -9,8 +9,8 @@ class DaycaresController < ApplicationController
 
   private
 
-  def set_shorty
-    @shorty = Shorty.find(params[:id])
-    authorize @shorty
+  def set_daycare
+    @daycare = Daycare.find(params[:id])
+    authorize @daycare
   end
 end
