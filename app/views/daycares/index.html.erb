@@ -6,3 +6,9 @@
   <p><%= daycare.description %></p>
   <p>Openings: <%= daycare.number_of_openings %></p>
 <% end %>
+
+<div class="map-column map-sticky" style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
