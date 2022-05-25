@@ -5,6 +5,9 @@ User.destroy_all
 
 puts 'New seeds are being created...'
 
+Daycare.destroy_all
+User.destroy_all
+
 3.times do
   User.create!(email: Faker::Internet.email,
                first_name: Faker::Name.first_name,
@@ -16,7 +19,7 @@ end
 
 User.all.each do |user|
   3.times do
-    Daycare.create!(name: "#{Faker::Hipster.word} Daycare",
+    Daycare.create!(name: "#{Faker::Hipster.word.capitalize} Daycare",
                     description: Faker::Hipster.paragraph,
                     supplier_id: user.id,
                     number_of_openings: rand(1..5),
