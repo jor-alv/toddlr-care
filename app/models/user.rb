@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :consultations, dependent: :destroy
-  has_many :daycares, dependent: :destroy
+  has_many :daycares, foreign_key: :supplier_id, dependent: :destroy
   enum category: {
     client: 1,
     supplier: 2

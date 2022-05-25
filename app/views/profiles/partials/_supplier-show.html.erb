@@ -8,28 +8,18 @@
 <%# Tabs to access daycares, consultations and add a daycare (default to daycares) %>
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href=<% render 'tabs/_daycares-tab'%>>Your daycares</a>
+    <a class="nav-link active" aria-current="page" href=<% render 'profiles/partials/tabs/daycares-tab'%>>Your daycares</a>
   </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Consultations</a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="render 'tabs/_pending-tab'">Pending</a></li>
-      <li><a class="dropdown-item" href="render 'tabs/_confirmed-tab'">Upcoming</a></li>
+      <li><a class="dropdown-item" href=<% render 'profiles/partials/tabs/pending-tab'%>> Pending</a></li>
+      <li><a class="dropdown-item" href=<% render'profiles/partials/tabs/confirmed-tab'%>>Upcoming</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="render 'tabs/_all-consultations-tab'">All</a></li>
+      <li><a class="dropdown-item" href= <% render 'profiles/partials/tabs/all-consultations'%>>All</a></li>
     </ul>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Add new daycare</a>
   </li>
 </ul>
-
-
-
-<% current_user.daycares.each do |daycare| %>
-  <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
-  <p><%= daycare.address %></p>
-  <p>$<%= daycare.price %>per week</p>
-  <p><%= daycare.description %></p>
-  <p>Openings: <%= daycare.number_of_openings %></p>
-<% end %>

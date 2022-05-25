@@ -1,5 +1,5 @@
-<% if current_user.status == 2 %>
-  <%= render 'partials/supplier-show'%>
+<% if current_user.category == "supplier" %>
+  <%= render 'profiles/partials/supplier-show'%>
 <% else %>
-  <%= render 'partials/client-show' %>
+  <%= render 'profiles/partials/client-show' %>
 <% end %>
