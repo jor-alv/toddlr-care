@@ -7,8 +7,8 @@ class Daycare < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
-  pg_search_scope :search_by_name_address_price,
-    against: [ :name, :address, :price ],
+  pg_search_scope :search_by_name_address_price_description,
+    against: [ :name, :address, :price, :description ],
     using: {
       tsearch: { prefix: true }
     }
