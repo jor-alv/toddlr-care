@@ -5,8 +5,7 @@ User.destroy_all
 
 puts 'New seeds are being created...'
 
-Daycare.destroy_all
-User.destroy_all
+puts 'Creating users...'
 
 3.times do
   User.create!(email: Faker::Internet.email,
@@ -16,6 +15,8 @@ User.destroy_all
                company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
                category: 2)
 end
+
+puts 'Creating daycares...'
 
 User.all.each do |user|
   3.times do
