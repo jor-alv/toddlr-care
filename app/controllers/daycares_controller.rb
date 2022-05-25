@@ -4,7 +4,7 @@ class DaycaresController < ApplicationController
 
   def index
     if params[:query].present?
-      @daycares = policy_scope(Daycare).search_by_name_address_price(params[:query])
+      @daycares = policy_scope(Daycare).search_by_name_address_price_description(params[:query])
     else
       @daycares = policy_scope(Daycare)
     end
