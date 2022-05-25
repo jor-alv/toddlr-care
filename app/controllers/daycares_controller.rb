@@ -3,7 +3,8 @@ class DaycaresController < ApplicationController
   before_action :set_daycare, only: %i[show]
 
   def index
-    @daycares = policy_scope(Daycare)  
+    @daycares = policy_scope(Daycare)
+  end
 
   def show; end
 
