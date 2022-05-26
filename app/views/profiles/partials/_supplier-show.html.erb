@@ -8,18 +8,35 @@
 <%# Tabs to access daycares, consultations and add a daycare (default to daycares) %>
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href=<% render 'profiles/partials/tabs/daycares-tab'%>>Your daycares</a>
+    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">Your daycares</a>
   </li>
-  <li class="nav-item dropdown">
+  <li>
+    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#pending" aria-current="page" id="test-pending" href="#">Pending Consultations</a>
+  </li>
+  <li>
+    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#upcoming" aria-current="page" id="test-upcoming" href="#">Upcoming Consultations</a>
+  </li>
+
+  <%# <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Consultations</a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href=<% render 'profiles/partials/tabs/pending-tab'%>> Pending</a></li>
-      <li><a class="dropdown-item" href=<% render'profiles/partials/tabs/confirmed-tab'%>>Upcoming</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href= <% render 'profiles/partials/tabs/all-consultations'%>>All</a></li>
-    </ul>
-  </li>
+    <ul class="dropdown-menu"> %>
+      <%# <li><a class="dropdown-item nav-link" data-bs-toggle="tab" href="#" data-bs-target="#pending" aria-current="page" id="pending">Pending</a></li> %>
+      <%# <li><a class="dropdown-item" href=render 'profiles/partials/tabs/confirmed-tab'>Upcoming</a></li> %>
+      <%# <li><hr class="dropdown-divider"></li> %>
+      <%# <li><a class="dropdown-item" href= render 'profiles/partials/tabs/all-consultations'>All</a></li> %>
+    <%# </ul> %>
+  <%# </li> %>
   <li class="nav-item">
     <a class="nav-link" href="#">Add new daycare</a>
   </li>
 </ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="test" role="tabpanel"><%= render 'profiles/partials/tabs/daycares-tab'%></div>
+  <div class="tab-pane fade" id="pending" role="tabpanel"> <%= render 'profiles/partials/tabs/pending-tab'%></div>
+  <div class="tab-pane fade" id="upcoming" role="tabpanel"><%= render 'profiles/partials/tabs/confirmed-tab'%></div>
+</div>
+
+
+<%# render 'profiles/partials/tabs/pending-tab'%>
+<%# render 'profiles/partials/tabs/daycares-tab'%>
+<%# render 'profiles/partials/tabs/confirmed-tab'%>

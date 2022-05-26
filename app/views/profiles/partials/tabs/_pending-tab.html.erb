@@ -1,1 +1,6 @@
-<h2>Consultations tab</h2>
+<h2>Your pending consultations:</h2>
+<% @admin_consultations[0].each do |consultation| %>
+  <h2>Booked by: <%= link_to "#{consultation.client.first_name} #{consultation.client.last_name}", client_profile_path(consultation.client) %></h2>
+  <p><%= consultation.daycare.name %></p>
+  <p><%= consultation.time %></p>
+<% end %>
