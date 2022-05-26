@@ -10,4 +10,12 @@ class User < ApplicationRecord
     client: 1,
     supplier: 2
   }
+
+  def admin_consultations
+    admin_consultations = []
+    self.daycares.each do |daycare|
+      admin_consultations << daycare.consultations
+    end
+    return admin_consultations
+  end
 end
