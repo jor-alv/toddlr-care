@@ -196,6 +196,7 @@ User.all.each do |user|
                     price: rand(100..500),
                     address: "#{Faker::Address.street_address}, #{Faker::Address.street_name.downcase}, #{Faker::Address.city}")
   end
+end
 
 # 1. daycare_1
 
@@ -382,6 +383,8 @@ User.all.each do |user|
 #
 # CREATING REVIEWS
 
+puts 'Creating reviews...'
+
 # 1. review_1
 
 # Review.create(daycare: '',
@@ -565,4 +568,143 @@ User.all.each do |user|
 #
 # CREATING CONSULTATIONS
 
-end
+puts 'Creating consultations...'
+
+# 1. consultation_1
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_1 = Consultation.last
+
+# 2. consultation_2
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_2 = Consultation.last
+
+# 3. consultation_3
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_3 = Consultation.last
+
+# 4. consultation_4
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_4 = Consultation.last
+
+# 5. consultation_5
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_5 = Consultation.last
+
+# 6. consultation_6
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_6 = Consultation.last
+
+# 7. consultation_7
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_7 = Consultation.last
+
+# 8. consultation_8
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_8 = Consultation.last
+
+# 9. consultation_9
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_9 = Consultation.last
+
+# 10. consultation_10
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_10 = Consultation.last
+
+# 11. consultation_11
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_11 = Consultation.last
+
+# 12. consultation_12
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_12 = Consultation.last
+
+# 13. consultation_13
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_13 = Consultation.last
+
+# 14. consultation_14
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_14 = Consultation.last
+
+# 15. consultation_15
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_15 = Consultation.last
+
+# FINAL CONFIRMATION
+
+puts 'All seeds have been successfully created...'
