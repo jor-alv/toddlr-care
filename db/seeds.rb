@@ -9,7 +9,7 @@ User.destroy_all
 
 puts 'New seeds are being created...'
 
-# Creating Users
+# CREATING USERS
 
 puts 'Creating users...'
 
@@ -34,7 +34,7 @@ end
 #             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
 #             bio: "")
 #
-# client_1 = User.last
+# kim = User.last
 
 # 2. client_2
 
@@ -108,8 +108,8 @@ end
 # 8. supplier_1
 
 # User.create(category: 2,
-#             first_name: 'Kim',
-#             last_name: 'Coquilla',
+#             first_name: 'Yann',
+#             last_name: 'Bouhadana',
 #             company_name: '',
 #             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
 #             bio: "")
@@ -119,8 +119,8 @@ end
 # 9. supplier_2
 
 # User.create(category: 2,
-#             first_name: 'Jorge',
-#             last_name: 'Alvarez',
+#             first_name: 'James',
+#             last_name: 'Campbell',
 #             company_name: '',
 #             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
 #             bio: "")
