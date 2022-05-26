@@ -7,6 +7,72 @@ puts 'New seeds are being created...'
 
 puts 'Creating users...'
 
+# 1. user_1
+
+# User.create(category: '',
+#             first_name: '',
+#             last_name: '',
+#             company_name: '',
+#             email: company_name.present? ? "contact@#{company_name}.com" : "#{first_name}_#{last_name}@gmail.com",
+#             bio: "")
+#
+# user_1 = User.last
+
+# 2. user_2
+
+# User.create(category: '',
+#             first_name: '',
+#             last_name: '',
+#             company_name: '',
+#             email: company_name.present? ? "contact@#{company_name}.com" : "#{first_name}_#{last_name}@gmail.com",
+#             bio: "")
+#
+# user_2 = User.last
+
+# 3. user_3
+
+# User.create(category: '',
+#             first_name: '',
+#             last_name: '',
+#             company_name: '',
+#             email: company_name.present? ? "contact@#{company_name}.com" : "#{first_name}_#{last_name}@gmail.com",
+#             bio: "")
+#
+# user_3 = User.last
+
+# 4. user_4
+
+# User.create(category: '',
+#             first_name: '',
+#             last_name: '',
+#             company_name: '',
+#             email: company_name.present? ? "contact@#{company_name}.com" : "#{first_name}_#{last_name}@gmail.com",
+#             bio: "")
+#
+# user_4 = User.last
+
+# 5. user_5
+
+# User.create(category: '',
+#             first_name: '',
+#             last_name: '',
+#             company_name: '',
+#             email: company_name.present? ? "contact@#{company_name}.com" : "#{first_name}_#{last_name}@gmail.com",
+#             bio: "")
+#
+# user_5 = User.last
+
+# 6. user_6
+
+# User.create(category: '',
+#             first_name: '',
+#             last_name: '',
+#             company_name: '',
+#             email: company_name.present? ? "contact@#{company_name}.com" : "#{first_name}_#{last_name}@gmail.com",
+#             bio: "")
+#
+# user_6 = User.last
+
 3.times do
   User.create!(email: Faker::Internet.email,
                first_name: Faker::Name.first_name,
