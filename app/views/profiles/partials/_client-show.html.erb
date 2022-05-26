@@ -1,0 +1,23 @@
+<h1>Hello, <%= current_user.first_name %></h1>
+
+<%# Display profile photo here %>
+
+<h2>Your bio:</h2>
+<p><%= current_user.bio %></p>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">All Consultations</a>
+  </li>
+  <li>
+    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#pending" aria-current="page" id="test-pending" href="#">Pending Consultations</a>
+  </li>
+  <li>
+    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#upcoming" aria-current="page" id="test-upcoming" href="#">Upcoming Consultations</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="test" role="tabpanel"><%= render 'profiles/partials/client-tabs/all-tab'%></div>
+  <div class="tab-pane fade" id="pending" role="tabpanel"> <%= render 'profiles/partials/client-tabs/pending-tab'%></div>
+  <div class="tab-pane fade" id="upcoming" role="tabpanel"><%= render 'profiles/partials/client-tabs/confirmed-tab'%></div>
+</div>

@@ -18,8 +18,25 @@ puts 'Creating users...'
                first_name: Faker::Name.first_name,
                last_name: Faker::Name.last_name,
                password: "123456",
-               company_name: "#{Faker::Company.name.downcase} #{Faker::Company.suffix}",
+               bio: Faker::Hipster.paragraph,
+               company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
                category: 2)
+end
+
+5.times do
+  User.create!(email: Faker::Internet.email,
+               first_name: Faker::Name.first_name,
+               last_name: Faker::Name.last_name,
+               password: "123456",
+               category: 1)
+end
+parents = User.where(category: 1)
+parents.each do |parent|
+  Daycare.all.each do |daycare|
+    Consultation.create!(time: Date.tomorrow,
+                         client_id: parent.id,
+                         daycare_id: daycare.id)
+  end
 end
 
 # Creating client users
@@ -194,8 +211,9 @@ User.all.each do |user|
                     supplier_id: user.id,
                     number_of_openings: rand(1..5),
                     price: rand(100..500),
-                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name.downcase}, #{Faker::Address.city}")
+                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
   end
+end
 
 # 1. daycare_1
 
@@ -382,7 +400,328 @@ User.all.each do |user|
 #
 # CREATING REVIEWS
 
+puts 'Creating reviews...'
+
+# 1. review_1
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_1 = Review.last
+
+# 2. review_2
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_2 = Review.last
+
+# 3. review_3
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_3 = Review.last
+
+# 4. review_4
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_4 = Review.last
+
+# 5. review_5
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_5 = Review.last
+
+# 6. review_6
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_6 = Review.last
+
+# 7. review_7
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_7 = Review.last
+
+# 8. review_8
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_8 = Review.last
+
+# 9. review_9
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_9 = Review.last
+
+# 10. review_10
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_10 = Review.last
+
+# 11. review_11
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_11 = Review.last
+
+# 12. review_12
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_12 = Review.last
+
+# 13. review_13
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_13 = Review.last
+
+# 14. review_14
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_14 = Review.last
+
+# 15. review_15
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_15 = Review.last
+
+# 16. review_16
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_16 = Review.last
+
+# 17. review_17
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_17 = Review.last
+
+# 18. review_18
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_18 = Review.last
+
+# 19. review_19
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_19 = Review.last
+
+# 20. review_20
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_20 = Review.last
+
 #
 # CREATING CONSULTATIONS
 
-end
+puts 'Creating consultations...'
+
+# 1. consultation_1
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_1 = Consultation.last
+
+# 2. consultation_2
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_2 = Consultation.last
+
+# 3. consultation_3
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_3 = Consultation.last
+
+# 4. consultation_4
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_4 = Consultation.last
+
+# 5. consultation_5
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_5 = Consultation.last
+
+# 6. consultation_6
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_6 = Consultation.last
+
+# 7. consultation_7
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_7 = Consultation.last
+
+# 8. consultation_8
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_8 = Consultation.last
+
+# 9. consultation_9
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_9 = Consultation.last
+
+# 10. consultation_10
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_10 = Consultation.last
+
+# 11. consultation_11
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_11 = Consultation.last
+
+# 12. consultation_12
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_12 = Consultation.last
+
+# 13. consultation_13
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_13 = Consultation.last
+
+# 14. consultation_14
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_14 = Consultation.last
+
+# 15. consultation_15
+
+# Consultation.create(daycare: '',
+#                     client: '',
+#                     time: '',
+#                     status: '')
+#
+# consultation_15 = Consultation.last
+
+# FINAL CONFIRMATION
+
+puts 'All seeds have been successfully created...'
