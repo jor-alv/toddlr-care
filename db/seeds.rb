@@ -21,23 +21,29 @@ puts 'Creating users...'
                bio: Faker::Hipster.paragraph,
                company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
                category: 2)
-end
+              end
 
 5.times do
   User.create!(email: Faker::Internet.email,
-               first_name: Faker::Name.first_name,
-               last_name: Faker::Name.last_name,
-               password: "123456",
-               category: 1)
+              first_name: Faker::Name.first_name,
+              last_name: Faker::Name.last_name,
+              password: "123456",
+              category: 1)
 end
-parents = User.where(category: 1)
-parents.each do |parent|
-  Daycare.all.each do |daycare|
-    Consultation.create!(time: Date.tomorrow,
-                         client_id: parent.id,
-                         daycare_id: daycare.id)
+
+puts 'Creating daycares...'
+
+User.all.each do |user|
+  3.times do
+    Daycare.create!(name: "#{Faker::Hipster.word.capitalize} Daycare",
+                    description: Faker::Hipster.paragraph,
+                    supplier_id: user.id,
+                    number_of_openings: rand(1..5),
+                    price: rand(100..500),
+                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
   end
 end
+
 
 # Creating client users
 # puts 'Creating client users...'
@@ -202,18 +208,6 @@ puts 'Creating supplier users...'
 # #
 # # CREATING DAYCARES
 
-puts 'Creating daycares...'
-
-User.all.each do |user|
-  3.times do
-    Daycare.create!(name: "#{Faker::Hipster.word.capitalize} Daycare",
-                    description: Faker::Hipster.paragraph,
-                    supplier_id: user.id,
-                    number_of_openings: rand(1..5),
-                    price: rand(100..500),
-                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
-  end
-end
 
 # 1. daycare_1
 
@@ -723,5 +717,15 @@ puts 'Creating consultations...'
 # consultation_15 = Consultation.last
 
 # FINAL CONFIRMATION
+
+parents = User.where(category: 1)
+parents.each do |parent|
+  Daycare.all.each do |daycare|
+    Consultation.create!(date_time: Date.tomorrow,
+                        client_id: parent.id,
+                        daycare_id: daycare.id,
+                        status: rand(1...2))
+  end
+end
 
 puts 'All seeds have been successfully created...'

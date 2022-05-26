@@ -1,5 +1,10 @@
-<h2>Your Confirmed consultations:</h2>
-<% @user.consultations.each do |consultation| %>
-  <h3><%= consultation.daycare.name %></h3>
-  <p><%= consultation.time %></p>
+<h2>Your confirmed consultations:</h2>
+<% @user.consultations.confirmed.each do |consultation| %>
+  <h3><%= link_to consultation.daycare.name, daycare_path(consultation.daycare) %></h3>
+  <p><%= consultation.date_time %></p>
+  <p>Status:<%= consultation.status %></p>
+    <%= simple_form_for consultation do |f| %>
+    <%= f.input :status, priority: ["Cancelled"], collection: ["Cancelled"]%>
+    <%= f.submit "Cancel", class:"btn btn-danger"%>
+  <% end %>
 <% end %>

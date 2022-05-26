@@ -17,10 +17,14 @@ Rails.application.routes.draw do
   patch '/my_profile', to: 'profiles#update'
   delete '/my_profile', to: 'profiles#destroy'
 
-  get '/my_admin_consultations', to: 'consultations#my_admin_consultations'
-  patch '/my_admin_consultations/:id', to: 'consultations#update'
+  # get '/my_admin_consultations', to: 'consultations#my_admin_consultations'
+  # patch '/my_admin_consultations/:id', to: 'consultations#update'
 
-  get '/my_consultations', to: 'consultations#my_consultations'
+  # get '/my_consultations', to: 'consultations#my_consultations'
+
+
+  # post 'my_profile/consultation/consultation_id', to: 'consultations#update', as: :consultation
+  patch 'my_profile/consultation/:consultation_id', to: 'consultations#update', as: :consultation
 
   # Ensure that consultation belongs to current user
   patch '/consultations/:id', to: 'consultations#update'
