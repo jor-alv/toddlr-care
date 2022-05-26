@@ -1,1 +1,5 @@
 <h1>Welcome to the Daycares Show Page!</h1>
+    <%= simple_form_for [@daycare, @consultation] do |f| %>
+    <%= f.input :time, as: :date, html5: true %>
+    <%= f.button :submit, label: "Consult now", class: "btn btn-primary" %>
+    <% end %>
