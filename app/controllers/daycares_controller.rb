@@ -19,6 +19,25 @@ class DaycaresController < ApplicationController
     end
   end
 
+  def new
+    @daycare = Daycare.new
+    authorize @daycare
+  end
+
+  def create
+    if current_user.category != "supplier"
+      redirect_to my_profile_path, notice: 'Unable to create daycare as a parent.'
+    end
+    @daycare = Daycare.new(daycare_params)
+    @daycare.supplier = current_user
+    authorize @daycare
+    if @daycare.save
+      redirect_to daycare_path(@daycare), notice: 'Listing was successfully created.'
+    else
+      render :new
+    end
+  end
+
   def show
     @consultation = Consultation.new
     @my_client_consultations = Consultation.where(supplier: current_user)
@@ -35,5 +54,9 @@ class DaycaresController < ApplicationController
   def set_daycare
     @daycare = Daycare.find(params[:id])
     authorize @daycare
+  end
+
+  def daycare_params
+    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings)
   end
 end

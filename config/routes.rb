@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'daycares#index'
 
+  resources :daycares, except: [:index, :show]
   resources :daycares, only: :show do
     resources :consultations, only: :create
     resources :reviews, only: :create
   end
 
-  resources :daycares, except: [:index, :show]
 
   # Include logic to make sure that only admin profiles are shown
-  get '/profiles/:id', to: 'profiles#admin_profile', as: :admin_profile
+  get '/profiles/:id', to: 'profiles#client_profile', as: :client_profile
 
   get '/my_profile', to: 'profiles#show'
   get '/my_profile/edit', to: 'profiles#edit', as: :edit_my_profile
