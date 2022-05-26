@@ -15,7 +15,7 @@ class ConsultationsController < ApplicationController
       flash[:alert] = "Invalid Date"
       render :daycare
     end
-    authorize @consultation
+    # authorize @consultation
     if @consultation.save
       redirect_to my_profile_path(client)
     else
