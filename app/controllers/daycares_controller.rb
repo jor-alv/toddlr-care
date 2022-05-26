@@ -19,7 +19,16 @@ class DaycaresController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @consultation = Consultation.new
+    @my_client_consultations = Consultation.where(supplier: current_user)
+    @my_admin_consultations = current_user.consultations
+    @pending_requests = @my_admin_consultations.where(status:"pending")
+    @declined_requests = @my_admin_consultations.where(status:"declined")
+    @confirmed_requests = @my_admin_consultations.where(status:"confirmed")
+    @cancel_requests = @my_admin_consultations.where(status:"cancel")
+    @archived_requests = @my_admin_consultations.where(status:"archived")
+  end
 
   private
 
