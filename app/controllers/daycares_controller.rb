@@ -6,6 +6,11 @@ class DaycaresController < ApplicationController
     @daycares = policy_scope(Daycare)
   end
 
+  def new
+    @daycare = Daycare.new
+    authorize @daycare
+  end
+
   def show; end
 
   private

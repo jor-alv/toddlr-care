@@ -9,4 +9,14 @@ class DaycarePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def new?
+    true
+  end
+
+  private
+
+  def user_is_owner_or_admin
+    record.user == user || user.admin
+  end
 end
