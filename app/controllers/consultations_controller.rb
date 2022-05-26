@@ -36,7 +36,7 @@ class ConsultationsController < ApplicationController
   def update
     @consultation = Consultation.find(params[:consultation_id])
     @consultation.update(status: consultation_params[:status].downcase)
-    @consultation.confirmed!
+    # @consultation.confirmed!
     authorize @consultation
     redirect_to my_profile_path(@consultation.daycare.supplier)
   end

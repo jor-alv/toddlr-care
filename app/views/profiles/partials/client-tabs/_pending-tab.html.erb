@@ -1,6 +1,6 @@
 <h2>Your pending consultations:</h2>
 <% @user.consultations.pending.each do |consultation| %>
-  <h3><%= consultation.daycare.name %></h3>
+  <h3><%= link_to consultation.daycare.name, daycare_path(consultation.daycare) %></h3>
   <p><%= consultation.date_time %></p>
   <p>Status:<%= consultation.status %></p>
 <% end %>

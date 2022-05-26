@@ -4,4 +4,8 @@
   <p><%= consultation.daycare.name %></p>
   <p><%= consultation.date_time %></p>
   <p>Status:<%= consultation.status %></p>
+  <%= simple_form_for consultation do |f| %>
+    <%= f.input :status, priority: ["Cancelled"], collection: ["Cancelled", "Archived"]%>
+    <%= f.submit "Submit", class:"btn btn-success"%>
+  <% end %>
 <% end %>

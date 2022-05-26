@@ -5,7 +5,7 @@
   <p><%= consultation.date_time %></p>
   <p>Status:<%= consultation.status %></p>
   <%= simple_form_for consultation do |f| %>
-  <%= f.input :status, priority: ["Pending"], collection: ["Confirmed", "Declined"]%>
-  <%= f.submit "Submit", class:"btn btn-success w-100"%>
-<% end %>
+    <%= f.input :status, priority: ["Pending"], collection: ["Confirmed", "Declined"]%>
+    <%= f.submit "Submit", class:"btn btn-success"%>
+  <% end %>
 <% end %>
