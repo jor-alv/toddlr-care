@@ -13,6 +13,7 @@ User.destroy_all
                first_name: Faker::Name.first_name,
                last_name: Faker::Name.last_name,
                password: "123456",
+               bio: Faker::Hipster.paragraph,
                company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
                category: 2)
 end
