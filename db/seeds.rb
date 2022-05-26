@@ -18,8 +18,25 @@ puts 'Creating users...'
                first_name: Faker::Name.first_name,
                last_name: Faker::Name.last_name,
                password: "123456",
-               company_name: "#{Faker::Company.name.downcase} #{Faker::Company.suffix}",
+               bio: Faker::Hipster.paragraph,
+               company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
                category: 2)
+end
+
+5.times do
+  User.create!(email: Faker::Internet.email,
+               first_name: Faker::Name.first_name,
+               last_name: Faker::Name.last_name,
+               password: "123456",
+               category: 1)
+end
+parents = User.where(category: 1)
+parents.each do |parent|
+  Daycare.all.each do |daycare|
+    Consultation.create!(time: Date.tomorrow,
+                         client_id: parent.id,
+                         daycare_id: daycare.id)
+  end
 end
 
 # Creating client users
@@ -194,7 +211,7 @@ User.all.each do |user|
                     supplier_id: user.id,
                     number_of_openings: rand(1..5),
                     price: rand(100..500),
-                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name.downcase}, #{Faker::Address.city}")
+                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
   end
 end
 
