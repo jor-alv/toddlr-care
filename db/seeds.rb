@@ -382,6 +382,186 @@ User.all.each do |user|
 #
 # CREATING REVIEWS
 
+# 1. review_1
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_1 = Review.last
+
+# 2. review_2
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_2 = Review.last
+
+# 3. review_3
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_3 = Review.last
+
+# 4. review_4
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_4 = Review.last
+
+# 5. review_5
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_5 = Review.last
+
+# 6. review_6
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_6 = Review.last
+
+# 7. review_7
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_7 = Review.last
+
+# 8. review_8
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_8 = Review.last
+
+# 9. review_9
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_9 = Review.last
+
+# 10. review_10
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_10 = Review.last
+
+# 11. review_11
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_11 = Review.last
+
+# 12. review_12
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_12 = Review.last
+
+# 13. review_13
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_13 = Review.last
+
+# 14. review_14
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_14 = Review.last
+
+# 15. review_15
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_15 = Review.last
+
+# 16. review_16
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_16 = Review.last
+
+# 17. review_17
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_17 = Review.last
+
+# 18. review_18
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_18 = Review.last
+
+# 19. review_19
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_19 = Review.last
+
+# 20. review_20
+
+# Review.create(daycare: '',
+#               client: '',
+#               stars: '',
+#               content: '')
+#
+# review_20 = Review.last
+
 #
 # CREATING CONSULTATIONS
 
