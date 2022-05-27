@@ -33,7 +33,7 @@ end
 parents = User.where(category: 1)
 parents.each do |parent|
   Daycare.all.each do |daycare|
-    Consultation.create!(time: Date.tomorrow,
+    Consultation.create!(date_time: DateTime.tomorrow,
                          client_id: parent.id,
                          daycare_id: daycare.id)
   end

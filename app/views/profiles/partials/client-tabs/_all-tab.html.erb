@@ -1,5 +1,6 @@
 <h2>All consultations:</h2>
 <% @user.consultations.each do |consultation| %>
   <h3><%= consultation.daycare.name %></h3>
-  <p><%= consultation.time %></p>
+  <p><strong>Date and Time:</strong><%= consultation.date_time %></p>
+  <p><strong>Status:</strong><%= consultation.status %></p>
 <% end %>
