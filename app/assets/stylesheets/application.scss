@@ -14,6 +14,18 @@
 @import "components/index";
 @import "pages/index";
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   background-color: white;
+}
+
+.stuck {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
 }
