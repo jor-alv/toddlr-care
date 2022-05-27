@@ -11,188 +11,187 @@ puts 'New seeds are being created...'
 
 # CREATING USERS
 
-puts 'Creating users...'
+# puts 'Creating users...'
 
-3.times do
-  User.create!(email: Faker::Internet.email,
-               first_name: Faker::Name.first_name,
-               last_name: Faker::Name.last_name,
-               password: "123456",
-               bio: Faker::Hipster.paragraph,
-               company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
-               category: 2)
-              end
+# 3.times do
+#   User.create!(email: Faker::Internet.email,
+#                first_name: Faker::Name.first_name,
+#                last_name: Faker::Name.last_name,
+#                password: "123456",
+#                bio: Faker::Hipster.paragraph,
+#                company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
+#                category: 2)
+#               end
 
-5.times do
-  User.create!(email: Faker::Internet.email,
-              first_name: Faker::Name.first_name,
-              last_name: Faker::Name.last_name,
-              password: "123456",
-              category: 1)
-end
+# 5.times do
+#   User.create!(email: Faker::Internet.email,
+#               first_name: Faker::Name.first_name,
+#               last_name: Faker::Name.last_name,
+#               password: "123456",
+#               category: 1)
+# end
 
-parents = User.where(category: 1)
-parents.each do |parent|
-  Daycare.all.each do |daycare|
-    Consultation.create!(date_time: DateTime.tomorrow,
-                         client_id: parent.id,
-                         daycare_id: daycare.id)
-  end
-end
+# parents = User.where(category: 1)
+# parents.each do |parent|
+#   Daycare.all.each do |daycare|
+#     Consultation.create!(date_time: DateTime.tomorrow,
+#                          client_id: parent.id,
+#                          daycare_id: daycare.id)
+#   end
+# end
 
-puts 'Creating daycares...'
+# # puts 'Creating daycares...'
 
-User.all.each do |user|
-  3.times do
-    Daycare.create!(name: "#{Faker::Hipster.word.capitalize} Daycare",
-                    description: Faker::Hipster.paragraph,
-                    supplier_id: user.id,
-                    number_of_openings: rand(1..5),
-                    price: rand(100..500),
-                    address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
-  end
-end
-
+# User.all.each do |user|
+#   3.times do
+#     Daycare.create!(name: "#{Faker::Hipster.word.capitalize} Daycare",
+#                     description: Faker::Hipster.paragraph,
+#                     supplier_id: user.id,
+#                     number_of_openings: rand(1..5),
+#                     price: rand(100..500),
+#                     address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
+#   end
+# end
 
 # Creating client users
-# puts 'Creating client users...'
+puts 'Creating client users...'
 
-# 1. client_1
+# 1. Kim Coquilla
 
-# User.create(category: 1,
-#             first_name: 'Kim',
-#             last_name: 'Coquilla',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "")
-#
-# kim = User.last
+User.create(category: 1,
+            first_name: 'Kim',
+            last_name: 'Coquilla',
+            company_name: '',
+            email: "kim_coquilla@email.com",
+            bio: "Hey, my name is Kim and I have a lot of kids who need to go to daycares!")
 
-# 2. client_2
+kim_coquilla = User.last
 
-# User.create(category: 1,
-#             first_name: 'Jorge',
-#             last_name: 'Alvarez',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "")
-#
-# client_2 = User.last
+# 2. Yann Bouhadana
 
-# 3. client_3
+User.create(category: 1,
+            first_name: 'Yann',
+            last_name: 'Bouhadana',
+            company_name: '',
+            email: "yann_bouhadana@email.com",
+            bio: "Hello, my name is Yann. My kids need a place to stay while I go off to work.")
 
-# User.create(category: 1,
-#             first_name: '',
-#             last_name: '',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "")
-#
-# client_3 = User.last
+yann_bouhadana = User.last
 
-# 4. client_4
+# 3. Claudette Smith
 
-# User.create(category: 1,
-#             first_name: 'Kim',
-#             last_name: 'Coquilla',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "Hey my name is Kim and I have a lot of kids who need to go to daycares!")
+User.create(category: 1,
+            first_name: 'Claudette',
+            last_name: 'Smith',
+            company_name: '',
+            email: "claudette_smith@email.com",
+            bio: "Hello, I'm Claudette this app is amazing!")
 
-# kim = User.last
+claudette_smith = User.last
+
+# 4. John Littlewood
+
+User.create(category: 1,
+            first_name: 'John',
+            last_name: 'Littlewood',
+            company_name: '',
+            email: "john_littlewood@email.com",
+            bio: "Hey, I'm John and I have twins that need a nursery asap!")
+
+john_littlewood = User.last
 
 # # 5. client_5
 
 # User.create(category: 1,
-#             first_name: 'Jorge',
-#             last_name: 'Alvarez',
+#             first_name: '',
+#             last_name: '',
 #             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "Hello my name is Jorge. My kids need a place to stay while I go off to work.")
+#             email: "",
+#             bio: "")
 
-# jorge = User.last
+# client_5 = User.last
 
 # # 6. client_6
 
 # User.create(category: 1,
-#             first_name: 'John',
-#             last_name: 'Littlewood',
+#             first_name: '',
+#             last_name: '',
 #             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "Hey I'm John and I have twins that need a nursery asap!")
+#             email: "",
+#             bio: "")
 
-# john = User.last
+# client_6 = User.last
 
 # # 7. client_7
 
 # User.create(category: 1,
-#             first_name: 'Claudette',
-#             last_name: 'Smith',
+#             first_name: '',
+#             last_name: '',
 #             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "Hello I'm Claudette this app is amazing!")
+#             email: "",
+#             bio: "")
 
-# claudette = User.last
+# client_7 = User.last
 
-# # Creating supplier users
+# Creating supplier users
 puts 'Creating supplier users...'
 
-# 8. supplier_1
+# 8. Jorge Alvarez
 
-# User.create(category: 2,
-#             first_name: '',
-#             last_name: '',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "")
-#
-# supplier_1 = User.last
+User.create(category: 2,
+            first_name: 'Jorge',
+            last_name: 'Alvarez',
+            company_name: 'Prison Break Daycares',
+            email: "jorge_alvarez@email.com",
+            bio: "Me and my wife have been teaching children for almost 40 years. Now we have the luxury to run our own daycare business, how neat!")
 
-# 9. supplier_2
+jorge_alvarez = User.last
 
-# User.create(category: 2,
-#             first_name: '',
-#             last_name: '',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "")
-#
-# supplier_2 = User.last
+# 9. james_campbell
 
-# 10. supplier_3
+User.create(category: 2,
+            first_name: 'James',
+            last_name: 'Campbell',
+            company_name: 'Shorties Daycares',
+            email: "james_campbell@email.com",
+            bio: "My name is James and I'm here to make your life a lot easier!")
 
-# User.create(category: 2,
-#             first_name: 'James',
-#             last_name: 'Campbell',
-#             company_name: 'Teddy Bear Daycares',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "For almost 40 years, I've been teaching children, now I have the luxury to run my own daycare business, how neat!")
+james_campbell = User.last
 
-# james = User.last
+# 10. hufflepuff_daycares
 
-# # 11. supplier_4
+User.create(category: 2,
+            first_name: 'Helga',
+            last_name: 'Hufflepuff',
+            company_name: 'Hufflepuff Daycares',
+            email: "hufflepuff_daycares@email.com",
+            bio: "I have 4 kids and I fell in love with the whole daycare atmosphere, so here I am!")
 
-# User.create(category: 2,
-#             first_name: 'Yann',
-#             last_name: 'Bouhadana',
-#             company_name: '',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "I have 4 kids and I fell inlove with the whole daycare atmosphere, so here I am.")
+hufflepuff_daycares = User.last
 
-# yann = User.last
+# 11. Le Wagon Daycares
 
-# # 12. supplier_5
+User.create(category: 2,
+            first_name: 'Stephane',
+            last_name: 'Lafontaine',
+            company_name: 'Le Wagon Daycares',
+            email: "le_wagon_daycares@email.com",
+            bio: "All you need is code. Change your life, learn to code!")
 
-# User.create(category: 2,
-#             first_name: 'Emilie',
-#             last_name: 'Ware',
-#             company_name: 'Itty Bitties Daycares',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "My name is Emilie and I'm here to make your life a lot easier!")
+le_wagon_daycares = User.last
 
-# emilie = User.last
+# 12. Walmart Daycares
 
-# # 13. supplier_6
+User.create(category: 2,
+            first_name: 'Emilie',
+            last_name: 'Ware',
+            company_name: 'Walmart Daycares',
+            email: "walmart_daycares@email.com",
+            bio: "A premier early care and education provider which respects the child, encourages learning through exploration, and supports the family within a creative and nurturing environment.")
+
+walmart_daycares = User.last
+
+# 13. supplier_6
 
 # User.create(category: 2,
 #             first_name: 'Stephane',
@@ -217,123 +216,115 @@ puts 'Creating supplier users...'
 # #
 # # CREATING DAYCARES
 
+puts 'Creating daycares...'
 
-# 1. daycare_1
+# 1. Le Wagon Daycare
 
-# Daycare.create(supplier: 'Yann Bouhadana',
-#                name: 'Pitter Patter Playhouse',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
+Daycare.create(supplier: le_wagon_daycares,
+               name: 'Le Wagon Daycare',
+               address: '5333 Casgrain Avenue, Montreal, Quebec, Canada',
+               price: 7,
+               rating: 4,
+               description: "All you need is code. Change your life, learn to code!",
+               number_of_openings: 1)
 
-# pitter_patter_playhouse_1 = Daycare.last
+le_wagon_daycare = Daycare.last
 
-# 2. daycare_2
+# 2. Prison Break Daycare
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_2 = Daycare.last
+Daycare.create(supplier: jorge_alvarez,
+               name: 'Prison Break Daycare',
+               address: '565 Rue des Violettes, Salaberry-de-Valleyfield, Quebec, Canada',
+               price: 10,
+               rating: 5,
+               description: "Here, your child will develop their personality, their best mind and most important of all, how to escape prison.",
+               number_of_openings: 0)
 
-# 3. daycare_3
+prison_break_daycare = Daycare.last
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_3 = Daycare.last
+# 3. Walmart Daycare 1
 
-# 4. daycare_4
+Daycare.create(supplier: walmart_daycares,
+               name: 'Walmart Daycare 1',
+               address: '2050 Bd Monseigneur-Langlois, Salaberry-de-Valleyfield, Quebec, Canada',
+               price: 4,
+               rating: 2,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 2)
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_4 = Daycare.last
+walmart_daycare_1 = Daycare.last
 
-# 5. daycare_5
+# 4. Shorties Daycare 1
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_5 = Daycare.last
+Daycare.create(supplier: james_campbell,
+               name: 'Shorties Daycare 1',
+               address: '229 Rue Danis, Salaberry-de-Valleyfield, Quebec, Canada',
+               price: 6,
+               rating: 3,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 1)
 
-# 6. daycare_6
+shorties_daycare_1 = Daycare.last
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_6 = Daycare.last
+# 5. Walmart Daycare 2
 
-# 7. daycare_7
+Daycare.create(supplier: walmart_daycares,
+               name: 'Walmart Daycare 2',
+               address: '195 Boul Hymus, Pointe-Claire, Quebec, Canada',
+               price: 4,
+               rating: 2,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 2)
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_7 = Daycare.last
+walmart_daycare_2 = Daycare.last
 
-# 8. daycare_8
+# 6. Walmart Daycare 3
 
-# Daycare.create(supplier: '',
-#                name: '',
-#                address: '',
-#                price: 0,
-#                rating: 0.0,
-#                description: "",
-#                number_of_openings: 0,
-#                opening_date: Time.now)
-#
-# daycare_8 = Daycare.last
+Daycare.create(supplier: walmart_daycares,
+               name: 'Walmart Daycare 3',
+               address: '5400 Rue Jean-Talon Ouest, Montreal, Quebec, Canada',
+               price: 4,
+               rating: 2,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 2)
 
-# 9. daycare_9
+walmart_daycare_3 = Daycare.last
 
-# Daycare.create(supplier: walmart,
-#                name: 'Walmart Daycare',
-#                address: '6700 Ch. de la Côte-des-Neiges',
-#                price: 50,
-#                rating: 3.7,
-#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
-#                number_of_openings: 6,
-#                opening_date: Time.now)
+# 7. Shorties Daycare 2
 
-# walmart_daycare_1 = Daycare.last
+Daycare.create(supplier: james_campbell,
+               name: 'Shorties Daycare 2',
+               address: '3588 Rue Goyer, Montreal, Quebec, Canada',
+               price: 4,
+               rating: 2,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 2)
+
+shorties_daycare_2 = Daycare.last
+
+# 8. Shorties Daycare 3
+
+Daycare.create(supplier: james_campbell,
+               name: 'Shorties Daycare 3',
+               address: '1569 Rue Dudemaine, Montreal, Quebec, Canada',
+               price: 4,
+               rating: 2,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 2)
+
+shorties_daycare_3 = Daycare.last
+
+# 9. Hufflepuff Daycare
+
+Daycare.create(supplier: hufflepuff_daycares,
+               name: 'Hufflepuff Daycare',
+               address: '9175 Bd Perras, Montreal, Quebec, Canada',
+               price: 8,
+               rating: 4,
+               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+               number_of_openings: 1)
+
+shorties_daycare_3 = Daycare.last
 
 # # 10. daycare_10
 
@@ -407,30 +398,30 @@ puts 'Creating reviews...'
 
 # 1. review_1
 
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_1 = Review.last
+Review.create(daycare: le_wagon_daycare,
+              client: claudette_smith,
+              stars: 5,
+              content: "This daycare has been my rock for the last four years. The educators are exceptional, caring, kind, helpful and knowledgeable. We are sad to say goodbye after four years of comfort. I didn’t know what to expect dropping my baby boy off there when he was ten months old but they surpassed all of my expectations and gained my trust.")
+
+review_1 = Review.last
 
 # 2. review_2
 
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_2 = Review.last
+Review.create(daycare: le_wagon_daycare,
+              client: john_littlewood,
+              stars: 4,
+              content: "My son has been at this daycare since he was 18 months old and he absolutely loves it. The educators are warm and loving and you get a homey feeling when you walk in. The space is newly renovated and there are big bright windows with colourful art all over the walls.")
+
+review_2 = Review.last
 
 # 3. review_3
 
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_3 = Review.last
+Review.create(daycare: le_wagon_daycare,
+              client: yann_bouhadana,
+              stars: 3,
+              content: "3 of my kids went there and they really enjoyed their time within this public daycare. The staff is really kind, professional and competent. Thanks to the director, there always a focus to improve the wellbeing of the children.")
+
+review_3 = Review.last
 
 # 4. review_4
 
@@ -592,11 +583,11 @@ puts 'Creating consultations...'
 
 # 1. consultation_1
 
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
+# Consultation.create(daycare: prison_break_daycare,
+#                     client: john_littlewood,
+#                     date_time: '',
 #                     status: '')
-#
+
 # consultation_1 = Consultation.last
 
 # 2. consultation_2
@@ -727,14 +718,14 @@ puts 'Creating consultations...'
 
 # FINAL CONFIRMATION
 
-parents = User.where(category: 1)
-parents.each do |parent|
-  Daycare.all.each do |daycare|
-    Consultation.create!(date_time: Date.tomorrow,
-                        client_id: parent.id,
-                        daycare_id: daycare.id,
-                        status: rand(1...2))
-  end
-end
+# parents = User.where(category: 1)
+# parents.each do |parent|
+#   Daycare.all.each do |daycare|
+#     Consultation.create!(date_time: Date.tomorrow,
+#                         client_id: parent.id,
+#                         daycare_id: daycare.id,
+#                         status: rand(1...2))
+#   end
+# end
 
 puts 'All seeds have been successfully created...'
