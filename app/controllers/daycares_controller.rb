@@ -66,6 +66,6 @@ class DaycaresController < ApplicationController
   end
 
   def daycare_params
-    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings)
+    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings, :photo)
   end
 end

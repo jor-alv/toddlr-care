@@ -44,11 +44,19 @@
   <div class="gallery-container">
     <div class="row">
       <div class="col-lg-8 mt-2 mb-2">
+        <% if @daycare.photo.present? %>
+        <img
+          src="<%= cl_image_path(@daycare.photo.key) %>"
+          alt="Daycare Photo One"
+          class=" shadow-1-strong gallery-container image big-image"
+        />
+        <% else %>
         <img
           src="https://kidsrkids.com/greatwood-canyon-gate/wp-content/uploads/sites/100/2019/07/Preschool-Teachers-1000x630.jpg"
           alt="Daycare Photo One"
           class=" shadow-1-strong gallery-container image big-image"
         />
+        <% end %>
       </div>
       <div class="col-lg-4 col-md-12 mb-4 mt-2 mb-lg-0 d-flex flex-column gallery-container">
         <img
