@@ -30,7 +30,14 @@
         <span class="fa fa-star"></span>
       <% end %>
     </div>
-    <p class="mb-2"><%=@daycare.address %></p>
+    <p class="mb-2"><%=@daycare.address %> <% if user_signed_in? %>
+    <% if @daycare.supplier.first_name == current_user.first_name %>
+    <%= link_to edit_daycare_path(@daycare), data: {confirm: 'Are you sure you want to edit this daycare?'} do %>
+    <i class="fa-solid fa-pencil"></i>
+    <% end %>
+    <% end %>
+    <% end %>
+    </p>
   </div>
 
   <%# Photo gallery %>
