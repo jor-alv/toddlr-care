@@ -11,11 +11,11 @@ class ConsultationsController < ApplicationController
     @consultation.client = current_user
     @consultation.status = 1
     @consultation.daycare = @daycare
-    if @consultation.time < Date.today
+    if @consultation.date_time < DateTime.now
       flash[:alert] = "Invalid Date"
       render :daycare
     end
-    # authorize @consultation
+    authorize @consultation
     if @consultation.save
       redirect_to my_profile_path(client)
     else
@@ -54,7 +54,7 @@ class ConsultationsController < ApplicationController
   end
 
   def consultation_params
-    params.require(:consultation).permit(:time,
+    params.require(:consultation).permit(:date_time,
                                     :status,
                                     :client_id,
                                     :daycare_id)
