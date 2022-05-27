@@ -14,7 +14,7 @@ class DaycaresController < ApplicationController
         lat: daycare.latitude,
         lng: daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: daycare }),
-        image_url: helpers.asset_url('app/assets/images/kevin.png')
+        image_url: helpers.asset_url('https://spng.pngfind.com/pngs/s/468-4681644_daycare-themes-school-themes-camping-books-camping-happy.png')
       }
     end
   end

@@ -1,0 +1,40 @@
+.card-product {
+  // overflow: hidden;
+  height: 150px;
+  background: white;
+  display: flex;
+}
+
+.card-product img {
+  height: 100%;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product a {
+  color: #FF6053;
+  text-decoration: none;
+}
+
+.card-product .checked {
+  color: orange;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+.card-product .card-product-infos {
+  padding: 8px 8px 8px 16px;
+}
