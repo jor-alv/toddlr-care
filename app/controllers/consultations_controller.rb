@@ -11,11 +11,11 @@ class ConsultationsController < ApplicationController
     @consultation.client = current_user
     @consultation.status = 1
     @consultation.daycare = @daycare
-    if @consultation.time < Date.today
+    if @consultation.date_time < DateTime.now
       flash[:alert] = "Invalid Date"
       render :daycare
     end
-    # authorize @consultation
+    authorize @consultation
     if @consultation.save
       redirect_to my_profile_path(client)
     else
@@ -23,22 +23,22 @@ class ConsultationsController < ApplicationController
     end
   end
 
-  def my_admin_consultations
-    @my_client_consultations = Consultation.where(supplier: current_user)
-    @my_admin_consultations = current_user.consultations
-    @pending_requests = @my_admin_consultations.where(status:"pending")
-    @declined_requests = @my_admin_consultations.where(status:"declined")
-    @confirmed_requests = @my_admin_consultations.where(status:"confirmed")
-    @cancel_requests = @my_admin_consultations.where(status:"cancel")
-    @archived_requests = @my_admin_consultations.where(status:"archived")
-  end
+  # def my_admin_consultations
+  #   @my_client_consultations = Consultation.where(supplier: current_user)
+  #   @my_admin_consultations = current_user.consultations
+  #   @pending_requests = @my_admin_consultations.where(status:"pending")
+  #   @declined_requests = @my_admin_consultations.where(status:"declined")
+  #   @confirmed_requests = @my_admin_consultations.where(status:"confirmed")
+  #   @cancel_requests = @my_admin_consultations.where(status:"cancel")
+  #   @archived_requests = @my_admin_consultations.where(status:"archived")
+  # end
 
   def update
-    @consultation = Consultation.find(params[:id])
-    @consultation.update(consultation_params)
-    @consultation.confirmed!
+    @consultation = Consultation.find(params[:consultation_id])
+    @consultation.update(status: consultation_params[:status].downcase)
+    # @consultation.confirmed!
     authorize @consultation
-    redirect_to admin_profile_path(@consultation.daycare.user)
+    redirect_to my_profile_path(@consultation.daycare.supplier)
   end
 
   def destroy
@@ -54,7 +54,7 @@ class ConsultationsController < ApplicationController
   end
 
   def consultation_params
-    params.require(:consultation).permit(:time,
+    params.require(:consultation).permit(:date_time,
                                     :status,
                                     :client_id,
                                     :daycare_id)

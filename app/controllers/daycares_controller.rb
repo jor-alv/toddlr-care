@@ -1,6 +1,6 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_daycare, only: %i[show]
+  before_action :set_daycare, only: %i[show edit update]
 
   def index
     if params[:query].present?
@@ -14,7 +14,7 @@ class DaycaresController < ApplicationController
         lat: daycare.latitude,
         lng: daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: daycare }),
-        image_url: helpers.asset_url('app/assets/images/kevin.png')
+        image_url: helpers.asset_url('https://spng.pngfind.com/pngs/s/468-4681644_daycare-themes-school-themes-camping-books-camping-happy.png')
       }
     end
   end
@@ -49,6 +49,14 @@ class DaycaresController < ApplicationController
     # @cancel_requests = @my_admin_consultations.where(status:"cancel")
     # @archived_requests = @my_admin_consultations.where(status:"archived")
   end
+
+  def edit; end
+
+  def update
+    @daycare.update(daycare_params)
+    redirect_to daycare_path(@daycare), notice: 'Information was successfully updated.'
+  end
+
 
   private
 

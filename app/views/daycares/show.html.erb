@@ -1,19 +1,177 @@
-<h1>Welcome to the <%= @daycare.name %> Show Page!</h1>
-    <%= simple_form_for [@daycare, @consultation] do |f| %>
-    <%= f.input :date_time, as: :datetime, html5: true %>
-    <%= f.button :submit, label: "Consult now", class: "btn btn-primary" %>
-    <% end %>
+<div class="container">
+  <div class="mt-4 mb-3">
+    <h1 class="mt-4"><%= @daycare.name %></h1>
 
-<h2>Reviews:</h2>
-<ul>
-<% @daycare.reviews.each do |review| %>
-  <li><strong><%= review.stars %> Stars: </strong><%= review.content %> <strong>by: <%= review.client.first_name %></strong></li>
-<% end %>
-</ul>
+    <%# Sorry about this: %>
+    <div>
+      <% if @daycare.rating >= 1 %>
+        <span class="fa fa-star checked"></span>
+      <% else %>
+        <span class="fa fa-star"></span>
+      <% end %>
+      <% if @daycare.rating >= 2 %>
+        <span class="fa fa-star checked"></span>
+      <% else %>
+        <span class="fa fa-star"></span>
+      <% end %>
+      <% if @daycare.rating >= 3 %>
+        <span class="fa fa-star checked"></span>
+      <% else %>
+        <span class="fa fa-star"></span>
+      <% end %>
+      <% if @daycare.rating >= 4 %>
+        <span class="fa fa-star checked"></span>
+      <% else %>
+        <span class="fa fa-star"></span>
+      <% end %>
+      <% if @daycare.rating >= 5 %>
+        <span class="fa fa-star checked"></span>
+      <% else %>
+        <span class="fa fa-star"></span>
+      <% end %>
+    </div>
+    <p class="mb-2"><%=@daycare.address %></p>
+  </div>
 
-<h2>Add a Review</h2>
-    <%= simple_form_for [@daycare, @review] do |f| %>
-    <%= f.input :stars, as: :radio_buttons, collection: (1..5).each, html5: true %>
-    <%= f.input :content, as: :text, html5: true %>
-    <%= f.button :submit, label: "Add a Review", class: "btn btn-primary" %>
-    <% end %>
+  <%# Photo gallery %>
+  <div class="gallery-container">
+    <div class="row">
+      <div class="col-lg-8 mt-2 mb-2">
+        <img
+          src="https://kidsrkids.com/greatwood-canyon-gate/wp-content/uploads/sites/100/2019/07/Preschool-Teachers-1000x630.jpg"
+          alt="Daycare Photo One"
+          class=" shadow-1-strong gallery-container image big-image"
+        />
+      </div>
+      <div class="col-lg-4 col-md-12 mb-4 mt-2 mb-lg-0 d-flex flex-column gallery-container">
+        <img
+          src="https://www.tnrl.ca/wp-content/uploads/sites/2/2021/10/Daycare-Storytime-Web-Page.jpg"
+          alt="Table Full of Spices"
+          class="w-100 h-25 d-inline-block shadow-1-strong mb-4 image small-image"
+        />
+        <img
+          src="https://procaresoftware.com/wp-content/uploads/2021/03/AdobeStock_267007668_Resized-1024x682.jpeg"
+          alt="Table Full of Spices"
+          class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-image"
+        />
+      </div>
+    </div>
+  </div>
+
+  <%# Listing info %>
+  <div class="row mt-4">
+    <div class="col-lg-8">
+      <div class="card-trip line-break">
+        <div class="card-trip-infos">
+          <div class="d-flex justify-content-row align-items-center">
+            <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered" />
+            <p>Offered by <%= @daycare.supplier.company_name  %></p>
+          </div>
+          <p class="d-flex align-self-center ">$<%=@daycare.price %> per day</p>
+        </div>
+      </div>
+      <div class="card-trip mt-4">
+        <h2> About <%= @daycare.name %>:</h2>
+        <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+      </div>
+      <div class="card-trip line-break">
+        <h2> Features:</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          </div>
+          <div class="col-lg-6">
+            <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          </div>
+        </div>
+      </div>
+      <div class="line-break">
+        <h2>Reviews:</h2>
+        <% @daycare.reviews.each do |review| %>
+          <div class="review-card mt-4">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex align-items-center review-card">
+                <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered" />
+                <div class="flex-column">
+                  <p><strong><%= "#{review.client.first_name} #{review.client.last_name}" %></strong></p>
+
+                  <%# Add user location %>
+                  <p>Montreal, Quebec</p>
+                </div>
+              </div>
+              <div>
+                <% if review.client.first_name == current_user.first_name %>
+                  <%= link_to review_path(review), method: :delete, data: {confirm: 'Are you sure you want to delete this review?'} do %>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <%# Really sorry, too tired to do JS %>
+            <div>
+              <% if review.stars >= 1 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if review.stars >= 2 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if review.stars >= 3 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if review.stars >= 4 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if review.stars >= 5 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+            </div>
+            <p><%= review.content %> </p>
+          </div>
+          <% unless review == @daycare.reviews.last %>
+            <div class="line-break"></div>
+          <% end %>
+        <% end %>
+      </div>
+      <h2>Add a Review</h2>
+          <%= simple_form_for [@daycare, @review] do |f| %>
+          <%= f.input :stars, as: :radio_buttons, collection: (1..5).each, html5: true %>
+          <%= f.input :content, as: :text, html5: true %>
+          <%= f.button :submit, label: "Add a Review", class: "btn btn-primary" %>
+          <% end %>
+    </div>
+
+    <%# Book now card %>
+    <div class="col-lg-4 ">
+      <div class="card mb-2 book-now bg-body overflow-hidden w-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between text-center">
+            <div class="me-2 w-100">
+              <%= simple_form_for [@daycare, @consultation] do |f| %>
+              <%= f.input :date_time, as: :datetime, html5: true %>
+              <%= f.button :submit, label: "Consult now", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-column map-sticky" style="width: 100%; height: 600px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+</div>
+
+    <%# Additional info %>
+    <div class="col-lg-8">
+    </div>

@@ -1,5 +1,44 @@
-<h2>All consultations:</h2>
+<%# <h2>All consultations:</h2> %>
+<div class="row">
 <% @user.consultations.each do |consultation| %>
-  <h3><%= consultation.daycare.name %></h3>
-  <p><%= consultation.time %></p>
+  <div class='col col-sm-6'>
+    <div class="card-profile mt-4 d-flex flex-column">
+      <img src= "https://www.todaysparent.com/wp-content/uploads/2016/09/daycare-germs-what-you-need-to-know-1280x960-new.jpg" class="w-100"/>
+      <div class="card-profile-infos d-flex justify-contents-between">
+        <div class="d-flex flex-column align-items-between m-2">
+          <h2><%= link_to consultation.daycare.name, daycare_path(consultation.daycare) %></h2>
+            <div>
+              <% if consultation.daycare.rating >= 1 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if consultation.daycare.rating >= 2 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if consultation.daycare.rating >= 3 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if consultation.daycare.rating >= 4 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+              <% if consultation.daycare.rating >= 5 %>
+                <span class="fa fa-star checked"></span>
+              <% else %>
+                <span class="fa fa-star"></span>
+              <% end %>
+            </div>
+          <p class="mt-0"><%= consultation.date_time %></p>
+          <p>Status:<%= consultation.status %></p>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>

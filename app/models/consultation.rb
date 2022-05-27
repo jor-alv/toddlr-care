@@ -4,8 +4,8 @@ class Consultation < ApplicationRecord
 
   enum status: {
     pending: 1,
-    declined: 2,
-    confirmed: 3,
+    confirmed: 2,
+    declined: 3,
     cancelled: 4,
     archived: 5
   }

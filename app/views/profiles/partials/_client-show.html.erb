@@ -1,9 +1,22 @@
-<h1>Hello, <%= current_user.first_name %></h1>
+<div class='container'>
+  <div class="profile-header">
+    <h1 class= "mt-4">Hello, <%= current_user.first_name %>!</h1>
+  </div>
 
 <%# Display profile photo here %>
+  <div class="row mt-4 pb-4">
+    <div class="col-lg-12">
+      <div class="card-trip line-break">
+      </div>
+      <div class="card-trip mt-4">
+        <div class="d-flex justify-content-between align-items-start">
+          <h2>Your bio:</h2>
+        </div>
+        <p><%= current_user.bio %></p>
+        <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde</p>
+      </div>
+    </div>
 
-<h2>Your bio:</h2>
-<p><%= current_user.bio %></p>
 
 <ul class="nav nav-tabs">
   <li class="nav-item">
