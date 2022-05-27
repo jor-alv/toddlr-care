@@ -10,7 +10,17 @@ class ConsultationPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    user_is_owner_or_admin
+  end
+
   def create?
     true
+  end
+
+  private
+
+  def user_is_owner_or_admin
+    record.daycare.supplier == user || user.admin
   end
 end

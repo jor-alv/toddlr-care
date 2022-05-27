@@ -18,4 +18,20 @@ class User < ApplicationRecord
     end
     return admin_consultations
   end
+
+  def admin_pending_consultations
+    pending_consultations = []
+    self.daycares.each do |daycare|
+      pending_consultations << daycare.consultations.pending
+    end
+    return pending_consultations
+  end
+
+  def admin_confirmed_consultations
+    confirmed_consultations = []
+    self.daycares.each do |daycare|
+      confirmed_consultations << daycare.consultations.confirmed
+    end
+    return confirmed_consultations
+  end
 end
