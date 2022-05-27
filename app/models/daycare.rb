@@ -12,4 +12,15 @@ class Daycare < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def rating
+    rating = 0
+    self.reviews.each do |review|
+      rating += review.stars
+    end
+    unless self.reviews.size == 0
+      rating = (rating / self.reviews.size)
+    end
+    return rating
+  end
 end

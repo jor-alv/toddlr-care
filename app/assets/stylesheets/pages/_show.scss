@@ -1,0 +1,49 @@
+.gallery-container {
+  max-height: 420px;
+}
+
+.image {
+  object-fit: cover;
+  // border-radius: 24px;
+  height: 100%;
+  width: 100%;
+}
+
+.big-image {
+  border-radius: 18px 0px 0px 18px !important;
+}
+
+.small-image {
+  border-radius: 0px 18px 0px 0px !important;
+}
+
+.medium-image {
+  border-radius: 0px 0px 18px 0px !important;
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.line-break {
+  border-bottom: 1px solid rgba(80,80,80,0.2);
+  padding: 12px 0px 12px 0px;
+}
+
+.map-daycare {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.review-card p {
+margin-bottom: 2px;
+}
+
+.review-card img {
+  height: 60px;
+  width: 60px;
+  }
