@@ -1,6 +1,6 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_daycare, only: %i[show]
+  before_action :set_daycare, only: %i[show edit update]
 
   def index
     if params[:query].present?
@@ -49,6 +49,14 @@ class DaycaresController < ApplicationController
     # @cancel_requests = @my_admin_consultations.where(status:"cancel")
     # @archived_requests = @my_admin_consultations.where(status:"archived")
   end
+
+  def edit; end
+
+  def update
+    @daycare.update(daycare_params)
+    redirect_to daycare_path(@daycare), notice: 'Information was successfully updated.'
+  end
+
 
   private
 
