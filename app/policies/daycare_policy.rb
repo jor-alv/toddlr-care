@@ -22,6 +22,10 @@ class DaycarePolicy < ApplicationPolicy
     user_is_owner_or_admin
   end
 
+  def destroy?
+    record.supplier == user || user.admin
+  end
+
   private
 
   def user_is_owner_or_admin
