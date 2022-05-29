@@ -34,4 +34,8 @@ class User < ApplicationRecord
     end
     return confirmed_consultations
   end
+
+  def client_reviews
+    reviews = self.reviews
+  end
 end

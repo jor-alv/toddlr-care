@@ -2,6 +2,4 @@
   <%= render 'profiles/partials/supplier-show'%>
 <% elsif current_user = @user %>
   <%= render 'profiles/partials/client-show' %>
-<% else %>
-  <%= render 'profiles/partials/client-show-public' %>
 <% end %>

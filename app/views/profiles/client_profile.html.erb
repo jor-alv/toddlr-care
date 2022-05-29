@@ -1,0 +1,17 @@
+<div class="container">
+  <h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
+
+  <%# Display profile photo here %>
+
+  <h2><%=@user.first_name%>'s bio:</h2>
+  <p><%= @user.bio %></p>
+
+  <ul class="nav nav-tabs">
+    <li class= "nav">
+      <a class="nav-link active" data-bs-toggle="tab"  data-bs-target="#reviews" aria-current="page" id="test-reviews" href="#"><%=@user.first_name%>'s Reviews</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="reviews" role="tabpanel"><%= render 'profiles/partials/client-tabs/public-reviews-tab'%></div>
+  </div>
+</div>

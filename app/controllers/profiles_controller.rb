@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
     @admin_consultations = @user.admin_consultations
     @pending_consultations = @user.admin_pending_consultations
     @confirmed_consultations = @user.admin_confirmed_consultations
+    @client_reviews = @user.client_reviews
+
     authorize @user
   end
 
@@ -23,7 +25,10 @@ class ProfilesController < ApplicationController
     redirect_to root_path, notice: 'User was successfully deleted.'
   end
 
-  def client_profile; end
+  def client_profile
+    @user = User.find(params[:id])
+    authorize @user
+  end
 
   private
 
