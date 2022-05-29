@@ -6,19 +6,15 @@
 <%# Display profile photo here %>
   <div class="row mt-4 pb-4">
     <div class="col-lg-12">
-      <div class="card-trip line-break">
-      </div>
+      <div class="card-trip line-break"></div>
       <div class="card-trip mt-4">
         <div class="d-flex justify-content-between align-items-start">
           <h2>Your bio:</h2>
+          <%= link_to "Edit profile", edit_my_profile_path(@user), class: "btn btn-primary" %>
         </div>
         <p class="line-break pb-4"><%= current_user.bio %></p>
       </div>
     </div>
-
-
-<%# Display profile photo here %>
-
 
 <%# Tabs to access daycares, consultations and add a daycare (default to daycares) %>
 <ul class="nav nav-tabs">
@@ -50,8 +46,4 @@
   <div class="tab-pane fade" id="pending" role="tabpanel"> <%= render 'profiles/partials/tabs/pending-tab'%></div>
   <div class="tab-pane fade" id="upcoming" role="tabpanel"><%= render 'profiles/partials/tabs/confirmed-tab'%></div>
 </div>
-
-
-<%# render 'profiles/partials/tabs/pending-tab'%>
-<%# render 'profiles/partials/tabs/daycares-tab'%>
-<%# render 'profiles/partials/tabs/confirmed-tab'%>
+<%= link_to "Delete my profile", my_profile_path, method: :delete %>
