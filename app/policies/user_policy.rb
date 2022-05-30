@@ -1,9 +1,9 @@
 class UserPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   def show?
@@ -11,6 +11,10 @@ class UserPolicy < ApplicationPolicy
   end
 
   def edit?
+    true
+  end
+
+  def update?
     true
   end
 
@@ -22,12 +26,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
-
-
   private
 
   def user_is_owner_or_admin
-    record.user == user || user.admin
+    record.client == user
   end
 
 end

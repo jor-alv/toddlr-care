@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get '/my_profile', to: 'profiles#show'
   get '/my_profile/edit', to: 'profiles#edit', as: :edit_my_profile
+  post '/my_profile', to: 'profiles#update'
   patch '/my_profile', to: 'profiles#update'
   delete '/my_profile', to: 'profiles#destroy'
 
