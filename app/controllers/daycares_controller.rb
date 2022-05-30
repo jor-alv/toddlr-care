@@ -67,7 +67,7 @@ class DaycaresController < ApplicationController
         lat: @daycare.latitude,
         lng: @daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: @daycare }),
-        image_url: helpers.asset_url('app/assets/images/ToddlrFox.png')
+        image_url: helpers.asset_url('ToddlrFox.png')
       }
   end
 
