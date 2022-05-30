@@ -37,11 +37,14 @@ gem 'pundit'
 # Geocoder
 gem 'geocoder'
 
-# PG search
+# PG Search
 gem 'pg_search', '~> 2.3.0'
 
-# image upload
+# Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+# Acts as favoritor
+gem 'acts_as_favoritor'
 
 # Faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
