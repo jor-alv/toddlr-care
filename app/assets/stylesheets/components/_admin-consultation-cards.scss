@@ -1,0 +1,59 @@
+.admin-consultation-card h3{
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.admin-consultation-card p{
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.admin-consultation-card a{
+  text-decoration: none;
+  color: #FF6053;
+}
+
+.line-break-date {
+  border-right: 1px solid rgba(80,80,80,0.2);
+  // border-left: 1px solid rgba(80,80,80,0.2);
+  // padding: 12px 0px 12px 0px;
+}
+
+.line-break-btn {
+  border-right: 1px solid rgba(80,80,80,0.2);
+  // border-left: 1px solid rgba(80,80,80,0.2);
+  padding: 0px 18px 0px 0px;
+}
+
+.date-box p{
+  padding: 8px 16px 16px 0px;
+}
+
+.decline-btn {
+  color:#FF6053 !important;
+  margin-left: 8px !important;
+  background-color: white !important;
+  border-color: #FF6053;
+}
+
+.confirm-btn {
+  color:#63AEF2 !important;
+  background-color: white !important;
+  border-color:#63AEF2;
+}
+
+.consultation-class {
+  margin: 0px !important;
+}
+
+.line-break-consultations {
+  border-bottom: 1px solid rgba(80,80,80,0.2);
+}
+
+.nav-tabs a {
+  color: #63AEF2;
+}
+
+.nav-tabs .nav-link.active {
+  color: #FF6053;
+}
