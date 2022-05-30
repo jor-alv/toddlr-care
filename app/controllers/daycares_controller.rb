@@ -1,6 +1,6 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_daycare, only: %i[show edit update]
+  before_action :set_daycare, only: %i[show edit update destroy]
 
   def index
     if params[:query].present?
@@ -63,6 +63,11 @@ class DaycaresController < ApplicationController
   def update
     @daycare.update(daycare_params)
     redirect_to daycare_path(@daycare), notice: 'Information was successfully updated.'
+  end
+
+  def destroy
+    @daycare.destroy
+    redirect_to my_profile_path(@daycare.supplier), notice: 'Daycare was successfully deleted.'
   end
 
 

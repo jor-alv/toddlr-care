@@ -37,6 +37,7 @@
             <p><%= daycare.address %></p>
             <p><%= daycare.description %></p>
           </div>
+          <%= link_to "Delete", daycare_path(daycare), method: :delete %>
         </div>
       </div>
     </div>
