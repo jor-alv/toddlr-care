@@ -8,21 +8,21 @@ $headers-font: "Libertinus Sans", "Helvetica", "sans-serif";
 // To use a font file (.woff) uncomment following lines
 @font-face {
   font-family: "Libertinus Sans";
-  src: asset-url('fonts/LibertinusSans-Regular.woff2') format('woff'),
-       asset-url('fonts/LibertinusSans-Regular.otf') format('opentype')
+  src: font-url('public/fonts/LibertinusSans-Regular.woff2') format('woff'),
+       font-url('public/fonts/LibertinusSans-Regular.otf') format('opentype')
 }
 
 @font-face {
   font-family: "Libertinus Sans";
-  src: asset-url('fonts/LibertinusSans-Bold.woff2') format('woff'),
-       asset-url('fonts/LibertinusSans-Bold.otf') format('truetype');
+  src: font-url('public/fonts/LibertinusSans-Bold.woff2') format('woff'),
+       font-url('public/fonts/LibertinusSans-Bold.otf') format('truetype');
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Libertinus Sans";
-  src: asset-url('fonts/LibertinusSans-Italic.woff2') format('woff'),
-       asset-url('fonts/LibertinusSans-Italic.otf') format('opentype');
+  src: font-url('public/fonts/LibertinusSans-Italic.woff2') format('woff'),
+       font-url('public/fonts/LibertinusSans-Italic.otf') format('opentype');
   font-style: italic;
 }
 
