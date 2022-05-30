@@ -8,28 +8,38 @@
 
 
 <div class= 'container'>
-  <div class="d-flex justify-content-between tags mt-4 mb-4">
-    <div class="flex-column">
-      <i class="fa-solid fa-house-medical">  <%= link_to 'Vaccinated staff', root_path(:tag => 'Vaccinated staff') %></i>
+  <div class="tags-sticky">
+    <div class="d-flex align-items-between justify-content-between tags tags-sticky">
+      <div class="text-center">
+        <i class="fa-solid fa-house-medical"></i>
+        <p><%= link_to 'Vaccinated staff', root_path(:tag => 'Vaccinated staff') %></p>
+      </div>
+      <div class="text-center">
+        <i class="fa-solid fa-baseball"></i>
+        <p><%= link_to 'Large playground', root_path(:tag => 'Large playground') %></p>
+      </div>
+      <div class="text-center">
+        <i class="fa-solid fa-tree"></i>
+        <p><%= link_to 'Nearby park', root_path(:tag => 'Nearby park') %></p>
+      </div>
+      <div class="text-center">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <p><%= link_to 'Montessori', root_path(:tag => 'Montessori') %></p>
+      </div>
+      <div class="text-center">
+        <i class="fa-solid fa-music"></i>
+        <p><%= link_to 'Music instruction', root_path(:tag => 'Music instruction') %></p>
+      </div>
+      <div class="text-center">
+        <i class="fa-solid fa-rainbow"></i>
+        <p><%= link_to 'LGBTQIA+', root_path(:tag => 'LGBTQIA+ friendly') %></p>
+      </div>
+      <div class="text-center">
+        <i class="fa-solid fa-carrot"></i>
+        <p><%= link_to 'Allergy friendly', root_path(:tag => 'Allergy friendly') %></p>
+      </div>
     </div>
-    <div class="flex-column">
-      <i class="fa-solid fa-baseball"><%= link_to 'Large playground', root_path(:tag => 'Large playground') %></i>
-    </div>
-    <div class="flex-column">
-      <i class="fa-solid fa-tree"><%= link_to 'Nearby park', root_path(:tag => 'Nearby park') %></i>
-    </div>
-    <div class="flex-column">
-      <i class="fa-solid fa-graduation-cap"><%= link_to 'Montessori', root_path(:tag => 'Montessori') %></i>
-    </div>
-    <div class="flex-column">
-      <i class="fa-solid fa-music"><%= link_to 'Music instruction', root_path(:tag => 'Music instruction') %></i>
-    </div>
-    <div class="flex-column">
-      <i class="fa-solid fa-rainbow"><%= link_to 'LGBTQIA+', root_path(:tag => 'LGBTQIA+ friendly') %></i>
-    </div>
-    <div class="flex-column">
-      <i class="fa-solid fa-peanut"><%= link_to 'Allergy friendly', root_path(:tag => 'Allergy friendly') %></i>
-    </div>
+    <div class="line-break-tags mb-4"></div>
   </div>
   <div class='row'>
     <div class='col col-sm-9'>

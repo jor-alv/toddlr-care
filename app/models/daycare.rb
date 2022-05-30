@@ -5,6 +5,7 @@ class Daycare < ApplicationRecord
   has_many :daycare_tags, dependent: :destroy
   has_many :tags, through: :daycare_tags
   has_many_attached :photos
+  acts_as_favoritable
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
