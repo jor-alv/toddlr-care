@@ -1,16 +1,29 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap");
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Source Sans Pro", "Helvetica", "sans-serif";
+$headers-font: "Libertinus Sans", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
+@font-face {
+  font-family: "Libertinus Sans";
+  src: font-url('app/assets/fonts/LibertinusSans-Regular.woff2') format('woff'),
+       font-url('app/assets/fonts/LibertinusSans-Regular.otf') format('opentype')
+}
+
+@font-face {
+  font-family: "Libertinus Sans";
+  src: font-url('app/assets/fonts/LibertinusSans-Bold.woff2') format('woff'),
+       font-url('app/assets/fonts/LibertinusSans-Bold.otf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Libertinus Sans";
+  src: font-url('app/assets/fonts/LibertinusSans-Italic.woff2') format('woff'),
+       font-url('app/assets/fonts/LibertinusSans-Italic.otf') format('opentype');
+  font-style: italic;
+}
+
 // $my-font: "Font Name";
