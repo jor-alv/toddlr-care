@@ -1,0 +1,28 @@
+.tags i {
+  color: #FF6053;
+}
+
+.tags i::before {
+  margin-right: 8px;
+}
+
+.tags a {
+  text-decoration: none;
+  color: #63AEF2;
+  // font-size: 16px;
+}
+
+.tags-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 58px;
+  background-color: white;
+  z-index: 420;
+  padding-top: 8px;
+  margin: 0px
+}
+
+.line-break-tags {
+  border-bottom: 1px solid rgba(80,80,80,0.2);
+  padding: 2px 0px 2px 0px;
+}

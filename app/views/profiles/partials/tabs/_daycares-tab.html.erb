@@ -37,6 +37,11 @@
             <p><%= daycare.address %></p>
             <p><%= daycare.description %></p>
           </div>
+          <div class="flex-column">
+            <%= link_to "Delete", daycare_path(daycare), method: :delete %>
+            <%= link_to "Edit", edit_daycare_path(daycare)%>
+          </div>
+
         </div>
       </div>
     </div>

@@ -5,11 +5,12 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :number_of_openings %>
+    <%= f.association :tags, as: :check_boxes, collection_check_boxes: @tags, prompt: "Select relevant tags"%>
     <%= f.input :photo, as: :file %>
     <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%# <div class='d-flex justify-content-between pt-4'> %>
       <%# <p class='m-0'> %>
-    <%= f.submit "Edit Daycare", class: "btn btn-primary" %>
+    <%= f.submit "Submit Changes", class: "btn btn-primary" %>
       <%# </p> %>
     <%# </div> %>
   <% end %>

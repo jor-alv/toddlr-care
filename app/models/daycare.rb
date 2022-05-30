@@ -5,6 +5,7 @@ class Daycare < ApplicationRecord
   has_many :daycare_tags, dependent: :destroy
   has_many :tags, through: :daycare_tags
   has_one_attached :photo
+  acts_as_favoritable
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
@@ -23,5 +24,11 @@ class Daycare < ApplicationRecord
       rating = (rating / self.reviews.size)
     end
     return rating
+  end
+
+  def add_tags(info)
+    info.each do |tag|
+      DaycareTag.create!(daycare: self, tag_id: tag) unless tag.empty?
+    end
   end
 end

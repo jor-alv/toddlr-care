@@ -1,10 +1,18 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_daycare, only: %i[show edit update]
+  before_action :set_daycare, only: %i[show edit update destroy]
 
   def index
     if params[:query].present?
       @daycares = policy_scope(Daycare).search_by_name_address_price_description(params[:query])
+    elsif params[:tag].present?
+      daycares_filtered = []
+      tag = Tag.where(name: params[:tag])
+      daycare_tags = DaycareTag.where(tag: tag)
+      daycare_tags.each do |dc_tag|
+        daycares_filtered << policy_scope(Daycare).where(id: dc_tag.daycare_id)
+      end
+      @daycares = daycares_filtered[0]
     else
       @daycares = policy_scope(Daycare)
     end
@@ -14,13 +22,15 @@ class DaycaresController < ApplicationController
         lat: daycare.latitude,
         lng: daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: daycare }),
-        image_url: helpers.asset_url('https://spng.pngfind.com/pngs/s/468-4681644_daycare-themes-school-themes-camping-books-camping-happy.png')
+        image_url: helpers.asset_url('ToddlrFox.png')
       }
     end
   end
 
   def new
     @daycare = Daycare.new
+    @tags = []
+    @tags << Tag.all.name
     authorize @daycare
   end
 
@@ -32,6 +42,9 @@ class DaycaresController < ApplicationController
     @daycare.supplier = current_user
     authorize @daycare
     if @daycare.save
+      daycare_info = params[:daycare]
+      tag_ids = daycare_info[:tag_ids]
+      @daycare.add_tags(tag_ids)
       redirect_to daycare_path(@daycare), notice: 'Listing was successfully created.'
     else
       render :new
@@ -50,19 +63,30 @@ class DaycaresController < ApplicationController
     # @archived_requests = @my_admin_consultations.where(status:"archived")
 
     @markers =
-      {
+      [{
         lat: @daycare.latitude,
         lng: @daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: @daycare }),
-        image_url: helpers.asset_url('https://spng.pngfind.com/pngs/s/468-4681644_daycare-themes-school-themes-camping-books-camping-happy.png')
-      }
+        image_url: helpers.asset_url('ToddlrFox.png')
+      }]
   end
 
-  def edit; end
+  def edit
+    @tags = []
+    @tags << Tag.all.name
+  end
 
   def update
     @daycare.update(daycare_params)
+    daycare_info = params[:daycare]
+    tag_ids = daycare_info[:tag_ids]
+    @daycare.add_tags(tag_ids)
     redirect_to daycare_path(@daycare), notice: 'Information was successfully updated.'
+  end
+
+  def destroy
+    @daycare.destroy
+    redirect_to my_profile_path(@daycare.supplier), notice: 'Daycare was successfully deleted.'
   end
 
 
@@ -74,6 +98,6 @@ class DaycaresController < ApplicationController
   end
 
   def daycare_params
-    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings, :photo)
+    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings, :photo, :tag_ids)
   end
 end

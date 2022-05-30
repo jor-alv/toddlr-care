@@ -10,6 +10,20 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
+  def destroy?
+    true
+  end
+
+  def client_profile?
+    true
+  end
+
+
+
   private
 
   def user_is_owner_or_admin

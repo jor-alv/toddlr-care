@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   # Include logic to make sure that only admin profiles are shown
-  get '/profiles/:id', to: 'profiles#client_profile', as: :client_profile
+  get '/profile/:id', to: 'profiles#client_profile', as: :client_profile
 
   get '/my_profile', to: 'profiles#show'
   get '/my_profile/edit', to: 'profiles#edit', as: :edit_my_profile
