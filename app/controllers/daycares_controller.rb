@@ -6,9 +6,9 @@ class DaycaresController < ApplicationController
     if params[:query].present?
       @daycares = policy_scope(Daycare).search_by_name_address_price_description(params[:query])
     elsif params[:tag].present?
+      daycares_filtered = []
       tag = Tag.where(name: params[:tag])
       daycare_tags = DaycareTag.where(tag: tag)
-      daycares_filtered = []
       daycare_tags.each do |dc_tag|
         daycares_filtered << policy_scope(Daycare).where(id: dc_tag.daycare_id)
       end
@@ -42,13 +42,13 @@ class DaycaresController < ApplicationController
     @daycare.supplier = current_user
     authorize @daycare
     if @daycare.save
+      daycare_info = params[:daycare]
+      tag_ids = daycare_info[:tag_ids]
+      @daycare.add_tags(tag_ids)
       redirect_to daycare_path(@daycare), notice: 'Listing was successfully created.'
     else
       render :new
     end
-    daycare_info = params[:daycare]
-    tag_ids = daycare_info[:tag_ids]
-    @daycare.add_tags(tag_ids)
   end
 
   def show
