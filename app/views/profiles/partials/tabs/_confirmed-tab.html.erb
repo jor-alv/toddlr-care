@@ -1,11 +1,24 @@
-<h2>Your confirmed consultations:</h2>
 <% @confirmed_consultations[0].each do |consultation| %>
-  <h2>Booked by: <%= link_to "#{consultation.client.first_name} #{consultation.client.last_name}", client_profile_path(consultation.client) %></h2>
-  <p><%= consultation.daycare.name %></p>
-  <p><%= consultation.date_time %></p>
-  <p>Status:<%= consultation.status %></p>
-  <%= simple_form_for consultation do |f| %>
-    <%= f.input :status, priority: ["Cancelled"], collection: ["Cancelled", "Archived"]%>
-    <%= f.submit "Submit", class:"btn btn-success"%>
-  <% end %>
+  <div class="admin-consultation-card d-flex justify-content-between mt-4 mb-4">
+    <div class="d-flex justify-content-start align-items-center">
+      <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered-admin" />
+      <div class="d-flex flex-column justify-contents-center">
+        <h3><%= link_to "#{consultation.client.first_name} #{consultation.client.last_name}", client_profile_path(consultation.client) %></h3>
+        <p><em>Montreal, Quebec</em></p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center line-break-btn">
+      <%= simple_form_for consultation do |f| %>
+        <%= f.input :status, :as => :hidden, :input_html => { :value => "Cancelled" } %>
+        <%= f.submit "Cancel", class:"btn btn-primary confirm-btn mb-3"%>
+      <% end %>
+    </div>
+    <div class="d-flex align-items-center date-box line-break-btn">
+      <p><%= consultation.date_time.strftime("%A, %B %d, %Y ") %><strong><%= consultation.date_time.strftime("at %l%p") %></strong></p>
+    </div>
+    <div class="d-flex align-items-center date-box">
+      <p><strong><%= consultation.daycare.name %></strong></p>
+    </div>
+  </div>
+  <div class="line-break-consultations mt-2"></div>
 <% end %>
