@@ -81,6 +81,11 @@
                       <% end %>
                     </div>
                 </div>
+                <div class="btn-tag">
+                <% daycare.tags.first(2).each do |tag|%>
+                  <p class="btn btn-outline-secondary"><%= link_to tag.name, root_path(:tag => tag.name) %></p>
+                <% end %>
+                </div>
                 <p><%= daycare.description[0,100] %></p>
 
                 <%# Replace Date.today with opening_date %>
