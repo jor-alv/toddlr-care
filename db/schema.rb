@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_29_234342) do
+ActiveRecord::Schema.define(version: 2022_05_30_130429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,11 +77,6 @@ ActiveRecord::Schema.define(version: 2022_05_29_234342) do
     t.float "latitude"
     t.float "longitude"
     t.index ["supplier_id"], name: "index_daycares_on_supplier_id"
-  end
-
-  create_table "daycares_tags", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
