@@ -24,4 +24,10 @@ class Daycare < ApplicationRecord
     end
     return rating
   end
+
+  def add_tags(info)
+    info.each do |tag|
+      DaycareTag.create!(daycare: self, tag_id: tag) unless tag.empty?
+    end
+  end
 end

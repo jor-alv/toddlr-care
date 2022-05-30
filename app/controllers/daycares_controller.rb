@@ -5,6 +5,14 @@ class DaycaresController < ApplicationController
   def index
     if params[:query].present?
       @daycares = policy_scope(Daycare).search_by_name_address_price_description(params[:query])
+    elsif params[:tag].present?
+      tag = Tag.where(name: params[:tag])
+      daycare_tags = DaycareTag.where(tag: tag)
+      daycares_filtered = []
+      daycare_tags.each do |dc_tag|
+        daycares_filtered << policy_scope(Daycare).where(id: dc_tag.daycare_id)
+      end
+      @daycares = daycares_filtered[0]
     else
       @daycares = policy_scope(Daycare)
     end
@@ -38,6 +46,9 @@ class DaycaresController < ApplicationController
     else
       render :new
     end
+    daycare_info = params[:daycare]
+    tag_ids = daycare_info[:tag_ids]
+    @daycare.add_tags(tag_ids)
   end
 
   def show
@@ -67,6 +78,9 @@ class DaycaresController < ApplicationController
 
   def update
     @daycare.update(daycare_params)
+    daycare_info = params[:daycare]
+    tag_ids = daycare_info[:tag_ids]
+    @daycare.add_tags(tag_ids)
     redirect_to daycare_path(@daycare), notice: 'Information was successfully updated.'
   end
 
@@ -84,6 +98,6 @@ class DaycaresController < ApplicationController
   end
 
   def daycare_params
-    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings, :photo)
+    params.require(:daycare).permit(:name, :description, :address, :price, :number_of_openings, :photo, :tag_ids)
   end
 end

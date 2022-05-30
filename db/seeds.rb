@@ -738,14 +738,15 @@ puts 'Creating consultations...'
 # end
 puts 'Creating tags'
 
-Tag.create!(name: "Montessori")
+Tag.create!(name: "Vaccinated staff")
 Tag.create!(name: "Large playground")
-Tag.create!(name: "Medium playground")
 Tag.create!(name: "Nearby park")
+Tag.create!(name: "Montessori")
+Tag.create!(name: "Music instruction")
+Tag.create!(name: "LGBTQIA+ friendly")
 Tag.create!(name: "Halal food")
 Tag.create!(name: "Kosher food")
 Tag.create!(name: "Allergy friendly")
-Tag.create!(name: "Vaccinated staff")
 Tag.create!(name: "English speaking")
 Tag.create!(name: "French speaking")
 Tag.create!(name: "Spanish speaking")
@@ -754,9 +755,7 @@ Tag.create!(name: "Mandarin speaking")
 Tag.create!(name: "All-boys")
 Tag.create!(name: "All-girls")
 Tag.create!(name: "Co-ed")
-Tag.create!(name: "Music instruction")
 Tag.create!(name: "Many teachers per class (at least 1:5")
-Tag.create!(name: "LGBTQIA+ friendly")
 
 
 puts 'All seeds have been successfully created...'
