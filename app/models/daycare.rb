@@ -4,7 +4,7 @@ class Daycare < ApplicationRecord
   belongs_to :supplier, class_name: 'User', foreign_key: :supplier_id
   has_many :daycare_tags, dependent: :destroy
   has_many :tags, through: :daycare_tags
-  has_one_attached :photo
+  has_many_attached :photos
   acts_as_favoritable
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
