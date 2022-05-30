@@ -21,6 +21,8 @@ class DaycaresController < ApplicationController
 
   def new
     @daycare = Daycare.new
+    @tags = []
+    @tags << Tag.all.name
     authorize @daycare
   end
 
@@ -58,7 +60,10 @@ class DaycaresController < ApplicationController
       }
   end
 
-  def edit; end
+  def edit
+    @tags = []
+    @tags << Tag.all.name
+  end
 
   def update
     @daycare.update(daycare_params)
