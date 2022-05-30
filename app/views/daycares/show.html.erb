@@ -43,8 +43,8 @@
   <%# Photo gallery %>
   <div class="gallery-container">
     <div class="row">
-      <div class="col-lg-8 mt-2 mb-2">
         <% if @daycare.photos.present? %>
+      <div class="col-lg-8 mt-2 mb-2">
         <div id="daycare-pics" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <% @daycare.photos.each_with_index do |photo, index| %>
