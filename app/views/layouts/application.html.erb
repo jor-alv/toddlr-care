@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/ea809bf82d.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <script>$('.carousel').carousel()</script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
@@ -24,6 +24,7 @@
         </div>
         <%= yield %>
       </div>
+
     <%# <p class="notice"><%= notice </p> %>
     <%# <p class="alert"><%= alert </p> %>
   </body>
