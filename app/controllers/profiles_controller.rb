@@ -13,8 +13,10 @@ class ProfilesController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(profile_params)
-      redirect_to @user, notice: 'Your bio was successfully updated.'
+    if current_user.update(profile_params)
+      @user = policy_scope(User)
+      authorize @user
+      redirect_to my_profile_path, notice: 'Your bio was successfully updated.'
     else
       render :edit
     end
@@ -38,6 +40,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:user).permit(:email, :first_name, :last_name, :bio)
+    params.require(:user).permit(:email, :first_name, :last_name, :bio, photos: [])
   end
 end
