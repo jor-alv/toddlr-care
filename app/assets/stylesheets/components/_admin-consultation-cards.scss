@@ -13,6 +13,10 @@
   color: #FF6053;
 }
 
+.admin-consultation-card img {
+  margin-right: 8px
+}
+
 .line-break-date {
   border-right: 1px solid rgba(80,80,80,0.2);
   // border-left: 1px solid rgba(80,80,80,0.2);
@@ -36,9 +40,40 @@
   border-color: #FF6053;
 }
 
+.decline-btn:hover {
+  background-color:#FF6053 !important;
+  margin-left: 8px !important;
+  color: white !important;
+  border-color: #FF6053;
+}
+
+.edit-btn {
+  color:#FF6053 !important;
+  margin-left: 8px !important;
+  background-color: white !important;
+  border-color: #FF6053;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.edit-btn:hover {
+  background-color:#FF6053 !important;
+  margin-left: 8px !important;
+  color: white !important;
+  border-color: #FF6053;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
 .confirm-btn {
   color:#63AEF2 !important;
   background-color: white !important;
+  border-color:#63AEF2;
+}
+
+.confirm-btn:hover {
+  background-color:#63AEF2 !important;
+  color: white !important;
   border-color:#63AEF2;
 }
 
@@ -54,6 +89,15 @@
   color: #63AEF2;
 }
 
+.nav-tabs {
+  margin-top: 24px;
+}
+
 .nav-tabs .nav-link.active {
   color: #FF6053;
+  // border-top: none;
+}
+
+.active {
+  background-color: white !important;
 }
