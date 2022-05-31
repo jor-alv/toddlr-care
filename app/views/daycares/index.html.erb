@@ -92,8 +92,13 @@
                 <p><em><%= daycare.description[0,100] %></em></p>
 
                 <%# Replace Date.today with opening_date %>
-                <p><strong>Availability: <span class="green"><%= Date.today.strftime("%B") %></span></strong></p>
-
+                <% if daycare.opening_date %>
+                  <% if daycare.opening_date.strftime("%B") == Time.now.strftime("%B")  %>
+                    <p>Availabilities: <span class="green"><strong><%= daycare.opening_date.strftime("%B") %></strong></span></p>
+                  <% else %>
+                    <p>Availabilities: <span class="red"><strong><%= daycare.opening_date.strftime("%B") %></strong></span></p>
+                  <% end %>
+                <% end %>
               </div>
             </div>
           </div>
