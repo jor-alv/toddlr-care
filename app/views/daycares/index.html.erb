@@ -1,9 +1,11 @@
+<% if @tag_scroll %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.edutopia.org/styles/responsive_2880px_16x9/s3/sites/default/files/masters/2021-10/istockphoto-1031753828-crop.jpg);">
   <div class="container">
     <h1>Toddlr</h1>
     <p>Find the best daycare for your kids.</p>
   </div>
 </div>
+<% end %>
 
 
 
@@ -36,7 +38,7 @@
       </div>
       <div class="text-center">
         <i class="fa-solid fa-carrot"></i>
-        <p><%= link_to 'Allergy friendly', root_path(:tag => 'Allergy friendly') %></p>
+        <p data-action="click->home#scroll"><%= link_to 'Allergy friendly', root_path(:tag => 'Allergy friendly') %></p>
       </div>
     </div>
     <div class="line-break-tags mb-4"></div>
