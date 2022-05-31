@@ -231,6 +231,8 @@ puts 'Creating daycares...'
 
 Daycare.create(supplier: le_wagon_daycares,
                name: 'Le Wagon Daycare',
+               email: 'daycare@lewagon.com',
+               phone_number: '+15144479576',
                address: '5333 Casgrain Avenue, Montreal, Quebec, Canada',
                price: 7,
                rating: 4,
@@ -243,6 +245,8 @@ le_wagon_daycare = Daycare.last
 
 Daycare.create(supplier: jorge_alvarez,
                name: 'Prison Break Daycare',
+               email: 'daycare@prisonbreak.com',
+               phone_number: '+15144478776',
                address: '565 Rue des Violettes, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 10,
                rating: 5,
@@ -255,6 +259,8 @@ prison_break_daycare = Daycare.last
 
 Daycare.create(supplier: walmart_daycares,
                name: 'Walmart Daycare 1',
+               email: 'daycare1@walmart.com',
+               phone_number: '+15144474576',
                address: '2050 Bd Monseigneur-Langlois, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 4,
                rating: 2,
@@ -267,6 +273,8 @@ walmart_daycare_1 = Daycare.last
 
 Daycare.create(supplier: james_campbell,
                name: 'Shorties Daycare 1',
+               email: 'daycare1@shorties.com',
+               phone_number: '+15144474590',
                address: '229 Rue Danis, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 6,
                rating: 3,
@@ -279,6 +287,8 @@ shorties_daycare_1 = Daycare.last
 
 Daycare.create(supplier: walmart_daycares,
                name: 'Walmart Daycare 2',
+               email: 'daycare2@walmart.com',
+               phone_number: '+15144471376',
                address: '195 Boul Hymus, Pointe-Claire, Quebec, Canada',
                price: 4,
                rating: 2,
@@ -291,6 +301,8 @@ walmart_daycare_2 = Daycare.last
 
 Daycare.create(supplier: walmart_daycares,
                name: 'Walmart Daycare 3',
+               email: 'daycare3@walmart.com',
+               phone_number: '+15144474500',
                address: '5400 Rue Jean-Talon Ouest, Montreal, Quebec, Canada',
                price: 4,
                rating: 2,
@@ -303,6 +315,8 @@ walmart_daycare_3 = Daycare.last
 
 Daycare.create(supplier: james_campbell,
                name: 'Shorties Daycare 2',
+               email: 'daycare2@shorties.com',
+               phone_number: '+15144474588',
                address: '3588 Rue Goyer, Montreal, Quebec, Canada',
                price: 4,
                rating: 2,
@@ -315,6 +329,8 @@ shorties_daycare_2 = Daycare.last
 
 Daycare.create(supplier: james_campbell,
                name: 'Shorties Daycare 3',
+               email: 'daycare3@shorties.com',
+               phone_number: '+15144474501',
                address: '1569 Rue Dudemaine, Montreal, Quebec, Canada',
                price: 4,
                rating: 2,
@@ -327,13 +343,15 @@ shorties_daycare_3 = Daycare.last
 
 Daycare.create(supplier: hufflepuff_daycares,
                name: 'Hufflepuff Daycare',
+               email: 'daycare@hufflepuff.com',
+               phone_number: '+15144474511',
                address: '9175 Bd Perras, Montreal, Quebec, Canada',
                price: 8,
                rating: 4,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 1)
 
-shorties_daycare_3 = Daycare.last
+hufflepuff_daycare = Daycare.last
 
 # # 10. daycare_10
 
