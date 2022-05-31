@@ -3,9 +3,12 @@ class DaycaresController < ApplicationController
   before_action :set_daycare, only: %i[show edit update destroy]
 
   def index
+    @tag_scroll = true
     if params[:query].present?
+      @tag_scroll = false
       @daycares = policy_scope(Daycare).search_by_name_address_price_description(params[:query])
     elsif params[:tag].present?
+      @tag_scroll = false
       daycares_filtered = []
       tag = Tag.where(name: params[:tag])
       daycare_tags = DaycareTag.where(tag: tag)
