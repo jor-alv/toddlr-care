@@ -30,10 +30,11 @@ class DaycaresController < ApplicationController
     end
 
     if params[:price].present?
+      # raise
       @daycares = Daycare.where("price <= ?", params[:price].to_i)
     end
     if params[:opening].present?
-      @daycares = Daycare.where(opening_date: params[:opening])
+      @daycares = Daycare.where("number_of_openings >= ?", params[:opening].to_i)
     end
   end
 

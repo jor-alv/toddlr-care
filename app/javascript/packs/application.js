@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
+import { initStarRating } from '../plugins/init_star_rating';
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
@@ -11,6 +12,7 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+initStarRating();
 
 import "controllers"
 import "bootstrap"
