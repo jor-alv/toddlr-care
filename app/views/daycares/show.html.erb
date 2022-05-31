@@ -228,7 +228,7 @@
           <div class="d-flex justify-content-between text-center">
             <div class="me-2 w-100">
               <%= simple_form_for [@daycare, @consultation] do |f| %>
-              <%= f.input :date_time, as: :datetime, html5: true %>
+              <%= f.input :start_time, as: :datetime, html5: true %>
               <%= f.button :submit, label: "Consult now", class: "btn btn-primary confirm-btn" %>
               <% end %>
             </div>

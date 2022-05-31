@@ -14,7 +14,7 @@
       <% end %>
     </div>
     <div class="d-flex align-items-center date-box line-break-btn">
-      <p><%= consultation.date_time.strftime("%A, %B %d, %Y ") %><strong><%= consultation.date_time.strftime("at %l%p") %></strong></p>
+      <p><%= consultation.start_time.strftime("%A, %B %d, %Y ") %><strong><%= consultation.start_time.strftime("at %l%p") %></strong></p>
     </div>
     <div class="d-flex align-items-center date-box">
       <p><%= link_to consultation.daycare.name, daycare_path(consultation.daycare)%></p>
