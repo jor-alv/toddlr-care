@@ -46,6 +46,9 @@ gem 'cloudinary', '~> 1.16.0'
 # Acts as favoritor
 gem 'acts_as_favoritor'
 
+# Gemfile
+gem "simple_calendar", "~> 2.4"
+
 # Faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
