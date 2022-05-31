@@ -1,0 +1,10 @@
+<div class="calendar mt-4">
+  <%= month_calendar(events: @pending_consultations) do |date, consultations| %>
+    <%= date %>
+    <% consultations.each do |consultation| %>
+      <div class="meeting">
+        <p><%= consultation.client.first_name %> <%= consultation.client.last_name %> <small><%= consultation.start_time.strftime('%I:%M %p') %></small></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

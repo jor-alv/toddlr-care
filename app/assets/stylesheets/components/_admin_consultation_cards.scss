@@ -101,3 +101,38 @@
 .active {
   background-color: white !important;
 }
+
+.line-break-tab {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 1px;
+  // margin-bottom: -1px;
+}
+
+.calendar .btn-primary {
+  background-color:#FF6053;
+  color: white;
+  border-color:#FF6053;
+}
+
+.calendar .btn-primary:hover {
+  color:#FF6053;
+  background-color: white;
+  border-color:#FF6053;
+}
+
+.calendar .btn-outline-primary {
+  color:#FF6053;
+  background-color: white;
+  border-color:#FF6053;
+}
+
+.calendar .btn-outline-primary:hover {
+  background-color:#FF6053;
+  color: white;
+  border-color:#FF6053;
+}
+
+.table {
+  border-radius: 12px;
+  margin-top: 8px
+}
