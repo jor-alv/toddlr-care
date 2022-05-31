@@ -1,19 +1,21 @@
-<h1>New Daycare</h1>
-  <%= simple_form_for(@daycare) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :email %>
-    <%= f.input :phone_number %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :number_of_openings %>
-    <%= f.input :opening_date %>
-    <%= f.association :tags, as: :check_boxes, collection_check_boxes: @tags, prompt: "Select relevant tags"%>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%# <div class='d-flex justify-content-between pt-4'> %>
-      <%# <p class='m-0'> %>
-    <%= f.submit "Create Daycare", class: "btn btn-primary" %>
-      <%# </p> %>
-    <%# </div> %>
-  <% end %>
+<div class="container form my-5">
+  <h1>New Daycare</h1>
+    <%= simple_form_for(@daycare) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :email %>
+      <%= f.input :phone_number %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :number_of_openings %>
+      <%= f.input :opening_date %>
+      <%= f.association :tags, as: :check_boxes, collection_check_boxes: @tags, prompt: "Select relevant tags"%>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%# <div class='d-flex justify-content-between pt-4'> %>
+        <%# <p class='m-0'> %>
+      <%= f.submit "Create Daycare", class: "btn btn-primary" %>
+        <%# </p> %>
+      <%# </div> %>
+    <% end %>
+</div>
