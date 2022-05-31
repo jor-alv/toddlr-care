@@ -738,15 +738,15 @@ puts 'Creating consultations...'
 # end
 puts 'Creating tags'
 
-Tag.create!(name: "Vaccinated staff")
-Tag.create!(name: "Large playground")
-Tag.create!(name: "Nearby park")
-Tag.create!(name: "Montessori")
-Tag.create!(name: "Music instruction")
-Tag.create!(name: "LGBTQIA+ friendly")
+Tag.create!(name: "Vaccinated staff", font_awesome: "house-medical")
+Tag.create!(name: "Large playground", font_awesome: "baseball")
+Tag.create!(name: "Nearby park", font_awesome: "tree")
+Tag.create!(name: "Montessori", font_awesome: "graduation-cap")
+Tag.create!(name: "Music instruction", font_awesome: "music")
+Tag.create!(name: "LGBTQIA+ friendly", font_awesome: "rainbow")
 Tag.create!(name: "Halal food")
 Tag.create!(name: "Kosher food")
-Tag.create!(name: "Allergy friendly")
+Tag.create!(name: "Allergy friendly", font_awesome: "house-carrot")
 Tag.create!(name: "English speaking")
 Tag.create!(name: "French speaking")
 Tag.create!(name: "Spanish speaking")

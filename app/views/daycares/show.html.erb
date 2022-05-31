@@ -33,7 +33,7 @@
     <p class="mb-2"><%=@daycare.address %> <% if user_signed_in? %>
     <% if @daycare.supplier.first_name == current_user.first_name %>
     <%= link_to edit_daycare_path(@daycare), data: {confirm: 'Are you sure you want to edit this daycare?'} do %>
-    <i class="fa-solid fa-pencil"></i>
+    <i class="fa-solid fa-pencil blue"></i>
     <% end %>
     <% end %>
     <% end %>
@@ -124,13 +124,29 @@
         <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
       </div>
       <div class="card-trip line-break">
-        <h2> Features:</h2>
+        <h2 class="mb-4"> Features:</h2>
         <div class="row">
-          <div class="col-lg-6">
-            <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          <div class="col-lg-6 features-line-break mb-4">
+            <%# <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p> %>
+            <% @daycare.tags.each_with_index do |tag, index| %>
+              <% if index.even? %>
+                <div class="d-flex align-items-center tags-features">
+                  <i class="fa-solid fa-<%= tag.font_awesome %>"></i>
+                  <p><%= tag.name %></p>
+                </div>
+              <% end %>
+            <% end %>
           </div>
           <div class="col-lg-6">
-            <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+            <%# <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p> %>
+            <% @daycare.tags.each_with_index do |tag, index| %>
+              <% if index.odd? %>
+                <div class="d-flex align-items-center tags-features">
+                  <i class="fa-solid fa-<%= tag.font_awesome %>"></i>
+                  <p><%= tag.name %></p>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -143,16 +159,16 @@
               <div class="d-flex align-items-center review-card">
                 <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered" />
                 <div class="flex-column">
-                  <p><strong><%= "#{review.client.first_name} #{review.client.last_name}" %></strong></p>
+                  <p><strong><%= link_to "#{review.client.first_name} #{review.client.last_name}", client_profile_path(review.client) %></strong></p>
 
                   <%# Add user location %>
-                  <p>Montreal, Quebec</p>
+                  <p><em>Montreal, Quebec</em></p>
                 </div>
               </div>
               <div>
                 <% if review.client.first_name == current_user.first_name %>
                   <%= link_to review_path(review), method: :delete, data: {confirm: 'Are you sure you want to delete this review?'} do %>
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can blue"></i>
                   <% end %>
                 <% end %>
               </div>
@@ -196,7 +212,7 @@
           <%= simple_form_for [@daycare, @review] do |f| %>
           <%= f.input :stars, as: :radio_buttons, collection: (1..5).each, html5: true %>
           <%= f.input :content, as: :text, html5: true %>
-          <%= f.button :submit, label: "Add a Review", class: "btn btn-primary" %>
+          <%= f.button :submit, label: "Add a Review", class: "btn btn-primary confirm-btn" %>
           <% end %>
     </div>
 
@@ -208,7 +224,7 @@
             <div class="me-2 w-100">
               <%= simple_form_for [@daycare, @consultation] do |f| %>
               <%= f.input :date_time, as: :datetime, html5: true %>
-              <%= f.button :submit, label: "Consult now", class: "btn btn-primary" %>
+              <%= f.button :submit, label: "Consult now", class: "btn btn-primary confirm-btn" %>
               <% end %>
             </div>
           </div>
