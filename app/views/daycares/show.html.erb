@@ -211,7 +211,7 @@
           <% end %>
         <% end %>
       </div>
-      <h2 class="pt-4">Add a Review</h2>
+      <h2 class="pt-4">Leave a Review:</h2>
           <%= simple_form_for [@daycare, @review] do |f| %>
           <%= f.input :stars, as: :radio_buttons, collection: (1..5).each, html5: true %>
           <%= f.input :content, as: :text, html5: true %>
