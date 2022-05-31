@@ -10,15 +10,15 @@ export default class extends Controller {
 
   connect() {
 
-    console.log(this.markersValue)
-    console.log(this.apiKeyValue)
+    // console.log(this.markersValue)
+    // console.log(this.apiKeyValue)
 
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      // style: "mapbox://styles/mapbox/streets-v10"
-      style: "mapbox://styles/j-o-r-g-e/cl3t19y9e000a15r2v7zxu67c"
+      style: "mapbox://styles/mapbox/streets-v10"
+      // style: "mapbox://styles/j-o-r-g-e/cl3t19y9e000a15r2v7zxu67c"
     })
 
     this.#addMarkersToMap()
