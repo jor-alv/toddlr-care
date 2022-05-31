@@ -110,7 +110,7 @@
   </div>
 <%= form_with url: daycares_path, method: :get, class: "search-form" do |f| %>
   <%= f.label "select max price" %>
-  <%= f.select :price, (0..30).to_a, class: "form-control" %>
+  <%= f.select :price, (0..30).to_a, selected: params[:price] || 30, class: "form-control" %>
   <%# <%= label_tag "select opening date" %>
    <%# <%= text_field_tag :opening, %>
      <%# params[:opening], %>
@@ -118,7 +118,7 @@
      <%# placeholder: "Find an opening date" %>
     <%# %>
   <%= f.label "openings" %>
-  <%= f.select :opening, (1..5).to_a, class: "form-control" %>
+  <%= f.select :opening, (1..5).to_a, selected: params[:price] || 1, class: "form-control" %>
   <%= f.submit "Search", class: "btn btn-primary" %>
   <% end %>
 </div>

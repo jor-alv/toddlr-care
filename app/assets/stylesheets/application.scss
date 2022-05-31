@@ -50,3 +50,15 @@ h2 a {
 .btn {
   border-radius: 12px;
 }
+
+.br-theme-bars-1to10 .br-widget a {
+  // color: red;
+  background-color: red;
+}
+.br-theme-bars-1to10 .br-widget a.br-selected {
+  background-color: green;
+}
+
+.br-theme-bars-1to10 .br-widget a.br-active {
+  background-color: blue;
+}
