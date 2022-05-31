@@ -1,0 +1,34 @@
+.card-map {
+  background: white;
+  display: flex;
+}
+
+.card-map img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.card-map h2 {
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 8px;
+}
+
+// .card-map a {
+//   color: #FF6053;
+//   text-decoration: none;
+// }
+
+.card-map p {
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+.card-map .card-map-infos {
+  margin: 8px;
+}
