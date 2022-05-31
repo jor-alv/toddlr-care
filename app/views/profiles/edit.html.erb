@@ -6,11 +6,12 @@
     <% else %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
+      <%= f.input :location %>
     <% end %>
     <%= f.input :email %>
     <%= f.input :bio %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
-      <%= f.submit "Edit Profile", class: "btn btn-primary" %>
+      <%= f.submit "Edit Profile", class: "btn btn-primary confirm-btn" %>
   <% end %>
   <br>
 </div>
