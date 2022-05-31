@@ -1,9 +1,9 @@
 <div class="container">
   <div class="mt-4 mb-3">
-    <h1 class="mt-4"><%= @daycare.name %></h1>
+    <h1 class="mt-4 mb-0"><%= @daycare.name %></h1>
 
     <%# Sorry about this: %>
-    <div>
+    <div class="d-flex align-items-center">
       <% if @daycare.rating >= 1 %>
         <span class="fa fa-star checked"></span>
       <% else %>
@@ -29,8 +29,9 @@
       <% else %>
         <span class="fa fa-star"></span>
       <% end %>
+      <p class="pl-3 mb-0">(<%= @daycare.reviews.size %>)</p>
     </div>
-    <p class="mb-2"><%=@daycare.address %> <% if user_signed_in? %>
+    <p class="mb-2"><em><%=@daycare.address %></em> <% if user_signed_in? %>
     <% if @daycare.supplier.first_name == current_user.first_name %>
     <%= link_to edit_daycare_path(@daycare), data: {confirm: 'Are you sure you want to edit this daycare?'} do %>
     <i class="fa-solid fa-pencil blue"></i>
@@ -111,17 +112,19 @@
   <div class="row mt-4">
     <div class="col-lg-8">
       <div class="card-trip line-break">
-        <div class="card-trip-infos">
-          <div class="d-flex justify-content-row align-items-center">
-            <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered" />
-            <p>Offered by <%= @daycare.supplier.company_name  %></p>
-          </div>
-          <p class="d-flex align-self-center ">$<%=@daycare.price %> per day</p>
-        </div>
       </div>
-      <div class="card-trip mt-4">
-        <h2> About <%= @daycare.name %>:</h2>
-        <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+      <div class="card-trip mt-4 description">
+        <div class="d-flex justify-content-between pb-2 pt-2">
+          <h2>About <%= @daycare.name %>:</h2>
+          <p class="d-flex align-self-center "><strong>$<%=@daycare.price %>/day</strong></p>
+        </div>
+        <p> <em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</em></p>
+        <div class="card-trip-infos line-break p-0 pb-2 mb-4">
+          <div class="d-flex align-items-center pb-2">
+            <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered-description" />
+            <p class="mb-0">Offered by <em><%= @daycare.supplier.company_name  %></em></p>
+          </div>
+        </div>
       </div>
       <div class="card-trip line-break">
         <h2 class="mb-4"> Features:</h2>
@@ -132,7 +135,7 @@
               <% if index.even? %>
                 <div class="d-flex align-items-center tags-features">
                   <i class="fa-solid fa-<%= tag.font_awesome %>"></i>
-                  <p><%= tag.name %></p>
+                  <p><strong><%= tag.name %></strong></p>
                 </div>
               <% end %>
             <% end %>
@@ -143,7 +146,7 @@
               <% if index.odd? %>
                 <div class="d-flex align-items-center tags-features">
                   <i class="fa-solid fa-<%= tag.font_awesome %>"></i>
-                  <p><%= tag.name %></p>
+                  <p><strong><%= tag.name %></strong></p>
                 </div>
               <% end %>
             <% end %>
@@ -158,8 +161,8 @@
             <div class="d-flex justify-content-between">
               <div class="d-flex align-items-center review-card">
                 <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered" />
-                <div class="flex-column">
-                  <p><strong><%= link_to "#{review.client.first_name} #{review.client.last_name}", client_profile_path(review.client) %></strong></p>
+                <div class="flex-column d-flex justify-content-center">
+                  <h3 class="mt-1"><strong><%= link_to "#{review.client.first_name} #{review.client.last_name}", client_profile_path(review.client) %></strong></h3>
 
                   <%# Add user location %>
                   <p><em>Montreal, Quebec</em></p>
@@ -218,7 +221,7 @@
 
     <%# Book now card %>
     <div class="col-lg-4 ">
-      <div class="card mb-2 book-now bg-body overflow-hidden w-100">
+      <div class="card mb-4 book-now bg-body overflow-hidden w-100 mt-4">
         <div class="card-body">
           <div class="d-flex justify-content-between text-center">
             <div class="me-2 w-100">
