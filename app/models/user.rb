@@ -24,7 +24,9 @@ class User < ApplicationRecord
   def admin_pending_consultations
     pending_consultations = []
     self.daycares.each do |daycare|
-      pending_consultations << daycare.consultations.pending
+      daycare.consultations.pending.each do |consultation|
+        pending_consultations << consultation
+      end
     end
     return pending_consultations
   end
@@ -32,7 +34,9 @@ class User < ApplicationRecord
   def admin_confirmed_consultations
     confirmed_consultations = []
     self.daycares.each do |daycare|
-      confirmed_consultations << daycare.consultations.confirmed
+      daycare.consultations.confirmed.each do |consultation|
+        confirmed_consultations << consultation
+      end
     end
     return confirmed_consultations
   end

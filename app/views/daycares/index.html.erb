@@ -49,11 +49,11 @@
             <div class="card-product">
               <img src="https://static01.nyt.com/images/2020/10/16/multimedia/par-daycare-16/par-daycare-16-superJumbo.jpg" />
               <div class="card-product-infos flex-column d-flex justify-content-between">
-                <div class="align-self-start">
+                <div class="">
                   <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
 
                     <%# Sorry about this: %>
-                    <div>
+                    <div class="d-flex align-items-center">
                       <% if daycare.rating >= 1 %>
                         <span class="fa fa-star checked"></span>
                       <% else %>
@@ -79,6 +79,7 @@
                       <% else %>
                         <span class="fa fa-star"></span>
                       <% end %>
+                      <p class="ml-3 mt-1">(<%= daycare.reviews.size %>)</p>
                     </div>
                 </div>
                 <div class="btn-tag">
@@ -86,10 +87,10 @@
                   <p class="btn btn-outline-secondary"><%= link_to tag.name, root_path(:tag => tag.name) %></p>
                 <% end %>
                 </div>
-                <p><%= daycare.description[0,100] %></p>
+                <p><em><%= daycare.description[0,100] %></em></p>
 
                 <%# Replace Date.today with opening_date %>
-                <p><strong>Availability:</strong> <%= Date.today.strftime("%B") %></p>
+                <p><strong>Availability: <span class="green"><%= Date.today.strftime("%B") %></span></strong></p>
 
               </div>
             </div>
