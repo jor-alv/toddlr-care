@@ -43,6 +43,11 @@
 margin-bottom: 2px;
 }
 
+.review-card a {
+color:#FF6053;
+text-decoration: none;
+}
+
 .review-card img {
   margin-right: 8px;
   height: 60px;
@@ -59,4 +64,12 @@ margin-bottom: 2px;
 
 .features-line-break {
   border-right: 1px solid rgba(80,80,80,0.2);
+}
+
+.pink {
+  color: #FF6053;
+}
+
+.blue {
+  color: #63AEF2
 }
