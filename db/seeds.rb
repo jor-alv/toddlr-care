@@ -236,6 +236,7 @@ Daycare.create(supplier: le_wagon_daycares,
                address: '5333 Casgrain Avenue, Montreal, Quebec, Canada',
                price: 7,
                rating: 4,
+               opening_date: Time.now,
                description: "All you need is code. Change your life, learn to code!",
                number_of_openings: 1)
 
@@ -250,6 +251,7 @@ Daycare.create(supplier: jorge_alvarez,
                address: '565 Rue des Violettes, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 10,
                rating: 5,
+               opening_date: Time.now,
                description: "Here, your child will develop their personality, their best mind and most important of all, how to escape prison.",
                number_of_openings: 0)
 
@@ -264,6 +266,7 @@ Daycare.create(supplier: walmart_daycares,
                address: '2050 Bd Monseigneur-Langlois, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 4,
                rating: 2,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 2)
 
@@ -278,6 +281,7 @@ Daycare.create(supplier: james_campbell,
                address: '229 Rue Danis, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 6,
                rating: 3,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 1)
 
@@ -292,6 +296,7 @@ Daycare.create(supplier: walmart_daycares,
                address: '195 Boul Hymus, Pointe-Claire, Quebec, Canada',
                price: 4,
                rating: 2,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 2)
 
@@ -306,6 +311,7 @@ Daycare.create(supplier: walmart_daycares,
                address: '5400 Rue Jean-Talon Ouest, Montreal, Quebec, Canada',
                price: 4,
                rating: 2,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 2)
 
@@ -320,6 +326,7 @@ Daycare.create(supplier: james_campbell,
                address: '3588 Rue Goyer, Montreal, Quebec, Canada',
                price: 4,
                rating: 2,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 2)
 
@@ -334,6 +341,7 @@ Daycare.create(supplier: james_campbell,
                address: '1569 Rue Dudemaine, Montreal, Quebec, Canada',
                price: 4,
                rating: 2,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 2)
 
@@ -348,6 +356,7 @@ Daycare.create(supplier: hufflepuff_daycares,
                address: '9175 Bd Perras, Montreal, Quebec, Canada',
                price: 8,
                rating: 4,
+               opening_date: Time.now,
                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
                number_of_openings: 1)
 
