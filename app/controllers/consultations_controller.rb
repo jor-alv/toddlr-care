@@ -11,7 +11,7 @@ class ConsultationsController < ApplicationController
     @consultation.client = current_user
     @consultation.status = 1
     @consultation.daycare = @daycare
-    if @consultation.date_time < DateTime.now
+    if @consultation.start_time < DateTime.now
       flash[:alert] = "Invalid Date"
       render :daycare
     end
@@ -54,7 +54,7 @@ class ConsultationsController < ApplicationController
   end
 
   def consultation_params
-    params.require(:consultation).permit(:date_time,
+    params.require(:consultation).permit(:start_time,
                                     :status,
                                     :client_id,
                                     :daycare_id)

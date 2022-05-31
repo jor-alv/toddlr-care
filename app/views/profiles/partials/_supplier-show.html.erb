@@ -13,6 +13,16 @@
           <%= link_to "Edit profile", edit_my_profile_path(@user), class: "btn btn-primary confirm-btn" %>
         </div>
         <p class="line-break pb-4"><em><%= current_user.bio %></em></p>
+          <h2>My Calendar:</h2>
+          <%= month_calendar(events: @pending_consultations) do |date, consultations| %>
+          <%= date %>
+
+          <% consultations.each do |consultation| %>
+          <div class="meeting">
+          <p><%= consultation.client.first_name %> <%= consultation.client.last_name %> <small><%= consultation.start_time.strftime('%I:%M %p') %></small></p>
+          </div>
+          <% end %>
+          <% end %>
       </div>
     </div>
 

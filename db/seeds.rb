@@ -34,7 +34,7 @@ puts 'New seeds are being created...'
 # parents = User.where(category: 1)
 # parents.each do |parent|
 #   Daycare.all.each do |daycare|
-#     Consultation.create!(date_time: DateTime.tomorrow,
+#     Consultation.create!(start_time: DateTime.tomorrow,
 #                          client_id: parent.id,
 #                          daycare_id: daycare.id)
 #   end
@@ -621,7 +621,7 @@ puts 'Creating consultations...'
 
 # Consultation.create(daycare: prison_break_daycare,
 #                     client: john_littlewood,
-#                     date_time: '',
+#                     start_time: '',
 #                     status: '')
 
 # consultation_1 = Consultation.last
@@ -757,7 +757,7 @@ puts 'Creating consultations...'
 # parents = User.where(category: 1)
 # parents.each do |parent|
 #   Daycare.all.each do |daycare|
-#     Consultation.create!(date_time: Date.tomorrow,
+#     Consultation.create!(start_time: Date.tomorrow,
 #                         client_id: parent.id,
 #                         daycare_id: daycare.id,
 #                         status: rand(1...2))
