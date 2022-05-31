@@ -1,7 +1,7 @@
 <div class="container form my-5">
   <h1>Edit Profile</h1>
-  <%= simple_form_for(my_profile_url) do |f| %>
-    <% if @user.category = "supplier" %>
+  <%= simple_form_for(@user, :url => my_profile_path, :method => :patch) do |f| %>
+    <% if @user.category == "supplier" %>
       <%= f.input :company_name %>
     <% else %>
       <%= f.input :first_name %>
@@ -9,6 +9,7 @@
     <% end %>
     <%= f.input :email %>
     <%= f.input :bio %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
       <%= f.submit "Edit Profile", class: "btn btn-primary" %>
   <% end %>
   <br>

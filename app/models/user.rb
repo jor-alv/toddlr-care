@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :reviews, foreign_key: :client_id,  dependent: :destroy
   has_many :consultations, foreign_key: :client_id, dependent: :destroy
   has_many :daycares, foreign_key: :supplier_id, dependent: :destroy
+  has_many_attached :photos
   acts_as_favoritor
   enum category: {
     client: 1,
