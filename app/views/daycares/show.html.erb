@@ -124,13 +124,29 @@
         <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
       </div>
       <div class="card-trip line-break">
-        <h2> Features:</h2>
+        <h2 class="mb-4"> Features:</h2>
         <div class="row">
-          <div class="col-lg-6">
-            <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          <div class="col-lg-6 features-line-break">
+            <%# <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p> %>
+            <% @daycare.tags.each_with_index do |tag, index| %>
+              <% if index.even? %>
+                <div class="d-flex tags-features">
+                  <i class="fa-solid fa-<%= tag.font_awesome %>"></i>
+                  <p><%= tag.name %></p>
+                </div>
+              <% end %>
+            <% end %>
           </div>
           <div class="col-lg-6">
-            <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+            <%# <p class="pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p> %>
+            <% @daycare.tags.each_with_index do |tag, index| %>
+              <% if index.odd? %>
+                <div class="d-flex tags-features">
+                  <i class="fa-solid fa-<%= tag.font_awesome %>"></i>
+                  <p><%= tag.name %></p>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

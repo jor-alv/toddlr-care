@@ -49,7 +49,7 @@
             <div class="card-product">
               <img src="https://static01.nyt.com/images/2020/10/16/multimedia/par-daycare-16/par-daycare-16-superJumbo.jpg" />
               <div class="card-product-infos flex-column d-flex justify-content-between">
-                <div class="align-self-start">
+                <div class="">
                   <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
 
                     <%# Sorry about this: %>
@@ -89,7 +89,7 @@
                 <p><%= daycare.description[0,100] %></p>
 
                 <%# Replace Date.today with opening_date %>
-                <p><strong>Availability:</strong> <%= Date.today.strftime("%B") %></p>
+                <p><strong>Availability: <span class="green"><%= Date.today.strftime("%B") %></span></strong></p>
 
               </div>
             </div>
