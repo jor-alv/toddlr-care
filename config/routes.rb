@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'daycares#index'
+  resources :daycares, only: :index
 
   resources :daycares, except: [:index, :show]
   resources :daycares, only: :show do

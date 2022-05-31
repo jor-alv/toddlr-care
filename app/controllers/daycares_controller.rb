@@ -25,6 +25,13 @@ class DaycaresController < ApplicationController
         image_url: helpers.asset_url('ToddlrFox.png')
       }
     end
+
+    if params[:price].present?
+      @daycares = Daycare.where("price <= ?", params[:price].to_i)
+    end
+    if params[:opening].present?
+      @daycares = Daycare.where(opening_date: params[:opening])
+    end
   end
 
   def new
