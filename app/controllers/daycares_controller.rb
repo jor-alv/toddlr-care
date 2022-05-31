@@ -29,11 +29,13 @@ class DaycaresController < ApplicationController
       }
     end
 
-    if params[:price].present?
+    if params[:price].present? && params[:opening].present?
+      # raise
+      @daycares = Daycare.where("price <= ?", params[:price].to_i).where("number_of_openings >= ?", params[:opening].to_i)
+    elsif params[:opening].present?
+      @daycares = Daycare.where("number_of_openings >= ?", params[:opening].to_i)
+    elsif params[:price].present?
       @daycares = Daycare.where("price <= ?", params[:price].to_i)
-    end
-    if params[:opening].present?
-      @daycares = Daycare.where(opening_date: params[:opening])
     end
   end
 

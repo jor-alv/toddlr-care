@@ -4,6 +4,7 @@
 @import "config/bootstrap_variables";
 
 // External libraries
+@import "jquery-bar-rating/dist/themes/bars-1to10";
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -49,6 +50,23 @@ h2 a {
 
 .btn {
   border-radius: 12px;
+}
+
+.br-theme-bars-1to10 .br-widget a {
+  // color: red;
+  background-color: #FF6053;
+}
+
+.br-theme-bars-1to10 .br-widget a.br-selected {
+  background-color: #63AEF2;
+}
+
+.br-theme-bars-1to10 .br-widget a.br-active {
+  background-color: #63AEF2;
+}
+
+.br-current-rating {
+  color: #FF6053;
 }
 
 .arrow {
