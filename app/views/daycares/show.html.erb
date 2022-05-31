@@ -169,11 +169,13 @@
                 </div>
               </div>
               <div>
+              <% if user_signed_in? %>
                 <% if review.client.first_name == current_user.first_name %>
                   <%= link_to review_path(review), method: :delete, data: {confirm: 'Are you sure you want to delete this review?'} do %>
                     <i class="fa-solid fa-trash-can blue"></i>
                   <% end %>
                 <% end %>
+              <% end %>
               </div>
             </div>
             <%# Really sorry, too tired to do JS %>
