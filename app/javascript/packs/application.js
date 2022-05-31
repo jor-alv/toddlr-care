@@ -12,7 +12,10 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-initStarRating();
+
+document.addEventListener('turbolinks:load', () => {
+  initStarRating();
+})
 
 import "controllers"
 import "bootstrap"

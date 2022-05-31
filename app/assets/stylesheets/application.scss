@@ -53,12 +53,16 @@ h2 a {
 
 .br-theme-bars-1to10 .br-widget a {
   // color: red;
-  background-color: red;
+  background-color: #FF6053;
 }
 .br-theme-bars-1to10 .br-widget a.br-selected {
-  background-color: green;
+  background-color: #63AEF2;
 }
 
 .br-theme-bars-1to10 .br-widget a.br-active {
-  background-color: blue;
+  background-color: #63AEF2;
+}
+
+.br-current-rating {
+  color: #FF6053;
 }
