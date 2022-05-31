@@ -65,10 +65,26 @@ h2 a {
   background-color: #63AEF2;
 }
 
-.br-current-rating {
-  color: #FF6053;
+.br-theme-bars-1to10 .br-widget .br-current-rating {
+  color: #63AEF2;
+  font-family: oswald;
 }
 
 .arrow {
   z-index: 0;
+}
+
+.btn-primary {
+  margin-bottom: 20px;
+  background-color: #FF6053;
+  border: #FF6053;
+}
+
+.btn-primary:hover {
+  opacity: 1;
+  background-color: red
+}
+
+.footer-links:hover {
+  color: #FF6053;
 }
