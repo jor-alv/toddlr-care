@@ -105,4 +105,19 @@
       </div>
     </div>
   </div>
+<%= form_tag daycares_path, method: :get do %>
+  <%= label_tag "select max price" %>
+  <%= range_field_tag :price,
+    params[:price],
+    in: 1...10, step: 1,
+    class: "form-control"
+  %>
+  <%= label_tag "select opening date" %>
+   <%= text_field_tag :opening,
+     params[:opening],
+     class: "form-control",
+     placeholder: "Find an opening date"
+    %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>
