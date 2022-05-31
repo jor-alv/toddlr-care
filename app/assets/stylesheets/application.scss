@@ -10,6 +10,7 @@
 @import "font-awesome";
 @import "mapbox-gl/dist/mapbox-gl";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+@import "simple_calendar";
 
 // Your CSS partials
 @import "components/index";
@@ -55,6 +56,7 @@ h2 a {
   // color: red;
   background-color: #FF6053;
 }
+
 .br-theme-bars-1to10 .br-widget a.br-selected {
   background-color: #63AEF2;
 }
@@ -65,4 +67,8 @@ h2 a {
 
 .br-current-rating {
   color: #FF6053;
+}
+
+.arrow {
+  z-index: 0;
 }

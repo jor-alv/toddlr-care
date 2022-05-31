@@ -1,4 +1,15 @@
-<h3><%= daycare.name %></h3>
-<p><%= daycare.address %></p>
-<p><%= daycare.phone_number %></p>
-<p><%= daycare.email %></p>
+<div class="card-map">
+  <% if daycare.photos.present?  %>
+    <img src="<%= cl_image_path(daycare.photos[0].key)%>" alt="">
+  <% else %>
+    <img src="https://www.tnrl.ca/wp-content/uploads/sites/2/2021/10/Daycare-Storytime-Web-Page.jpg" alt="">
+  <% end %>
+</div>
+<div class = "card-map">
+  <div>
+    <h2><%= daycare.name %></h2>
+    <p><%= daycare.address %></p>
+    <p><%= daycare.phone_number %></p>
+    <p><%= daycare.email %></p>
+  </div>
+</div>
