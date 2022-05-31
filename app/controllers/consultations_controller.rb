@@ -15,7 +15,8 @@ class ConsultationsController < ApplicationController
       flash[:alert] = "Invalid Date"
       render :daycare
     end
-    @daycare.number_of_openings -= 1
+    new_openings = @daycare.number_of_openings - @consultation.number_of_children
+    @daycare.update(number_of_openings: new_openings)
     authorize @consultation
     if @consultation.save
       redirect_to my_profile_path(client)
@@ -58,6 +59,7 @@ class ConsultationsController < ApplicationController
     params.require(:consultation).permit(:start_time,
                                     :status,
                                     :client_id,
-                                    :daycare_id)
+                                    :daycare_id,
+                                    :number_of_children)
   end
 end
