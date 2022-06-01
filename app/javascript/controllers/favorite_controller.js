@@ -18,12 +18,12 @@ export default class extends Controller {
     if (this.iconTarget.classList.contains('fa-regular')) {
       this.iconTarget.classList.remove('fa-regular')
       this.iconTarget.classList.add('fa-solid')
+      this.iconTarget.innerText = ''
     } else {
       this.iconTarget.classList.remove('fa-solid')
       this.iconTarget.classList.add('fa-regular')
+      this.iconTarget.innerText = ' Add to favorites'
     }
-    // this.iconTarget.classList.remove('fa-regular')
-    // this.iconTarget.classList.add('fa-solid')
     fetch(this.linkTarget.href, {
       method: "GET"
     })

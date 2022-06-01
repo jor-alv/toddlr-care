@@ -16,6 +16,5 @@ export default class extends Controller {
     } else if (this.lessTarget.innerHTML === "See less ▴"){
       this.lessTarget.innerHTML = "See more ▾";
     }
-    // this.lessTarget.innerHTML = "Show less";
   }
 }

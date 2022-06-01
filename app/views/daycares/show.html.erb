@@ -43,22 +43,18 @@
       <% end %>
     <% end %>
     </p>
+    <% if user_signed_in? %>
     <div data-controller="favorite" data-favorite-id-value = <%= @daycare.id %>>
-    <%= @daycare.favorited_by?(current_user) %>
         <%= link_to toggle_favorite_daycare_path(@daycare), data: { favorite_target: "link", action: "favorite#toggleFavorite"} do %>
           <% if @daycare.favorited_by?(current_user) %>
             <i data-favorite-target = "icon" class="fa-solid fa-heart"></i>
           <% else %>
-            <i data-favorite-target = "icon" class="fa-regular fa-heart"></i>
+            <i data-favorite-target = "icon" class="fa-regular fa-heart"> Add as favorites</i>
           <% end %>
         <% end %>
-
       </a>
-        <%# <%= link_to "Save as Favorite", toggle_favorite_daycare_path(@daycare), remote: true, method: :post %>
-
-
-
     </div>
+    <% end %>
   </div>
 
   <%# Photo gallery %>
