@@ -32,7 +32,13 @@
 .map-column {
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  margin-top: 10px;
+  margin-top: 32px;
+}
+
+.map-column-home {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin-top: 8px;
 }
 
 .map-sticky {
@@ -47,6 +53,7 @@
 }
 
 .filter-bar {
+  width: 196px;
   margin-top: 8px;
   // border-radius: 12px;
   // border: 1px solid rgba(80,80,80,0.2)
@@ -101,4 +108,8 @@
 .call-to-action p {
 font-size: 22px;
 margin-left: 260px;
+}
+
+.availabilities-text p {
+  font-size: 14px;
 }
