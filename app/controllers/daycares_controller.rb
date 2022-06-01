@@ -1,6 +1,7 @@
 class DaycaresController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_daycare, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: :toggle_favorite
+  before_action :set_daycare, only: %i[show edit update destroy toggle_favorite]
 
   def index
     @tag_scroll = true
@@ -30,7 +31,6 @@ class DaycaresController < ApplicationController
     end
 
     if params[:price].present? && params[:opening].present?
-      # raise
       @tag_scroll = false
       @daycares = Daycare.where("price <= ?", params[:price].to_i).where("number_of_openings >= ?", params[:opening].to_i)
     elsif params[:opening].present?
@@ -104,6 +104,14 @@ class DaycaresController < ApplicationController
     redirect_to my_profile_path(@daycare.supplier), notice: 'Daycare was successfully deleted.'
   end
 
+  def toggle_favorite
+    if @daycare.favorited_by?(current_user)
+      current_user.unfavorite(@daycare)
+    else
+      current_user.favorite(@daycare)
+    end
+    # redirect_to daycare_path(@daycare)
+  end
 
   private
 
@@ -114,8 +122,8 @@ class DaycaresController < ApplicationController
 
   def daycare_params
     params.require(:daycare).permit(:name,
-                                    :description,
-                                    :address,
+      :description,
+      :address,
                                     :price,
                                     :number_of_openings,
                                     :tag_ids,
