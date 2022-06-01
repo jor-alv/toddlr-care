@@ -26,6 +26,10 @@ class DaycarePolicy < ApplicationPolicy
     record.supplier == user || user.admin
   end
 
+  def toggle_favorite?
+    true
+  end
+
   private
 
   def user_is_owner_or_admin

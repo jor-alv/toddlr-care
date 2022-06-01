@@ -102,7 +102,12 @@ class DaycaresController < ApplicationController
   end
 
   def toggle_favorite
-    current_user.favorited?(@cocktail) ? current_user.unfavorite(@cocktail) : current_user.favorite(@cocktail)
+    if @daycare.favorited_by?(current_user)
+      current_user.unfavorite(@daycare)
+    else
+      current_user.favorite(@daycare)
+    end
+    # redirect_to daycare_path(@daycare)
   end
 
   private
@@ -114,8 +119,8 @@ class DaycaresController < ApplicationController
 
   def daycare_params
     params.require(:daycare).permit(:name,
-                                    :description,
-                                    :address,
+      :description,
+      :address,
                                     :price,
                                     :number_of_openings,
                                     :tag_ids,

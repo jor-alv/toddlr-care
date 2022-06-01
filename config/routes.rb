@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'daycares#index'
-  resources :daycares, only: :index do
-    member do
-      post 'toggle_favorite', to: 'daycares#toggle_favorite'
-    end
-  end
+  resources :daycares, only: :index
 
   resources :daycares, except: %i[index show]
   resources :daycares, only: :show do
     resources :consultations, only: :create
     resources :reviews, only: :create
+    member do
+      get 'toggle_favorite', to: 'daycares#toggle_favorite'
+    end
   end
 
   # Include logic to make sure that only admin profiles are shown
