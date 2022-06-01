@@ -1,15 +1,29 @@
-<div class='container'>
+<%# <div class='container'>
   <div class="profile-header">
-    <h1 class= "mt-4">Hello, <%= current_user.first_name %>!</h1>
-  </div>
+  </div> %>
 
 <%# Display profile photo here %>
-  <div class="row mt-4 pb-4">
+
+  <div class="banner-profile" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(
+    <% if current_user.photos.empty? %>
+            <%= "https://i0.wp.com/jayfeitlinger.com/wp-content/uploads/2017/04/happy-family-e1504619253464.jpg?fit=1500%2C855&ssl=1" %>
+    <% else %>
+            <%= current_user.photos[0]%>
+    <% end %>
+    );">
+
+    <div class="container">
+      <h1 class= "mt-4">Hello, <%= current_user.first_name %>!</h1>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row mt-4">
     <div class="col-lg-12">
       <div class="card-trip line-break"></div>
         <div class="card-trip mt-4">
           <div class="d-flex justify-content-between align-items-start">
-            <h2>Your bio:</h2>
+            <h2 class="pink">Your bio:</h2>
             <%= link_to "Edit profile", edit_my_profile_path(@user), class: "btn btn-primary confirm-btn" %>
           </div>
           <p><em><%= current_user.bio %></em></p>
@@ -19,25 +33,25 @@
     </div>
 
 
-<ul class="nav nav-tabs">
-  <li class="nav">
-    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">All Consultations</a>
-  </li>
-  <li>
-    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#pending" aria-current="page" id="test-pending" href="#">Pending Consultations</a>
-  </li>
-  <li>
-    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#upcoming" aria-current="page" id="test-upcoming" href="#">Upcoming Consultations</a>
-  </li>
+  <ul class="nav nav-tabs">
+    <li class="nav">
+      <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">All Consultations</a>
+    </li>
     <li>
-    <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#reviews" aria-current="page" id="test-reviews" href="#">Your Reviews</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="test" role="tabpanel"><%= render 'profiles/partials/client-tabs/all-tab'%></div>
-  <div class="tab-pane fade" id="pending" role="tabpanel"> <%= render 'profiles/partials/client-tabs/pending-tab'%></div>
-  <div class="tab-pane fade" id="upcoming" role="tabpanel"><%= render 'profiles/partials/client-tabs/confirmed-tab'%></div>
-  <div class="tab-pane fade" id="reviews" role="tabpanel"><%= render 'profiles/partials/client-tabs/reviews-tab'%></div>
-
+      <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#pending" aria-current="page" id="test-pending" href="#">Pending Consultations</a>
+    </li>
+    <li>
+      <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#upcoming" aria-current="page" id="test-upcoming" href="#">Upcoming Consultations</a>
+    </li>
+      <li>
+      <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#reviews" aria-current="page" id="test-reviews" href="#">Your Reviews</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="test" role="tabpanel"><%= render 'profiles/partials/client-tabs/all-tab'%></div>
+    <div class="tab-pane fade" id="pending" role="tabpanel"> <%= render 'profiles/partials/client-tabs/pending-tab'%></div>
+    <div class="tab-pane fade" id="upcoming" role="tabpanel"><%= render 'profiles/partials/client-tabs/confirmed-tab'%></div>
+    <div class="tab-pane fade" id="reviews" role="tabpanel"><%= render 'profiles/partials/client-tabs/reviews-tab'%></div>
+  </div>
+  <%= link_to "Delete my profile", my_profile_path, method: :delete %>
 </div>
-<%= link_to "Delete my profile", my_profile_path, method: :delete %>
