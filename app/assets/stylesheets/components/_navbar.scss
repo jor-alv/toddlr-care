@@ -21,5 +21,6 @@
 }
 
 .dropdown-menu.show {
-  z-index: 150000;
+  z-index: 2;
+  position: relative;
 }
