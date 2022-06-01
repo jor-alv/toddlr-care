@@ -1,8 +1,15 @@
 <% if @tag_scroll %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.edutopia.org/styles/responsive_2880px_16x9/s3/sites/default/files/masters/2021-10/istockphoto-1031753828-crop.jpg);">
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.edutopia.org/styles/responsive_2880px_16x9/s3/sites/default/files/masters/2021-10/istockphoto-1031753828-crop.jpg);">
   <div class="container">
     <h1>Toddlr</h1>
     <p>Find the best daycare for your kids.</p>
+  </div>
+</div> %>
+<div class="banner d-flex justify-content-between">
+<section id="stop-motion-animation"><div></div></section>
+  <div class="container d-flex flex-column title-text">
+    <h1>toddlr</h1>
+    <p>find the best daycare for your kids</p>
   </div>
 </div>
 <% end %>
@@ -44,10 +51,34 @@
     <div class="line-break-tags mb-4"></div>
   </div>
   <div class='row'>
-    <div class='col col-sm-9'>
+    <div class="col-2">
+      <%# <div class="d-flex justify-content-center filter-font">
+        <h2>Search options:</h2>
+      </div> %>
+      <div class="d-flex justify-content-center  filter-sticky">
+          <%= form_with url: daycares_path, method: :get, class: "search-form" do |f| %>
+        <div class="filter-bar">
+            <%= f.label "select max price", class: "filter-font"%>
+            <%= f.select :price, (0..15).to_a, selected: params[:price] || 15, class: "form-control" %>
+            <%# <%= label_tag "select opening date" %>
+            <%# <%= text_field_tag :opening, %>
+              <%# params[:opening], %>
+              <%# class: "form-control", %>
+              <%# placeholder: "Find an opening date" %>
+              <%# %>
+            <%= f.label "Available spots", class: "filter-font" %>
+            <%= f.select :opening, (1..5).to_a, selected: params[:opening] || 1, class: "form-control" %>
+        </div>
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Search", class: "btn btn-danger search-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='col col-7'>
       <div class="d-flex flex-wrap">
         <% @daycares.each do |daycare| %>
-          <div class='col col-sm-6 p-2'>
+          <div class='col col-sm-12 p-2'>
             <div class="card-product">
               <img src="https://static01.nyt.com/images/2020/10/16/multimedia/par-daycare-16/par-daycare-16-superJumbo.jpg" />
               <div class="card-product-infos flex-column d-flex justify-content-between">
@@ -113,17 +144,4 @@
       </div>
     </div>
   </div>
-<%= form_with url: daycares_path, method: :get, class: "search-form" do |f| %>
-  <%= f.label "select max price" %>
-  <%= f.select :price, (0..15).to_a, selected: params[:price] || 15, class: "form-control" %>
-  <%# <%= label_tag "select opening date" %>
-   <%# <%= text_field_tag :opening, %>
-     <%# params[:opening], %>
-     <%# class: "form-control", %>
-     <%# placeholder: "Find an opening date" %>
-    <%# %>
-  <%= f.label "Available spots" %>
-  <%= f.select :opening, (1..5).to_a, selected: params[:opening] || 1, class: "form-control" %>
-  <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
 </div>

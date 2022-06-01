@@ -23,6 +23,7 @@
 
 body {
   background-color: white;
+  color: rgb(50,50,50)
   // font-family: 'Quicksand', sans-serif;
 }
 
@@ -66,23 +67,17 @@ h2 a {
 }
 
 .br-theme-bars-1to10 .br-widget .br-current-rating {
-  color: #63AEF2;
-  font-family: oswald;
+  font-size: 20px;
+  line-height: 1.5;
+  float: left;
+  padding: 0px 0px 0px 6px;
+  margin-bottom: 8px;
+  color: #EDB867;
+  font-weight: 400;
 }
 
 .arrow {
   z-index: 0;
-}
-
-.btn-primary {
-  margin-bottom: 20px;
-  background-color: #FF6053;
-  border: #FF6053;
-}
-
-.btn-primary:hover {
-  opacity: 1;
-  background-color: red
 }
 
 .footer-links:hover {

@@ -2,25 +2,31 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  height: 100vh;
+  padding: 30px 0;
+  height: 95vh;
   width: 100%;
+  border-bottom: 1px solid rgba(80,80,80,0.2);
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 72px;
-  font-weight: bold;
+  color:#FF6053;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 150px;
+  font-weight: 300;
   margin-top: 100px;
 }
 
+.title-text {
+  padding-left: 200px;
+}
+
 .banner p {
-  font-size: 32px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 24px;
+  color: #63AEF2;
+  // opacity: .7;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-left: 86px;
 }
 
 .map-column {
@@ -38,4 +44,45 @@
 
 .checked {
   color: orange;
+}
+
+.filter-bar {
+  margin-top: 8px;
+  // border-radius: 12px;
+  // border: 1px solid rgba(80,80,80,0.2)
+  border-right: 1px solid rgba(80,80,80,0.2);
+  padding-right: 9px;
+}
+
+.filter-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 18vh;
+}
+
+.filter-font {
+  color: rgb(120,120,120)
+}
+
+.filter-font h2 {
+  padding-top: 8px;
+  font-size: 16px;
+}
+
+.search-btn {
+  color:#FF6053 !important;
+  background-color: white !important;
+  border-color: #FF6053;
+}
+
+.search-btn:hover {
+  background-color:#FF6053 !important;
+  color: white !important;
+  border-color: #FF6053;
+}
+
+.br-theme-bars-1to10 .br-widget a {
+  width: 8px;
+  height: 28px;
+  border-radius: 3px;
 }
