@@ -117,7 +117,9 @@
 
 .form-select {
   border-radius: 12px;
-  background-color: #f1f1f1;
+  // background-color: white;
+  background-color: rgba(241, 241, 241,0.8);
+
 }
 
 .line-break-map {
@@ -126,5 +128,5 @@
 }
 
 .form-control {
-  background-color: #f1f1f1;
+  background-color: rgba(241, 241, 241,0.8);
 }
