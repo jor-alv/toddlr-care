@@ -4,7 +4,6 @@ export default class extends Controller {
   static targets = ["more", "less"];
 
   connect() {
-    console.log("sup");
   }
 
   info(event) {
