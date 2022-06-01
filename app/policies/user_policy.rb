@@ -31,5 +31,4 @@ class UserPolicy < ApplicationPolicy
   def user_is_owner_or_admin
     record.client == user
   end
-
 end
