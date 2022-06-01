@@ -40,8 +40,8 @@
 }
 
 .review-card p {
-margin-bottom: 2px;
-font-size: 14px;
+  margin-bottom: 2px;
+  font-size: 14px;
 }
 
 .review-card h3 {
@@ -61,10 +61,14 @@ text-decoration: none;
   }
 
 .book-now {
-  border-radius: 12px;
-  // background-color: white !important;
+  border: none;
+  background-color: white !important;
   // border-color: #63AEF2;
-}s
+  border-left: 1px solid rgba(80,80,80,0.2);
+}
+
+.card-body .book-now {
+}
 
 .btn  {
   border-radius: 12px;
@@ -108,4 +112,13 @@ text-decoration: none;
 .daycare-title h1 {
   color:#FF6053;
   font-weight: 200;
+}
+
+.form-select {
+  border-radius: 12px;
+}
+
+.line-break-map {
+  border-bottom: 1px solid rgba(80,80,80,0.2);
+  margin-bottom: 8px;
 }

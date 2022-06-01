@@ -6,8 +6,8 @@ class Daycare < ApplicationRecord
   has_many :tags, through: :daycare_tags
   has_many_attached :photos
   acts_as_favoritable
-  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/,
-                              message: "Please enter a valid email" }
+  # validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/,
+  #                             message: "Please enter a valid email" }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
