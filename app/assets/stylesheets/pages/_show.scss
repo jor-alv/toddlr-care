@@ -47,11 +47,12 @@
 .review-card h3 {
   margin-bottom: 0px;
   font-size: 16px;
+  font-weight: 700;
   }
 
 .review-card a {
-color:#FF6053;
-text-decoration: none;
+  color:#63AEF2;
+  text-decoration: none;
 }
 
 .review-card img {
@@ -116,9 +117,14 @@ text-decoration: none;
 
 .form-select {
   border-radius: 12px;
+  background-color: #f1f1f1;
 }
 
 .line-break-map {
   border-bottom: 1px solid rgba(80,80,80,0.2);
   margin-bottom: 8px;
+}
+
+.form-control {
+  background-color: #f1f1f1;
 }

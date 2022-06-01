@@ -31,10 +31,13 @@ class DaycaresController < ApplicationController
 
     if params[:price].present? && params[:opening].present?
       # raise
+      @tag_scroll = false
       @daycares = Daycare.where("price <= ?", params[:price].to_i).where("number_of_openings >= ?", params[:opening].to_i)
     elsif params[:opening].present?
+      @tag_scroll = false
       @daycares = Daycare.where("number_of_openings >= ?", params[:opening].to_i)
     elsif params[:price].present?
+      @tag_scroll = false
       @daycares = Daycare.where("price <= ?", params[:price].to_i)
     end
   end
@@ -116,6 +119,7 @@ class DaycaresController < ApplicationController
                                     :price,
                                     :number_of_openings,
                                     :tag_ids,
+                                    :opening_date,
                                     photos: [])
   end
 end
