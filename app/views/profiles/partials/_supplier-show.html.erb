@@ -17,7 +17,7 @@
     </div>
 
 <%# Tabs to access daycares, consultations and add a daycare (default to daycares) %>
-<div class="d-flex justify-content-between align-items-end">
+<div class="d-flex justify-content-between">
   <ul class="nav nav-tabs flex-grow-1">
     <li class="nav-item">
       <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">Your daycares</a>
@@ -33,7 +33,7 @@
     </li>
   </ul>
   <div class="line-break-tab">
-    <%= link_to "Add new daycare", new_daycare_path, class: "btn btn-primary confirm-btn" %>
+    <%= link_to "Add new daycare", new_daycare_path, class: "btn btn-primary confirm-btn mt-2" %>
   </div>
 </div>
 <div class="tab-content" id="myTabContent">
