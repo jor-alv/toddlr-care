@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root to: 'daycares#index'
   resources :daycares, only: :index
 
-  resources :daycares, except: [:index, :show]
+  resources :daycares, except: %i[index show]
   resources :daycares, only: :show do
     resources :consultations, only: :create
     resources :reviews, only: :create
+    member do
+      get 'toggle_favorite', to: 'daycares#toggle_favorite'
+    end
   end
-
 
   # Include logic to make sure that only admin profiles are shown
   get '/profile/:id', to: 'profiles#client_profile', as: :client_profile
@@ -23,7 +25,6 @@ Rails.application.routes.draw do
   # patch '/my_admin_consultations/:id', to: 'consultations#update'
 
   # get '/my_consultations', to: 'consultations#my_consultations'
-
 
   # post 'my_profile/consultation/consultation_id', to: 'consultations#update', as: :consultation
   patch 'my_profile/consultation/:consultation_id', to: 'consultations#update', as: :consultation
