@@ -4,6 +4,9 @@ puts 'Previous seeds are being destroyed...'
 
 Daycare.destroy_all
 User.destroy_all
+Consultation.destroy_all
+Review.destroy_all
+Tag.destroy_all
 
 # CREATING NEW SEEDS
 
@@ -765,24 +768,24 @@ puts 'Creating consultations...'
 # end
 puts 'Creating tags'
 
-Tag.create!(name: "Vaccinated staff", font_awesome: "house-medical")
-Tag.create!(name: "Large playground", font_awesome: "baseball")
-Tag.create!(name: "Nearby park", font_awesome: "tree")
-Tag.create!(name: "Montessori", font_awesome: "graduation-cap")
-Tag.create!(name: "Music instruction", font_awesome: "music")
-Tag.create!(name: "LGBTQIA+ friendly", font_awesome: "rainbow")
-Tag.create!(name: "Halal food")
-Tag.create!(name: "Kosher food")
-Tag.create!(name: "Allergy friendly", font_awesome: "house-carrot")
-Tag.create!(name: "English speaking")
-Tag.create!(name: "French speaking")
-Tag.create!(name: "Spanish speaking")
-Tag.create!(name: "Arabic speaking")
-Tag.create!(name: "Mandarin speaking")
-Tag.create!(name: "All-boys")
-Tag.create!(name: "All-girls")
-Tag.create!(name: "Co-ed")
-Tag.create!(name: "Many teachers per class (at least 1:5")
+Tag.create(name: "Vaccinated staff", font_awesome: "house-medical")
+Tag.create(name: "Large playground", font_awesome: "baseball")
+Tag.create(name: "Nearby park", font_awesome: "tree")
+Tag.create(name: "Montessori", font_awesome: "graduation-cap")
+Tag.create(name: "Music instruction", font_awesome: "music")
+Tag.create(name: "LGBTQIA+ friendly", font_awesome: "rainbow")
+Tag.create(name: "Halal food")
+Tag.create(name: "Kosher food")
+Tag.create(name: "Allergy friendly", font_awesome: "house-carrot")
+Tag.create(name: "English speaking")
+Tag.create(name: "French speaking")
+Tag.create(name: "Spanish speaking")
+Tag.create(name: "Arabic speaking")
+Tag.create(name: "Mandarin speaking")
+Tag.create(name: "All-boys")
+Tag.create(name: "All-girls")
+Tag.create(name: "Co-ed")
+Tag.create(name: "Many teachers per class (at least 1:5")
 
 
 puts 'All seeds have been successfully created...'
