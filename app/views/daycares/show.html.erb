@@ -257,7 +257,8 @@
       </div>
       <h2 class="pt-4">Leave a Review:</h2>
           <%= simple_form_for [@daycare, @review] do |f| %>
-          <%= f.input :stars, as: :radio_buttons, collection: (1..5).each, html5: true %>
+          <%= f.label "Stars", class: "filter-font" %>
+          <%= f.select :stars, (1..5).to_a, selected: params[:stars] || 1, class: "form-control" %>
           <%= f.input :content, as: :text, html5: true %>
           <%= f.button :submit, label: "Add a Review", class: "btn btn-primary confirm-btn" %>
           <% end %>
