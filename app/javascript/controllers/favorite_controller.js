@@ -24,8 +24,6 @@ export default class extends Controller {
       this.iconTarget.classList.add('fa-regular')
       this.iconTarget.innerText = ' Add to favorites'
     }
-    // this.iconTarget.classList.remove('fa-regular')
-    // this.iconTarget.classList.add('fa-solid')
     fetch(this.linkTarget.href, {
       method: "GET"
     })
