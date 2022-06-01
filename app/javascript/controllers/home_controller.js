@@ -7,8 +7,8 @@ export default class extends Controller {
   }
 
   scroll(event) {
-    console.log("yo");
-    const test = document.getElementById("tag-scroll")
-    test.style.display = 'none';
+    const test = document.getElementById("tag-scroll");
+    console.log(test);
+    test.scrollIntoView();
   }
 }

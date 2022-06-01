@@ -18,7 +18,7 @@
 }
 
 .title-text {
-  padding-left: 200px;
+  padding-left: 150px;
 }
 
 .banner p {
@@ -85,4 +85,20 @@
   width: 8px;
   height: 28px;
   border-radius: 3px;
+}
+
+.call-to-action .confirm-btn {
+    background-color:#63AEF2 !important;
+    color: white !important;
+    border-color:#63AEF2;
+  }
+
+.call-to-action .confirm-btn:hover {
+  color:#63AEF2 !important;
+  background-color: white !important;
+  border-color:#63AEF2;
+}
+.call-to-action p {
+font-size: 22px;
+margin-left: 260px;
 }

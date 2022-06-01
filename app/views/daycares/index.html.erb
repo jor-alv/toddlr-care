@@ -5,142 +5,147 @@
     <p>Find the best daycare for your kids.</p>
   </div>
 </div> %>
-<div class="banner d-flex justify-content-between">
-<section id="stop-motion-animation"><div></div></section>
-  <div class="container d-flex flex-column title-text">
-    <h1>toddlr</h1>
-    <p>find the best daycare for your kids</p>
-  </div>
-</div>
-<% end %>
-
-
-
-<div class= 'container'>
-  <div class="tags-sticky">
-    <div class="d-flex align-items-between justify-content-between tags tags-sticky">
-      <div class="text-center">
-        <i class="fa-solid fa-house-medical"></i>
-        <p><%= link_to 'Vaccinated staff', root_path(:tag => 'Vaccinated staff') %></p>
-      </div>
-      <div class="text-center">
-        <i class="fa-solid fa-baseball"></i>
-        <p><%= link_to 'Large playground', root_path(:tag => 'Large playground') %></p>
-      </div>
-      <div class="text-center">
-        <i class="fa-solid fa-tree"></i>
-        <p><%= link_to 'Nearby park', root_path(:tag => 'Nearby park') %></p>
-      </div>
-      <div class="text-center">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <p><%= link_to 'Montessori', root_path(:tag => 'Montessori') %></p>
-      </div>
-      <div class="text-center">
-        <i class="fa-solid fa-music"></i>
-        <p><%= link_to 'Music instruction', root_path(:tag => 'Music instruction') %></p>
-      </div>
-      <div class="text-center">
-        <i class="fa-solid fa-rainbow"></i>
-        <p><%= link_to 'LGBTQIA+', root_path(:tag => 'LGBTQIA+ friendly') %></p>
-      </div>
-      <div class="text-center">
-        <i class="fa-solid fa-carrot"></i>
-        <p data-action="click->home#scroll"><%= link_to 'Allergy friendly', root_path(:tag => 'Allergy friendly') %></p>
+<div class="scroll" data-controller="home">
+  <div class="banner d-flex justify-content-between">
+  <section id="stop-motion-animation"><div></div></section>
+    <div class="container d-flex flex-column title-text">
+      <h1>toddlr</h1>
+      <p>find the best daycare for your kids</p>
+      <div class="call-to-action" data-action="click->home#scroll">
+        <p class="btn btn-primary confirm-btn">find your daycare</p>
       </div>
     </div>
-    <div class="line-break-tags mb-4"></div>
   </div>
-  <div class='row'>
-    <div class="col-2">
-      <%# <div class="d-flex justify-content-center filter-font">
-        <h2>Search options:</h2>
-      </div> %>
-      <div class="d-flex justify-content-center  filter-sticky">
-          <%= form_with url: daycares_path, method: :get, class: "search-form" do |f| %>
-        <div class="filter-bar">
-            <%= f.label "select max price", class: "filter-font"%>
-            <%= f.select :price, (0..15).to_a, selected: params[:price] || 15, class: "form-control" %>
-            <%# <%= label_tag "select opening date" %>
-            <%# <%= text_field_tag :opening, %>
-              <%# params[:opening], %>
-              <%# class: "form-control", %>
-              <%# placeholder: "Find an opening date" %>
-              <%# %>
-            <%= f.label "Available spots", class: "filter-font" %>
-            <%= f.select :opening, (1..5).to_a, selected: params[:opening] || 1, class: "form-control" %>
+  <% end %>
+
+
+
+  <div class= 'container' id="tag-scroll">
+    <div class="tags-sticky">
+      <div class="d-flex align-items-between justify-content-between tags tags-sticky">
+        <div class="text-center">
+          <i class="fa-solid fa-house-medical"></i>
+          <p><%= link_to 'Vaccinated staff', root_path(:tag => 'Vaccinated staff') %></p>
         </div>
-          <div class="d-flex justify-content-center">
-            <%= f.submit "Search", class: "btn btn-danger search-btn" %>
-          </div>
-        <% end %>
+        <div class="text-center">
+          <i class="fa-solid fa-baseball"></i>
+          <p><%= link_to 'Large playground', root_path(:tag => 'Large playground') %></p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-tree"></i>
+          <p><%= link_to 'Nearby park', root_path(:tag => 'Nearby park') %></p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <p><%= link_to 'Montessori', root_path(:tag => 'Montessori') %></p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-music"></i>
+          <p><%= link_to 'Music instruction', root_path(:tag => 'Music instruction') %></p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-rainbow"></i>
+          <p><%= link_to 'LGBTQIA+', root_path(:tag => 'LGBTQIA+ friendly') %></p>
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-carrot"></i>
+          <p data-action="click->home#scroll"><%= link_to 'Allergy friendly', root_path(:tag => 'Allergy friendly') %></p>
+        </div>
       </div>
+      <div class="line-break-tags mb-4"></div>
     </div>
-    <div class='col col-7'>
-      <div class="d-flex flex-wrap">
-        <% @daycares.each do |daycare| %>
-          <div class='col col-sm-12 p-2'>
-            <div class="card-product">
-              <img src="https://static01.nyt.com/images/2020/10/16/multimedia/par-daycare-16/par-daycare-16-superJumbo.jpg" />
-              <div class="card-product-infos flex-column d-flex justify-content-between">
-                <div class="">
-                  <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
+    <div class='row'>
+      <div class="col-2">
+        <%# <div class="d-flex justify-content-center filter-font">
+          <h2>Search options:</h2>
+        </div> %>
+        <div class="d-flex justify-content-center  filter-sticky">
+            <%= form_with url: daycares_path, method: :get, class: "search-form" do |f| %>
+          <div class="filter-bar">
+              <%= f.label "select max price", class: "filter-font"%>
+              <%= f.select :price, (0..15).to_a, selected: params[:price] || 15, class: "form-control" %>
+              <%# <%= label_tag "select opening date" %>
+              <%# <%= text_field_tag :opening, %>
+                <%# params[:opening], %>
+                <%# class: "form-control", %>
+                <%# placeholder: "Find an opening date" %>
+                <%# %>
+              <%= f.label "Available spots", class: "filter-font" %>
+              <%= f.select :opening, (1..5).to_a, selected: params[:opening] || 1, class: "form-control" %>
+          </div>
+            <div class="d-flex justify-content-center">
+              <%= f.submit "Search", class: "btn btn-danger search-btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class='col col-7'>
+        <div class="d-flex flex-wrap">
+          <% @daycares.each do |daycare| %>
+            <div class='col col-sm-12 p-2'>
+              <div class="card-product">
+                <img src="https://static01.nyt.com/images/2020/10/16/multimedia/par-daycare-16/par-daycare-16-superJumbo.jpg" />
+                <div class="card-product-infos flex-column d-flex justify-content-between">
+                  <div class="">
+                    <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
 
-                    <%# Sorry about this: %>
-                    <div class="d-flex align-items-center">
-                      <% if daycare.rating >= 1 %>
-                        <span class="fa fa-star checked"></span>
-                      <% else %>
-                        <span class="fa fa-star"></span>
-                      <% end %>
-                      <% if daycare.rating >= 2 %>
-                        <span class="fa fa-star checked"></span>
-                      <% else %>
-                        <span class="fa fa-star"></span>
-                      <% end %>
-                      <% if daycare.rating >= 3 %>
-                        <span class="fa fa-star checked"></span>
-                      <% else %>
-                        <span class="fa fa-star"></span>
-                      <% end %>
-                      <% if daycare.rating >= 4 %>
-                        <span class="fa fa-star checked"></span>
-                      <% else %>
-                        <span class="fa fa-star"></span>
-                      <% end %>
-                      <% if daycare.rating >= 5 %>
-                        <span class="fa fa-star checked"></span>
-                      <% else %>
-                        <span class="fa fa-star"></span>
-                      <% end %>
-                      <p class="ml-3 mt-1">(<%= daycare.reviews.size %>)</p>
-                    </div>
-                </div>
-                <div class="btn-tag">
-                <% daycare.tags.first(2).each do |tag|%>
-                  <p class="btn btn-outline-secondary"><%= link_to tag.name, root_path(:tag => tag.name) %></p>
-                <% end %>
-                </div>
-                <p><em><%= daycare.description[0,100] %></em></p>
-
-                <%# Replace Date.today with opening_date %>
-                <% if daycare.opening_date %>
-                  <% if daycare.opening_date.strftime("%B") == Time.now.strftime("%B")  %>
-                    <p>Availabilities: <span class="green"><strong><%= daycare.opening_date.strftime("%B") %></strong></span></p>
-                  <% else %>
-                    <p>Availabilities: <span class="red"><strong><%= daycare.opening_date.strftime("%B") %></strong></span></p>
+                      <%# Sorry about this: %>
+                      <div class="d-flex align-items-center">
+                        <% if daycare.rating >= 1 %>
+                          <span class="fa fa-star checked"></span>
+                        <% else %>
+                          <span class="fa fa-star"></span>
+                        <% end %>
+                        <% if daycare.rating >= 2 %>
+                          <span class="fa fa-star checked"></span>
+                        <% else %>
+                          <span class="fa fa-star"></span>
+                        <% end %>
+                        <% if daycare.rating >= 3 %>
+                          <span class="fa fa-star checked"></span>
+                        <% else %>
+                          <span class="fa fa-star"></span>
+                        <% end %>
+                        <% if daycare.rating >= 4 %>
+                          <span class="fa fa-star checked"></span>
+                        <% else %>
+                          <span class="fa fa-star"></span>
+                        <% end %>
+                        <% if daycare.rating >= 5 %>
+                          <span class="fa fa-star checked"></span>
+                        <% else %>
+                          <span class="fa fa-star"></span>
+                        <% end %>
+                        <p class="ml-3 mt-1">(<%= daycare.reviews.size %>)</p>
+                      </div>
+                  </div>
+                  <div class="btn-tag">
+                  <% daycare.tags.first(2).each do |tag|%>
+                    <p class="btn btn-outline-secondary"><%= link_to tag.name, root_path(:tag => tag.name) %></p>
                   <% end %>
-                <% end %>
+                  </div>
+                  <p><em><%= daycare.description[0,100] %></em></p>
+
+                  <%# Replace Date.today with opening_date %>
+                  <% if daycare.opening_date %>
+                    <% if daycare.opening_date.strftime("%B") == Time.now.strftime("%B")  %>
+                      <p>Availabilities: <span class="green"><strong><%= daycare.opening_date.strftime("%B") %></strong></span></p>
+                    <% else %>
+                      <p>Availabilities: <span class="red"><strong><%= daycare.opening_date.strftime("%B") %></strong></span></p>
+                    <% end %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class='col col-sm-3'>
-      <div class="map-column map-sticky" style="width: 100%; height: 600px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class='col col-sm-3'>
+        <div class="map-column map-sticky" style="width: 100%; height: 600px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
   </div>
