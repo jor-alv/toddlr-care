@@ -1,0 +1,55 @@
+<%# <h2>Your daycares:</h2> %>
+<div class="row">
+  <% current_user.all_favorited.each do |daycare| %>
+  <div class='col col-sm-6'>
+    <div class="card-profile mt-4 d-flex flex-column">
+        <img src= "https://www.todaysparent.com/wp-content/uploads/2016/09/daycare-germs-what-you-need-to-know-1280x960-new.jpg" class="w-100"/>
+      <div class="card-profile-infos d-flex justify-content-between">
+        <div class="d-flex flex-column align-items-between m-2">
+          <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
+          <div>
+            <% if daycare.rating >= 1 %>
+              <span class="fa fa-star checked"></span>
+            <% else %>
+              <span class="fa fa-star"></span>
+            <% end %>
+            <% if daycare.rating >= 2 %>
+              <span class="fa fa-star checked"></span>
+            <% else %>
+              <span class="fa fa-star"></span>
+            <% end %>
+            <% if daycare.rating >= 3 %>
+              <span class="fa fa-star checked"></span>
+            <% else %>
+              <span class="fa fa-star"></span>
+            <% end %>
+            <% if daycare.rating >= 4 %>
+              <span class="fa fa-star checked"></span>
+            <% else %>
+              <span class="fa fa-star"></span>
+            <% end %>
+            <% if daycare.rating >= 5 %>
+              <span class="fa fa-star checked"></span>
+            <% else %>
+              <span class="fa fa-star"></span>
+            <% end %>
+          </div>
+          <p><%= daycare.address %></p>
+          <p><em><%= daycare.description %></em></p>
+    <div data-controller="favorite" data-favorite-id-value = <%= daycare.id %>>
+      <%= link_to toggle_favorite_daycare_path(daycare), data: { favorite_target: "link", action: "favorite#toggleFavorite"} do %>
+        <% if daycare.favorited_by?(current_user) %>
+          <i data-favorite-target = "icon" class="fa-solid fa-heart"></i>
+        <% else %>
+          <i data-favorite-target = "icon" class="fa-regular fa-heart"> Add as favorites</i>
+        <% end %>
+     <% end %>
+    </div>
+        </div>
+        <div class="d-flex justify-content-end">
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
