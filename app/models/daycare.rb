@@ -6,23 +6,19 @@ class Daycare < ApplicationRecord
   has_many :tags, through: :daycare_tags
   has_many_attached :photos
   acts_as_favoritable
-  # validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/,
-  #                             message: "Please enter a valid email" }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
   pg_search_scope :search_by_name_address_price_description,
-    against: [ :name, :address, :price, :description ],
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: %i[name address price description],
+                  using: { tsearch: { prefix: true } }
 
   def rating
     rating = 0
     self.reviews.each do |review|
       rating += review.stars
     end
-    unless self.reviews.size == 0
+    unless self.reviews.size.zero?
       rating = (rating / self.reviews.size)
     end
     return rating

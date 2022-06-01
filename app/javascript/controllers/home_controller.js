@@ -13,6 +13,5 @@ export default class extends Controller {
       top: 800,
       behaviour: 'smooth'
       })
-    // test.scrollIntoView();
   }
 }
