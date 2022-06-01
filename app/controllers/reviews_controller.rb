@@ -33,8 +33,8 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:stars,
-                                    :content,
-                                    :client_id,
-                                    :daycare_id)
+                                   :content,
+                                   :client_id,
+                                   :daycare_id)
   end
 end

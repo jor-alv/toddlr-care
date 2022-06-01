@@ -25,20 +25,9 @@ class ConsultationsController < ApplicationController
     end
   end
 
-  # def my_admin_consultations
-  #   @my_client_consultations = Consultation.where(supplier: current_user)
-  #   @my_admin_consultations = current_user.consultations
-  #   @pending_requests = @my_admin_consultations.where(status:"pending")
-  #   @declined_requests = @my_admin_consultations.where(status:"declined")
-  #   @confirmed_requests = @my_admin_consultations.where(status:"confirmed")
-  #   @cancel_requests = @my_admin_consultations.where(status:"cancel")
-  #   @archived_requests = @my_admin_consultations.where(status:"archived")
-  # end
-
   def update
     @consultation = Consultation.find(params[:consultation_id])
     @consultation.update(status: consultation_params[:status].downcase)
-    # @consultation.confirmed!
     authorize @consultation
     redirect_to my_profile_path(@consultation.daycare.supplier)
   end
@@ -57,9 +46,9 @@ class ConsultationsController < ApplicationController
 
   def consultation_params
     params.require(:consultation).permit(:start_time,
-                                    :status,
-                                    :client_id,
-                                    :daycare_id,
-                                    :number_of_children)
+                                         :status,
+                                         :client_id,
+                                         :daycare_id,
+                                         :number_of_children)
   end
 end
