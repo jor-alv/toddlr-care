@@ -32,10 +32,12 @@
       </div>
     </div>
 
-
   <ul class="nav nav-tabs">
     <li class="nav">
-      <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">All Consultations</a>
+      <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#favorites" aria-current="page" id="test-favorites" href="#">Favorite Daycares</a>
+    </li>
+    <li class="nav">
+      <a class="nav-link" data-bs-toggle="tab" data-bs-target="#test" aria-current="page" id="test-tab" href="#">All Consultations</a>
     </li>
     <li>
       <a class="nav-link" data-bs-toggle="tab"  data-bs-target="#pending" aria-current="page" id="test-pending" href="#">Pending Consultations</a>
@@ -48,7 +50,8 @@
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="test" role="tabpanel"><%= render 'profiles/partials/client-tabs/all-tab'%></div>
+    <div class="tab-pane fade show active" id="favorites" role="tabpanel"><%= render 'profiles/partials/client-tabs/favorites-tab'%></div>
+    <div class="tab-pane fade" id="test" role="tabpanel"><%= render 'profiles/partials/client-tabs/all-tab'%></div>
     <div class="tab-pane fade" id="pending" role="tabpanel"> <%= render 'profiles/partials/client-tabs/pending-tab'%></div>
     <div class="tab-pane fade" id="upcoming" role="tabpanel"><%= render 'profiles/partials/client-tabs/confirmed-tab'%></div>
     <div class="tab-pane fade" id="reviews" role="tabpanel"><%= render 'profiles/partials/client-tabs/reviews-tab'%></div>
