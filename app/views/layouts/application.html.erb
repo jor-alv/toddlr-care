@@ -7,6 +7,12 @@
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/ea809bf82d.js" crossorigin="anonymous"></script>
 
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+
     <link href="//db.onlinewebfonts.com/c/9da41c570d5a221cb2486d78769a076d?family=Neue+Helvetica" rel="stylesheet" type="text/css"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

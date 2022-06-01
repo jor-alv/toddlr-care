@@ -1,11 +1,29 @@
+<div class="banner-profile" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(
+  <% if @user.photos.empty? %>
+          <%= "https://i0.wp.com/jayfeitlinger.com/wp-content/uploads/2017/04/happy-family-e1504619253464.jpg?fit=1500%2C855&ssl=1" %>
+  <% else %>
+          <%= @user.photos[0]%>
+  <% end %>
+  );">
+
+  <div class="container">
+    <h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
+  </div>
+</div>
+
 <div class="container">
-  <h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
-
-  <%# Display profile photo here %>
-
-  <h2><%=@user.first_name%>'s bio:</h2>
-  <p><em><%= @user.bio %></em></p>
-
+  <div class="row mt-4">
+    <div class="col-lg-12">
+      <div class="card-trip line-break"></div>
+        <div class="card-trip mt-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <h2><%=@user.first_name%>'s bio:</h2>
+          </div>
+          <p><em><%= @user.bio %></em></p>
+          <p class="line-break pb-4"><em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde</em></p>
+        </div>
+      </div>
+    </div>
   <ul class="nav nav-tabs">
     <li class= "nav">
       <a class="nav-link active" data-bs-toggle="tab"  data-bs-target="#reviews" aria-current="page" id="test-reviews" href="#"><%=@user.first_name%>'s Reviews</a>
