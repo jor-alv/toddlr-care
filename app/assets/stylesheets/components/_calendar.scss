@@ -1,7 +1,17 @@
 .simple-calendar {
   table {
     min-height: 80vh;
+    border-color:#FF6053;
   }
+
+  .day {
+    // color: #63AEF2 !important;
+  }
+  tr {
+    border-radius: 12px;
+    border-color:#FF6053;
+  }
+
   .today {
     background-color: #FAF3DD;
   }

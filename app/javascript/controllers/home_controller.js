@@ -9,6 +9,10 @@ export default class extends Controller {
   scroll(event) {
     const test = document.getElementById("tag-scroll");
     console.log(test);
-    test.scrollIntoView();
+    window.scroll({
+      top: 800,
+      behaviour: 'smooth'
+      })
+    // test.scrollIntoView();
   }
 }
