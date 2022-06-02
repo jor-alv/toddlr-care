@@ -30,7 +30,7 @@ class DaycaresController < ApplicationController
         lat: daycare.latitude,
         lng: daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: daycare }),
-        image_url: helpers.asset_url('ToddlrFox.png')
+        image_url: helpers.asset_url('map-marker-toddlr-fox.png')
       }
     end
 
@@ -85,7 +85,7 @@ class DaycaresController < ApplicationController
         lat: @daycare.latitude,
         lng: @daycare.longitude,
         info_window: render_to_string(partial: "info_window", locals: { daycare: @daycare }),
-        image_url: helpers.asset_url('ToddlrFox.png')
+        image_url: helpers.asset_url('map-marker-toddlr-fox.png')
       }]
   end
 
