@@ -67,7 +67,6 @@ User.create(category: 1,
             company_name: '',
             email: "kim_coquilla@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "Hey, my name is Kim and I have a lot of kids who need to go to daycares!")
 
 kim_coquilla = User.last
@@ -80,7 +79,6 @@ User.create(category: 1,
             company_name: '',
             email: "yann_bouhadana@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "Hello, my name is Yann. My kids need a place to stay while I go off to work.")
 
 yann_bouhadana = User.last
@@ -93,7 +91,6 @@ User.create(category: 1,
             company_name: '',
             email: "claudette_smith@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "Hello, I'm Claudette this app is amazing!")
 
 claudette_smith = User.last
@@ -106,7 +103,6 @@ User.create(category: 1,
             company_name: '',
             email: "john_littlewood@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "Hey, I'm John and I have twins that need a nursery asap!")
 
 john_littlewood = User.last
@@ -155,7 +151,6 @@ User.create(category: 2,
             company_name: 'Prison Break Daycares',
             email: "jorge_alvarez@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "Me and my wife have been teaching children for almost 40 years. Now we have the luxury to run our own daycare business, how neat!")
 
 jorge_alvarez = User.last
@@ -168,7 +163,6 @@ User.create(category: 2,
             company_name: 'Shorties Daycares',
             email: "james_campbell@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "My name is James and I'm here to make your life a lot easier!")
 
 james_campbell = User.last
@@ -181,7 +175,6 @@ User.create(category: 2,
             company_name: 'Hufflepuff Daycares',
             email: "hufflepuff_daycares@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "I have 4 kids and I fell in love with the whole daycare atmosphere, so here I am!")
 
 hufflepuff_daycares = User.last
@@ -194,7 +187,6 @@ User.create(category: 2,
             company_name: 'Le Wagon Daycares',
             email: "le_wagon_daycares@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "All you need is code. Change your life, learn to code!")
 
 le_wagon_daycares = User.last
@@ -207,7 +199,6 @@ User.create(category: 2,
             company_name: 'Walmart Daycares',
             email: "walmart_daycares@email.com",
             password: "123456",
-            address: '5333 Casgrain Avenue, Montreal, Canada',
             bio: "A premier early care and education provider which respects the child, encourages learning through exploration, and supports the family within a creative and nurturing environment.")
 
 walmart_daycares = User.last
