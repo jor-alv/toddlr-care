@@ -7,7 +7,7 @@
         <div class="card-profile-infos d-flex justify-content-between">
           <div class="d-flex flex-column align-items-between m-2">
             <h2><%= link_to daycare.name, daycare_path(daycare) %></h2>
-              <div>
+              <div class="d-flex align-items-center">
                 <% if daycare.rating >= 1 %>
                   <span class="fa fa-star checked"></span>
                 <% else %>
@@ -33,9 +33,12 @@
                 <% else %>
                   <span class="fa fa-star"></span>
                 <% end %>
+                <p class="ml-3 mt-1">(<%= daycare.reviews.size %>)</p>
               </div>
-            <p><%= daycare.address %></p>
-            <p><em><%= daycare.description %></em></p>
+              <div class="client-consultation-text">
+                <p class="pt-1"><em><%= daycare.description %></em></p>
+                <p class="pt-1"><%= daycare.address %></p>
+              </div>
           </div>
           <div class="d-flex justify-content-end">
             <div>

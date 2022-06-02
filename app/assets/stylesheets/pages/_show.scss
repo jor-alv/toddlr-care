@@ -130,3 +130,25 @@
 .form-control {
   background-color: rgba(241, 241, 241,0.8);
 }
+
+.favourite-show a {
+  font-size: 22px !important;
+  color: #FF6053;
+  text-decoration: none;
+  font-family: 'Quicksand';
+  padding-bottom: 16px;
+}
+
+
+.add-to-favourites {
+  padding-bottom: 4px;
+  padding-right: 20px;
+}
+
+.add-to-favourites p {
+  font-size: 14px;
+  // color: #63AEF2;
+  // padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 0px;
+}
