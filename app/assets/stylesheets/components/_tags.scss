@@ -53,3 +53,32 @@
 .tags a:hover {
   color: blue;
 }
+
+
+.clear-tag p {
+  padding-right: 4px;
+  font-size: 14px;
+}
+
+.clear-tag a:hover {
+  color: white;
+}
+
+.clear-filter-tag p {
+  padding-right: 6px;
+  padding-left: 6px;
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.clear-filter-tag {
+  margin-left: 8px;
+}
+
+.clear-filter-tag a {
+  text-decoration: none;
+}
+
+.clear-filter-tag:hover a {
+  color: white;
+}

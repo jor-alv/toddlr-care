@@ -5,10 +5,17 @@ class DaycaresController < ApplicationController
 
   def index
     @tag_scroll = true
+    @clear_scroll = true
+    @clear_tag = true
+    @clear_filter = true
     if params[:query].present?
       @tag_scroll = false
       @daycares = policy_scope(Daycare).search_by_name_address_price_description(params[:query])
+    elsif params[:clear] == "clear"
+      @clear_scroll = false
+      @daycares = policy_scope(Daycare)
     elsif params[:tag].present?
+      @clear_tag = false
       @tag_scroll = false
       daycares_filtered = []
       tag = Tag.where(name: params[:tag])
@@ -27,13 +34,19 @@ class DaycaresController < ApplicationController
       }
     end
 
-    if params[:price].present? && params[:opening].present?
+    if params[:clear_filter] == "clear"
+      @tag_scroll = false
+      @daycares = policy_scope(Daycare)
+    elsif params[:price].present? && params[:opening].present?
+      @clear_filter = false
       @tag_scroll = false
       @daycares = Daycare.where("price <= ?", params[:price].to_i).where("number_of_openings >= ?", params[:opening].to_i)
     elsif params[:opening].present?
+      @clear_filter = false
       @tag_scroll = false
       @daycares = Daycare.where("number_of_openings >= ?", params[:opening].to_i)
     elsif params[:price].present?
+      @clear_filter = false
       @tag_scroll = false
       @daycares = Daycare.where("price <= ?", params[:price].to_i)
     end
