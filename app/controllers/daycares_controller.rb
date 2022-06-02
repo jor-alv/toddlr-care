@@ -18,8 +18,9 @@ class DaycaresController < ApplicationController
       @clear_tag = false
       @tag_scroll = false
       daycares_filtered = []
-      tag = Tag.where(name: params[:tag])
-      daycare_tags = DaycareTag.where(tag: tag)
+      @tag = Tag.where(name: params[:tag])
+      daycare_tags = DaycareTag.where(tag: @tag)
+      @tag = @tag.first.name
       @daycares = policy_scope(Daycare).where(id: daycare_tags.pluck(:daycare_id))
     else
       @daycares = policy_scope(Daycare)

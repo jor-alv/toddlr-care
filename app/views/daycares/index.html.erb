@@ -96,7 +96,7 @@
       <% if @clear_tag == false %>
         <div class="">
           <div class="btn-tag btn btn-outline-secondary d-inline-flex align-items-center clear-tag pt-1 pb-1">
-            <p class="m-0 pr-1"><%= @daycares.first.tags.first.name %></p>
+            <p class="m-0 pr-1"><%= @tag %></p>
             <%= link_to root_path(:clear => "clear") do %>
               <i class="fa-solid fa-circle-xmark ">
               </i>
