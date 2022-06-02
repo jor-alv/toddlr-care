@@ -22,6 +22,10 @@
   min-height: 100vh;
 }
 
+.content-wrap {
+  padding-bottom: 80px;    /* Footer height */
+}
+
 body {
   background-color: white;
   color: rgb(50,50,50)

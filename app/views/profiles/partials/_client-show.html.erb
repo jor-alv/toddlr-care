@@ -8,7 +8,7 @@
     <% if current_user.photos.empty? %>
             <%= "https://i0.wp.com/jayfeitlinger.com/wp-content/uploads/2017/04/happy-family-e1504619253464.jpg?fit=1500%2C855&ssl=1" %>
     <% else %>
-            <%= current_user.photos[0]%>
+            <%= "https://i0.wp.com/jayfeitlinger.com/wp-content/uploads/2017/04/happy-family-e1504619253464.jpg?fit=1500%2C855&ssl=1" %>
     <% end %>
     );">
 
@@ -24,7 +24,9 @@
         <div class="card-trip mt-4">
           <div class="d-flex justify-content-between align-items-start">
             <h2 class="pink">Your bio:</h2>
-            <%= link_to "Edit profile", edit_my_profile_path(@user), class: "btn btn-primary confirm-btn" %>
+            <%= link_to edit_my_profile_path(@user), data: {confirm: 'Are you sure you want to edit this daycare?'} do %>
+            <i class="fa-solid fa-pencil blue"></i>
+          <% end %>
           </div>
           <p class="line-break pb-4"><em><%= current_user.bio %></em></p>
           <%# <p class="line-break pb-4"><em>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde</em></p> %>
