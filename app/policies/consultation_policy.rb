@@ -21,6 +21,6 @@ class ConsultationPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin
-    record.daycare.supplier == user || user.admin
+    record.daycare.supplier == user || record.client
   end
 end

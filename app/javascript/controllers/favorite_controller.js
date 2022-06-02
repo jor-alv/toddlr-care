@@ -2,7 +2,7 @@ import { post } from "jquery";
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["link", "icon"];
+  static targets = ["link", "icon", "text"];
   static values = {id: Number}
 
   connect() {
@@ -22,10 +22,16 @@ export default class extends Controller {
     } else {
       this.iconTarget.classList.remove('fa-solid')
       this.iconTarget.classList.add('fa-regular')
-      this.iconTarget.innerText = ' Add to favorites'
+      // this.iconTarget.innerText = ' Add to favorites'
     }
     fetch(this.linkTarget.href, {
       method: "GET"
     })
+  }
+
+  toggleText(event) {
+    event.preventDefault();
+
+    this.textTarget.classList.toggle("d-none")
   }
 }

@@ -7,7 +7,7 @@
       <div class="card-profile-infos d-flex justify-contents-between">
         <div class="d-flex flex-column align-items-between m-2">
           <h2><%= link_to consultation.daycare.name, daycare_path(consultation.daycare) %></h2>
-            <div>
+            <div class="d-flex align-items-center">
               <% if consultation.daycare.rating >= 1 %>
                 <span class="fa fa-star checked"></span>
               <% else %>
@@ -33,9 +33,18 @@
               <% else %>
                 <span class="fa fa-star"></span>
               <% end %>
+              <p class="ml-3 mt-1">(<%= consultation.daycare.reviews.size %>)</p>
             </div>
-          <p class="mt-0"><%= consultation.start_time %></p>
-          <p>Status:<%= consultation.status %></p>
+          <div class="client-consultation-text">
+            <p class="mt-0"><%= consultation.start_time.strftime("%A, %B %d, %Y ") %> at <%= "#{consultation.start_time.strftime("%I")}:#{consultation.start_time.strftime("%M,%P")}"%></p>
+            <% if consultation.status == "confirmed" %>
+              <p>Status: <span class="green"><strong><%= consultation.status.capitalize %></strong></span></p>
+            <% elsif consultation.status == "cancelled" || consultation.status == "declined" %>
+              <p>Status: <span class="red"><strong><%= consultation.status.capitalize %></strong></span></p>
+            <% elsif consultation.status == "pending" %>
+              <p>Status: <span class="blue"><strong><%= consultation.status.capitalize %></strong></span></p>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
