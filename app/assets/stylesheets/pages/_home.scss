@@ -1,10 +1,10 @@
 // Specific CSS for your home-page
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 30px 0;
+  // background-size: cover;
+  // background-position: center;
+  // padding: 30px 0;
   height: 95vh;
-  width: 100%;
+  width: 95%;
   border-bottom: 1px solid rgba(80,80,80,0.2);
 }
 
@@ -14,11 +14,15 @@
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 150px;
   font-weight: 300;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 
 .title-text {
-  padding-left: 150px;
+  padding-right: 80px;
+  // width: 50%;
+  margin-bottom: auto;
+  // display: flex;
+  // justify-content: end ;
 }
 
 .banner p {
@@ -26,7 +30,7 @@
   color: #63AEF2;
   // opacity: .7;
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-left: 86px;
+  // margin-left: 86px;
 }
 
 .map-column {
@@ -107,7 +111,7 @@
 }
 .call-to-action p {
 font-size: 22px;
-margin-left: 260px;
+// margin-left: 260px;
 }
 
 .availabilities-text p {
@@ -116,4 +120,8 @@ margin-left: 260px;
 
 .availabilities-text-favourites p {
   font-size: 16px;
+}
+
+.banner .col-6{
+  width:45% !important;
 }

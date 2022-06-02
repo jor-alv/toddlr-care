@@ -57,12 +57,12 @@
           <%= link_to toggle_favorite_daycare_path(@daycare), data: { favorite_target: "link", action: "favorite#toggleFavorite"} do %>
             <% if @daycare.favorited_by?(current_user) %>
             <div class="d-flex align-items-center add-to-favourites">
-              <p data-favorite-target = "text" class="d-none">Add to favorites</p>
+              <p data-favorite-target = "text" data-action="click->favorite#toggleText" class="d-none">Add to favorites</p>
               <i data-favorite-target = "icon" data-action="click->favorite#toggleText" class="fa-solid fa-heart"></i>
             </div>
             <% else %>
             <div class="d-flex align-items-center add-to-favourites">
-              <p data-favorite-target = "text" class="">Add to favorites</p>
+              <p data-favorite-target = "text" data-action="click->favorite#toggleText" class="">Add to favorites</p>
               <i data-favorite-target = "icon" data-action="click->favorite#toggleText" class="fa-regular fa-heart"></i>
             </div>
             <% end %>
