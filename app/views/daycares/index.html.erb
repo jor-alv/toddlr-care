@@ -109,7 +109,11 @@
             <div class='col col-sm-12 p-2'>
               <div class="card-product index-card d-flex justify-content-between">
               <div class="d-flex justify-content-start">
-                <img src="https://static01.nyt.com/images/2020/10/16/multimedia/par-daycare-16/par-daycare-16-superJumbo.jpg" />
+                <% if daycare.photos.present?  %>
+                  <img src="<%= cl_image_path(daycare.photos[0].key)%>" alt="">
+                <% else %>
+                  <img src="https://www.tnrl.ca/wp-content/uploads/sites/2/2021/10/Daycare-Storytime-Web-Page.jpg" alt="">
+                <% end %>
                 <div class="d-flex justify-content-between">
                   <div class="card-product-infos flex-column d-flex justify-content-between">
                     <div class="">
