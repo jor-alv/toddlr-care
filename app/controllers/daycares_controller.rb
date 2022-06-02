@@ -13,10 +13,7 @@ class DaycaresController < ApplicationController
       daycares_filtered = []
       tag = Tag.where(name: params[:tag])
       daycare_tags = DaycareTag.where(tag: tag)
-      daycare_tags.each do |dc_tag|
-        daycares_filtered << policy_scope(Daycare).where(id: dc_tag.daycare_id)
-      end
-      @daycares = daycares_filtered[0]
+      @daycares = policy_scope(Daycare).where(id: daycare_tags.pluck(:daycare_id))
     else
       @daycares = policy_scope(Daycare)
     end
