@@ -193,205 +193,185 @@ vanessa_lynch = User.last
 
 puts 'Creating daycares...'
 
-# 1. Le Wagon Daycare
+# 1. Happy Faces Daycare
 
-Daycare.create(supplier: le_wagon_daycares,
-               name: 'Le Wagon Daycare',
-               email: 'daycare@lewagon.com',
-               phone_number: '1(514)447-9576',
-               address: '5333 Casgrain Avenue, Montreal, Quebec, Canada',
-               price: 7,
+Daycare.create(supplier: madison_moore,
+               name: 'Happy Faces Daycare',
+               email: 'info@happyfaces.com',
+               phone_number: '1(514)413-8519',
+               address: "2050 Bd Monseigneur-Langlois, Salaberry-de-Valleyfield, Quebec, Canada",
+               price: 8,
                rating: 4,
                opening_date: Time.now,
-               description: "All you need is code. Change your life, learn to code!",
-               number_of_openings: 1)
+               description: "Happy Faces Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 6)
 
-le_wagon_daycare = Daycare.last
+happy_faces_daycare = Daycare.last
 
-# 2. Prison Break Daycare
+# 2. Little Learners Academy
 
 Daycare.create(supplier: jorge_alvarez,
+               name: 'Little Learners Academy',
+               email: 'info@littlelearners.com',
+               phone_number: '1(514)495-7435',
+               address: "5400 Rue Jean-Talon Ouest, Montreal, Quebec, Canada",
+               price: 15,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Little Learners Academy is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 4)
+
+little_learners_academy = Daycare.last
+
+# 3. Growing Sprouts Daycare
+
+Daycare.create(supplier: madison_moore,
+               name: 'Growing Sprouts Daycare',
+               email: 'info@growingsprouts.com',
+               phone_number: '1(514)561-4219',
+               address: "3588 Rue Goyer, Montreal, Quebec, Canada",
+               price: 14,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Growing Sprouts Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 2)
+
+growing_sprouts_daycare = Daycare.last
+
+# 4. Bright Minds Academy
+
+Daycare.create(supplier: jorge_alvarez,
+               name: 'Bright Minds Academy',
+               email: 'info@brightminds.com',
+               phone_number: '1(514)855-6613',
+               address: "7351 Jean-Desprez, Montreal, Quebec, Canada",
+               price: 15,
+               rating: 4,
+               opening_date: Time.now,
+               description: "Bright Minds Academy is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 3)
+
+bright_minds_academy = Daycare.last
+
+# 5. Kids Castle Pre-School
+
+Daycare.create(supplier: alexandra_watson,
+               name: 'Kids Castle Pre-School',
+               email: 'info@kidscastle.com',
+               phone_number: '1(514)325-9115',
+               address: "1569 Rue Dudemaine, Montreal, Quebec, Canada",
+               price: 6,
+               rating: 2,
+               opening_date: Time.now,
+               description: "Kids Castle Pre-School is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 3)
+
+kids_castle_preschool = Daycare.last
+
+# 6. Tiny Blessings Daycare
+
+Daycare.create(supplier: sophia_owens,
+               name: 'Tiny Blessings Daycare',
+               email: 'info@tinyblessings.com',
+               phone_number: '1(514)453-3371',
+               address: "229 Rue Danis, Salaberry-de-Valleyfield, Quebec, Canada",
+               price: 8,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Tiny Blessings Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 5)
+
+tiny_blessings_daycare = Daycare.last
+
+# 7. Giraffe Daycare
+
+Daycare.create(supplier: vanessa_lynch,
+               name: 'Giraffe Daycare',
+               email: 'info@giraffe.com',
+               phone_number: '1(514)411-3861',
+               address: "9175 Bd Perras, Montreal, Quebec, Canada",
+               price: 9,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Giraffe Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 1)
+
+giraffe_daycare = Daycare.last
+
+# 8. Little Apple Academy
+
+Daycare.create(supplier: haley_spencer,
+               name: 'Little Apple Academy',
+               email: 'info@littleapple.com',
+               phone_number: '1(514)344-5773',
+               address: "195 Boul Hymus, Pointe-Claire, Quebec, Canada",
+               price: 8,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Little Apple Academy is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 1)
+
+little_apple_academy = Daycare.last
+
+# 9. Teddy Bear Daycare
+
+Daycare.create(supplier: vanessa_lynch,
+               name: 'Teddy Bear Daycare',
+               email: 'info@teddybear.com',
+               phone_number: '1(514)681-7319',
+               address: "3163 Rue Fleury est, Montreal, Quebec, Canada",
+               price: 9,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Teddy Bear Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 1)
+
+teddy_bear_daycare = Daycare.last
+
+# 10. Growing Tree Academy
+
+Daycare.create(supplier: haley_spencer,
+               name: 'Growing Tree Academy',
+               email: 'info@growingtree.com',
+               phone_number: '1(514)153-6648',
+               address: "395 rue Cherrier, Montreal, Quebec, Canada",
+               price: 8,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Growing Tree Academy is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 1)
+
+growing_tree_academy = Daycare.last
+
+# 11. Happy Trails Daycare
+
+Daycare.create(supplier: vanessa_lynch,
+               name: 'Happy Trails Daycare',
+               email: 'info@happytrails.com',
+               phone_number: '1(514)366-4128',
+               address: "3250 rue Sainte-Catherine Est, Montreal, Quebec, Canada",
+               price: 9,
+               rating: 3,
+               opening_date: Time.now,
+               description: "Happy Trails Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
+               number_of_openings: 1)
+
+happy_trails_daycare = Daycare.last
+
+# 12. Prison Break Daycare
+
+Daycare.create(supplier: james_campbell,
                name: 'Prison Break Daycare',
-               email: 'daycare@prisonbreak.com',
-               phone_number: '1(514)447-8776',
+               email: 'info@prisonbreak.com',
+               phone_number: '1(514)265-8176',
                address: '565 Rue des Violettes, Salaberry-de-Valleyfield, Quebec, Canada',
                price: 10,
                rating: 5,
                opening_date: Time.now,
-               description: "Here, your child will develop their personality, their best mind and most important of all, how to escape prison.",
-               number_of_openings: 0)
+               description: "At Prison Break Daycares, we aim to introduce your children to a range of technologies in order to address the needs of an ever-changing society, as well as to enthusiastically and steadily train them for the more formal world of elementary school. Curiosity is the main catalyst of information learning. At Prison Break Daycares we aim for a superior educational environment that fosters your children’s sense of interest through community explorations and constructive participatory learning that encourage mutual connection and productive growth, working hand in hand with parents. Here, your child will develop their personality, their best mind and most important of all, how to escape prison.",
+               number_of_openings: 9)
 
 prison_break_daycare = Daycare.last
-
-# 3. Walmart Daycare 1
-
-Daycare.create(supplier: walmart_daycares,
-               name: 'Walmart Daycare 1',
-               email: 'daycare1@walmart.com',
-               phone_number: '1(514)447-4576',
-               address: '2050 Bd Monseigneur-Langlois, Salaberry-de-Valleyfield, Quebec, Canada',
-               price: 4,
-               rating: 2,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 2)
-
-walmart_daycare_1 = Daycare.last
-
-# 4. Shorties Daycare 1
-
-Daycare.create(supplier: james_campbell,
-               name: 'Shorties Daycare 1',
-               email: 'daycare1@shorties.com',
-               phone_number: '1(514)447-4590',
-               address: '229 Rue Danis, Salaberry-de-Valleyfield, Quebec, Canada',
-               price: 6,
-               rating: 3,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 1)
-
-shorties_daycare_1 = Daycare.last
-
-# 5. Walmart Daycare 2
-
-Daycare.create(supplier: walmart_daycares,
-               name: 'Walmart Daycare 2',
-               email: 'daycare2@walmart.com',
-               phone_number: '1(514)447-1376',
-               address: '195 Boul Hymus, Pointe-Claire, Quebec, Canada',
-               price: 4,
-               rating: 2,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 2)
-
-walmart_daycare_2 = Daycare.last
-
-# 6. Walmart Daycare 3
-
-Daycare.create(supplier: walmart_daycares,
-               name: 'Walmart Daycare 3',
-               email: 'daycare3@walmart.com',
-               phone_number: '1(514)447-4500',
-               address: '5400 Rue Jean-Talon Ouest, Montreal, Quebec, Canada',
-               price: 4,
-               rating: 2,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 2)
-
-walmart_daycare_3 = Daycare.last
-
-# 7. Shorties Daycare 2
-
-Daycare.create(supplier: james_campbell,
-               name: 'Shorties Daycare 2',
-               email: 'daycare2@shorties.com',
-               phone_number: '1(514)447-4588',
-               address: '3588 Rue Goyer, Montreal, Quebec, Canada',
-               price: 4,
-               rating: 2,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 2)
-
-shorties_daycare_2 = Daycare.last
-
-# 8. Shorties Daycare 3
-
-Daycare.create(supplier: james_campbell,
-               name: 'Shorties Daycare 3',
-               email: 'daycare3@shorties.com',
-               phone_number: '1(514)447-4501',
-               address: '1569 Rue Dudemaine, Montreal, Quebec, Canada',
-               price: 4,
-               rating: 2,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 2)
-
-shorties_daycare_3 = Daycare.last
-
-# 9. Hufflepuff Daycare
-
-Daycare.create(supplier: hufflepuff_daycares,
-               name: 'Hufflepuff Daycare',
-               email: 'daycare@hufflepuff.com',
-               phone_number: '1(514)447-4511',
-               address: '9175 Bd Perras, Montreal, Quebec, Canada',
-               price: 8,
-               rating: 4,
-               opening_date: Time.now,
-               description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
-               number_of_openings: 1)
-
-hufflepuff_daycare = Daycare.last
-
-# # 10. daycare_10
-
-# Daycare.create(supplier: 'Stephane Racine',
-#                name: 'Kiddy Klubhouse',
-#                address: '1680 Rue St-Clare',
-#                price: 125,
-#                rating: 4.2,
-#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
-#                number_of_openings: 2,
-#                opening_date: Time.now)
-
-# kiddy_klubhouse_1 = Daycare.last
-
-# # 11. daycare_11
-
-# Daycare.create(supplier: 'Stephane Racine',
-#                name: 'Kiddy Klubhouse',
-#                address: '2313 Saint-Catherine St W',
-#                price: 275,
-#                rating: 4.4,
-#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
-#                number_of_openings: 2,
-#                opening_date: Time.now)
-
-# kiddy_klubhouse_2 = Daycare.last
-
-# # 12. daycare_12
-
-# Daycare.create(supplier: 'Stephane Racine',
-#                name: 'Kiddy Klubhouse',
-#                address: '601 Biscayne Blvd, Miami, FL 33132',
-#                price: 350,
-#                rating: 4.8,
-#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
-#                number_of_openings: 1,
-#                opening_date: Time.now)
-
-# kiddy_klubhouse_3 = Daycare.last
-
-# # 13. daycare_13
-
-# Daycare.create(supplier: 'Emilie Ware',
-#                name: 'Itty Bitties Daycare',
-#                address: '1321 Saint-Catherine St W',
-#                price: 200,
-#                rating: 3.8,
-#                description: "Our mission is to provide your child with an unsurpassed daycare experience.",
-#                number_of_openings: 6,
-#                opening_date: Time.now)
-
-# itty_bitties_daycare_1 = Daycare.last
-
-# # 14. daycare_14
-
-# Daycare.create(supplier: 'Emilie Ware',
-#                name: 'Itty Bitties Daycare',
-#                address: '5333 Casgrain Avenue',
-#                price: 150,
-#                rating: 4.0,
-#                description: "Our mission is to provide your child with an unsurpassed daycare experience.",
-#                number_of_openings: 3,
-#                opening_date: Time.now)
-
-# itty_bitties_daycare_2 = Daycare.last
 
 # #
 # CREATING REVIEWS
@@ -750,5 +730,200 @@ Tag.create(name: "All-girls")
 Tag.create(name: "Co-ed")
 Tag.create(name: "Many teachers per class (at least 1:5")
 
-
 puts 'All seeds have been successfully created...'
+
+#
+# Possible additional info
+
+# Montreal Addresses
+
+# 4043 rue Ontario Est, Montreal, Quebec, Canada
+# 9155 rue Saint Hubert, Montreal, Quebec, Canada
+# 4653 Place Chénier, Laval, Quebec, Canada
+
+# # Other daycares
+
+# # 2. Le Wagon Daycare
+
+# Daycare.create(supplier: le_wagon_daycares,
+#                name: 'Le Wagon Daycare',
+#                email: 'daycare@lewagon.com',
+#                phone_number: '1(514)447-9576',
+#                address: '',
+#                price: 7,
+#                rating: 4,
+#                opening_date: Time.now,
+#                description: "All you need is code. Change your life, learn to code!",
+#                number_of_openings: 1)
+
+# le_wagon_daycare = Daycare.last
+
+# # 3. Walmart Daycare 1
+
+# Daycare.create(supplier: walmart_daycares,
+#                name: 'Walmart Daycare 1',
+#                email: 'daycare1@walmart.com',
+#                phone_number: '1(514)447-4576',
+#                address: '',
+#                price: 4,
+#                rating: 2,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 2)
+
+# walmart_daycare_1 = Daycare.last
+
+# # 4. Shorties Daycare 1
+
+# Daycare.create(supplier: james_campbell,
+#                name: 'Shorties Daycare 1',
+#                email: 'daycare1@shorties.com',
+#                phone_number: '1(514)447-4590',
+#                address: '',
+#                price: 6,
+#                rating: 3,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 1)
+
+# shorties_daycare_1 = Daycare.last
+
+# # 5. Walmart Daycare 2
+
+# Daycare.create(supplier: walmart_daycares,
+#                name: 'Walmart Daycare 2',
+#                email: 'daycare2@walmart.com',
+#                phone_number: '1(514)447-1376',
+#                address: '',
+#                price: 4,
+#                rating: 2,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 2)
+
+# walmart_daycare_2 = Daycare.last
+
+# # 6. Walmart Daycare 3
+
+# Daycare.create(supplier: walmart_daycares,
+#                name: 'Walmart Daycare 3',
+#                email: 'daycare3@walmart.com',
+#                phone_number: '1(514)447-4500',
+#                address: '',
+#                price: 4,
+#                rating: 2,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 2)
+
+# walmart_daycare_3 = Daycare.last
+
+# # 7. Shorties Daycare 2
+
+# Daycare.create(supplier: james_campbell,
+#                name: 'Shorties Daycare 2',
+#                email: 'daycare2@shorties.com',
+#                phone_number: '1(514)447-4588',
+#                address: '',
+#                price: 4,
+#                rating: 2,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 2)
+
+# shorties_daycare_2 = Daycare.last
+
+# # 8. Shorties Daycare 3
+
+# Daycare.create(supplier: james_campbell,
+#                name: 'Shorties Daycare 3',
+#                email: 'daycare3@shorties.com',
+#                phone_number: '1(514)447-4501',
+#                address: '',
+#                price: 4,
+#                rating: 2,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 2)
+
+# shorties_daycare_3 = Daycare.last
+
+# # 9. Hufflepuff Daycare
+
+# Daycare.create(supplier: hufflepuff_daycares,
+#                name: 'Hufflepuff Daycare',
+#                email: 'daycare@hufflepuff.com',
+#                phone_number: '1(514)447-4511',
+#                address: '',
+#                price: 8,
+#                rating: 4,
+#                opening_date: Time.now,
+#                description: "Our mission is to serve the child in a loving, nurturing and stimulating environment.",
+#                number_of_openings: 1)
+
+# hufflepuff_daycare = Daycare.last
+
+# # 10. daycare_10
+
+# Daycare.create(supplier: 'Stephane Racine',
+#                name: 'Kiddy Klubhouse',
+#                address: '1680 Rue St-Clare',
+#                price: 125,
+#                rating: 4.2,
+#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
+#                number_of_openings: 2,
+#                opening_date: Time.now)
+
+# kiddy_klubhouse_1 = Daycare.last
+
+# # 11. daycare_11
+
+# Daycare.create(supplier: 'Stephane Racine',
+#                name: 'Kiddy Klubhouse',
+#                address: '2313 Saint-Catherine St W',
+#                price: 275,
+#                rating: 4.4,
+#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
+#                number_of_openings: 2,
+#                opening_date: Time.now)
+
+# kiddy_klubhouse_2 = Daycare.last
+
+# # 12. daycare_12
+
+# Daycare.create(supplier: 'Stephane Racine',
+#                name: 'Kiddy Klubhouse',
+#                address: '601 Biscayne Blvd, Miami, FL 33132',
+#                price: 350,
+#                rating: 4.8,
+#                description: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence.",
+#                number_of_openings: 1,
+#                opening_date: Time.now)
+
+# kiddy_klubhouse_3 = Daycare.last
+
+# # 13. daycare_13
+
+# Daycare.create(supplier: 'Emilie Ware',
+#                name: 'Itty Bitties Daycare',
+#                address: '1321 Saint-Catherine St W',
+#                price: 200,
+#                rating: 3.8,
+#                description: "Our mission is to provide your child with an unsurpassed daycare experience.",
+#                number_of_openings: 6,
+#                opening_date: Time.now)
+
+# itty_bitties_daycare_1 = Daycare.last
+
+# # 14. daycare_14
+
+# Daycare.create(supplier: 'Emilie Ware',
+#                name: 'Itty Bitties Daycare',
+#                address: '5333 Casgrain Avenue',
+#                price: 150,
+#                rating: 4.0,
+#                description: "Our mission is to provide your child with an unsurpassed daycare experience.",
+#                number_of_openings: 3,
+#                opening_date: Time.now)
+
+# itty_bitties_daycare_2 = Daycare.last
