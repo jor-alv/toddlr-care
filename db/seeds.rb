@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # DESTROYING PREVIOUS SEEDS
 
 puts 'Previous seeds are being destroyed...'
@@ -231,6 +233,7 @@ Daycare.create(supplier: madison_moore,
                number_of_openings: 6)
 
 happy_faces_daycare = Daycare.last
+happy_faces_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203882/production/4lx7x38uk9syur87w6xigp44kuls.jpg'), filename: '4lx7x38uk9syur87w6xigp44kuls.jpg')
 
 # 2. Little Learners Academy
 
@@ -246,6 +249,7 @@ Daycare.create(supplier: jorge_alvarez,
                number_of_openings: 1)
 
 little_learners_academy = Daycare.last
+little_learners_academy.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203937/production/uewz898i13ghwjn2w861ltsfavl7.jpg'), filename: 'uewz898i13ghwjn2w861ltsfavl7.jpg')
 
 # 3. Growing Sprouts Daycare
 
@@ -261,6 +265,7 @@ Daycare.create(supplier: madison_moore,
                number_of_openings: 2)
 
 growing_sprouts_daycare = Daycare.last
+growing_sprouts_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203843/production/cuhkpueqjtq9m43k7winqpyvessw.jpg'), filename: 'cuhkpueqjtq9m43k7winqpyvessw.jpg')
 
 # 4. Bright Minds Academy
 
@@ -276,6 +281,7 @@ Daycare.create(supplier: jorge_alvarez,
                number_of_openings: 1)
 
 bright_minds_academy = Daycare.last
+bright_minds_academy.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203827/production/dxfnlqtr85x7gdx3hqp63cuk7lni.jpg'), filename: 'dxfnlqtr85x7gdx3hqp63cuk7lni.jpg')
 
 # 5. Kids Castle Pre-School
 
@@ -291,6 +297,7 @@ Daycare.create(supplier: alexandra_watson,
                number_of_openings: 1)
 
 kids_castle_preschool = Daycare.last
+kids_castle_preschool.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203810/production/uth5sokuo3x6jarmtakm19sllpms.jpg'), filename: 'uth5sokuo3x6jarmtakm19sllpms.jpg')
 
 # 6. Tiny Blessings Daycare
 
@@ -306,6 +313,7 @@ Daycare.create(supplier: sophia_owens,
                number_of_openings: 1)
 
 tiny_blessings_daycare = Daycare.last
+tiny_blessings_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203767/production/uwc1q9ywbgjkzsolyfyayjukvf1l.jpg'), filename: 'uwc1q9ywbgjkzsolyfyayjukvf1l.jpg')
 
 # 7. Giraffe Daycare
 
@@ -321,6 +329,7 @@ Daycare.create(supplier: vanessa_lynch,
                number_of_openings: 1)
 
 giraffe_daycare = Daycare.last
+giraffe_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203751/production/2251ibtwxatxmwsvhbfs16lplpf2.jpg'), filename: '2251ibtwxatxmwsvhbfs16lplpf2.jpg')
 
 # 8. Little Apple Academy
 
@@ -336,6 +345,7 @@ Daycare.create(supplier: haley_spencer,
                number_of_openings: 1)
 
 little_apple_academy = Daycare.last
+little_apple_academy.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203716/production/2naair1j2ieif8algj4two7ncrtb.jpg'), filename: '2naair1j2ieif8algj4two7ncrtb.jpg')
 
 # 9. Teddy Bear Daycare
 
@@ -351,6 +361,7 @@ Daycare.create(supplier: vanessa_lynch,
                number_of_openings: 1)
 
 teddy_bear_daycare = Daycare.last
+teddy_bear_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265125/production/dc5_fleozf.jpg'), filename: 'dc5_fleozf.jpg')
 
 # 10. Growing Tree Academy
 
@@ -366,6 +377,7 @@ Daycare.create(supplier: haley_spencer,
                number_of_openings: 1)
 
 growing_tree_academy = Daycare.last
+growing_tree_academy.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265193/dc4_djeopt.jpg'), filename: 'dc4_djeopt.jpg')
 
 # 11. Happy Trails Daycare
 
@@ -381,6 +393,7 @@ Daycare.create(supplier: vanessa_lynch,
                number_of_openings: 1)
 
 happy_trails_daycare = Daycare.last
+happy_trails_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265185/dc6_vzqusi.jpg'), filename: 'dc6_vzqusi.jpg')
 
 # 12. Prison Break Daycare
 
@@ -396,6 +409,11 @@ Daycare.create(supplier: james_campbell,
                number_of_openings: 9)
 
 prison_break_daycare = Daycare.last
+prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654203438/production/fcrcue3lu28ad842qoghhc893njl.jpg'), filename: 'fcrcue3lu28ad842qoghhc893njl.jpg')
+
+prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265377/Daycre3-770x513_kf7tpn.jpg'), filename: 'Daycre3-770x513_kf7tpn.jpg')
+
+prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265450/cover_eoxiqw.png'), filename: 'cover_eoxiqw.jpg')
 
 # #
 # CREATING REVIEWS
