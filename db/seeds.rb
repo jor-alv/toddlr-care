@@ -27,7 +27,7 @@ User.create(category: 1,
             password: "123456",
             bio: "Hey, my name is Kim and I have a lot of kids who need to go to daycares!")
 
-kim_coquilla = User.last
+# kim_coquilla = User.last
 
 # 2. Yann Bouhadana
 
@@ -123,7 +123,7 @@ User.create(category: 1,
             password: '123456',
             bio: "")
 
-elizabeth_landry = User.last
+# elizabeth_landry = User.last
 
 # Creating supplier users
 puts 'Creating supplier users...'
