@@ -29,7 +29,8 @@ User.create(category: 1,
             password: "123456",
             bio: "Hey, my name is Kim and I have a lot of kids who need to go to daycares!")
 
-# kim_coquilla = User.last
+kim_coquilla = User.last
+kim_coquilla.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265577/kim_pic_vgv5r4.png'), filename: 'kim_pic_vgv5r4.png')
 
 # 2. Yann Bouhadana
 
@@ -42,6 +43,7 @@ User.create(category: 1,
             bio: "Hello, my name is Yann. My kids need a place to stay while I go off to work.")
 
 yann_bouhadana = User.last
+yann_bouhadana.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265829/yann_gb1zqq.png'), filename: 'yann_gb1zqq.png')
 
 # 3. Claudette Smith
 
@@ -54,6 +56,7 @@ User.create(category: 1,
             bio: "Hello, I'm Claudette this app is amazing!")
 
 claudette_smith = User.last
+claudette_smith.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265932/av2_cciezj.png'), filename: 'av2_cciezj.png')
 
 # 4. John Littlewood
 
@@ -66,6 +69,7 @@ User.create(category: 1,
             bio: "Hey, I'm John and I have twins that need a nursery asap!")
 
 john_littlewood = User.last
+john_littlewood.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265960/av1_iurwtu.png'), filename: 'av1_iurwtu.png')
 
 # # 5. Claire Harrison
 
@@ -78,6 +82,7 @@ User.create(category: 1,
             bio: "I have two boys and am hoping this app will help me find a daycare for them.")
 
 claire_harrison = User.last
+claire_harrison.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265993/av4_fugapj.png'), filename: 'av4_fugapj.png')
 
 # 6. Angelina Scott
 
@@ -90,6 +95,7 @@ User.create(category: 1,
             bio: "This app looks great - I'm glad I found it!")
 
 angelina_scott = User.last
+angelina_scott.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265996/av6_dupsrm.jpg'), filename: 'av6_dupsrm.jpg')
 
 # 7. Alice Lewis
 
@@ -102,6 +108,7 @@ User.create(category: 1,
             bio: "")
 
 alice_lewis = User.last
+alice_lewis.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265997/av5_arqsnb.png'), filename: 'av5_arqsnb.png')
 
 # 7. Rowena Hogan
 
@@ -114,6 +121,7 @@ User.create(category: 1,
             bio: "")
 
 rowena_hogan = User.last
+rowena_hogan.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654266000/av7_fno2pr.jpg'), filename: 'av7_fno2pr.jpg')
 
 # 7. Elizabeth Landry
 
@@ -125,7 +133,8 @@ User.create(category: 1,
             password: '123456',
             bio: "")
 
-# elizabeth_landry = User.last
+elizabeth_landry = User.last
+elizabeth_landry.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654266004/av9_y3knqs.png'), filename: 'av9_y3knqs.png')
 
 # Creating supplier users
 puts 'Creating supplier users...'
@@ -141,6 +150,7 @@ User.create(category: 2,
             bio: "I am a graduate of the University of Toronto with a Bachelor of Science in Business Administration. I have over 10 years of experience as a manager of daycare centres. I am here to make your life a lot easier!")
 
 james_campbell = User.last
+james_campbell.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654196598/production/xdrucwge8bgpopah45vrebg2x3vb.jpg'), filename: 'xdrucwge8bgpopah45vrebg2x3vb.jpg')
 
 # 9. Jorge Alvarez
 
@@ -153,6 +163,7 @@ User.create(category: 2,
             bio: "Me and my wife have been teaching children for almost 40 years. Now we have the luxury to run our own daycare business, how neat!")
 
 jorge_alvarez = User.last
+jorge_alvarez.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265826/jorge_nmvtnw.png'), filename: 'jorge_nmvtnw.png')
 
 # 10. Sophia Owens
 
@@ -413,7 +424,7 @@ prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimc
 
 prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265377/Daycre3-770x513_kf7tpn.jpg'), filename: 'Daycre3-770x513_kf7tpn.jpg')
 
-prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265450/cover_eoxiqw.png'), filename: 'cover_eoxiqw.jpg')
+prison_break_daycare.photos.attach(io: URI.open('https://res.cloudinary.com/kimcoq/image/upload/v1654265450/cover_eoxiqw.png'), filename: 'cover_eoxiqw.png')
 
 # #
 # CREATING REVIEWS
