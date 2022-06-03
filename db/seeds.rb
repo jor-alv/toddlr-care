@@ -243,7 +243,7 @@ Daycare.create(supplier: jorge_alvarez,
                rating: 3,
                opening_date: Time.now,
                description: "Little Learners Academy is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
-               number_of_openings: 4)
+               number_of_openings: 1)
 
 little_learners_academy = Daycare.last
 
@@ -273,7 +273,7 @@ Daycare.create(supplier: jorge_alvarez,
                rating: 4,
                opening_date: Time.now,
                description: "Bright Minds Academy is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
-               number_of_openings: 3)
+               number_of_openings: 1)
 
 bright_minds_academy = Daycare.last
 
@@ -288,7 +288,7 @@ Daycare.create(supplier: alexandra_watson,
                rating: 2,
                opening_date: Time.now,
                description: "Kids Castle Pre-School is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
-               number_of_openings: 3)
+               number_of_openings: 1)
 
 kids_castle_preschool = Daycare.last
 
@@ -303,7 +303,7 @@ Daycare.create(supplier: sophia_owens,
                rating: 3,
                opening_date: Time.now,
                description: "Tiny Blessings Daycare is committed to helping children succeed and achieve their full potential through confidence-building activities, constructive encouragement, and open language and communication skills, all with the goal of encouraging individuality and self-esteem in your child. A child’s initial contact with the outside world without their parents is also at a daycare. That is why their educators and management make it a point to give children one-on-one time and treatment, two critical factors in a child’s social development.",
-               number_of_openings: 5)
+               number_of_openings: 1)
 
 tiny_blessings_daycare = Daycare.last
 
@@ -446,6 +446,16 @@ Review.create(daycare: growing_sprouts_daycare,
               stars: 3,
               content: "")
 
+Review.create(daycare: growing_sprouts_daycare,
+              client: rowena_hogan,
+              stars: 4,
+              content: "")
+
+Review.create(daycare: growing_sprouts_daycare,
+              client: rowena_hogan,
+              stars: 5,
+              content: "")
+
 Review.create(daycare: bright_minds_academy,
               client: alice_lewis,
               stars: 3,
@@ -461,6 +471,11 @@ Review.create(daycare: tiny_blessings_daycare,
               stars: 3,
               content: "")
 
+Review.create(daycare: tiny_blessings_daycare,
+              client: claudette_smith,
+              stars: 4,
+              content: "")
+
 Review.create(daycare: giraffe_daycare,
               client: alice_lewis,
               stars: 3,
@@ -469,6 +484,16 @@ Review.create(daycare: giraffe_daycare,
 Review.create(daycare: little_apple_academy,
               client: alice_lewis,
               stars: 3,
+              content: "")
+
+Review.create(daycare: little_apple_academy,
+              client: john_littlewood,
+              stars: 2,
+              content: "")
+
+Review.create(daycare: little_apple_academy,
+              client: angelina_scott,
+              stars: 2,
               content: "")
 
 Review.create(daycare: teddy_bear_daycare,
@@ -481,11 +506,20 @@ Review.create(daycare: growing_tree_academy,
               stars: 3,
               content: "")
 
+Review.create(daycare: growing_tree_academy,
+              client: claire_harrison,
+              stars: 4,
+              content: "")
+
 Review.create(daycare: happy_trails_daycare,
               client: alice_lewis,
               stars: 3,
               content: "")
 
+Review.create(daycare: happy_trails_daycare,
+              client: alice_lewis,
+              stars: 5,
+              content: "")
 #
 # CREATING CONSULTATIONS
 
