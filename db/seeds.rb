@@ -446,14 +446,14 @@ puts 'Creating consultations...'
 
 Consultation.create(daycare: prison_break_daycare,
                     client: john_littlewood,
-                    start_time: '',
+                    start_time: 'Mon 06 Jun 16:00:00 2022',
                     status: 1)
 
 # 2. consultation_2
 
 Consultation.create(daycare: prison_break_daycare,
                     client: rowena_hogan,
-                    time: '',
+                    start_time: 'Wed 08 Jun 15:00:00 2022',
                     status: 1)
 
 #
@@ -462,11 +462,10 @@ Consultation.create(daycare: prison_break_daycare,
 puts 'Creating tags'
 
 Tag.create(name: "Allergy friendly", font_awesome: "house-carrot")
-allergy_friendly = Tag.last
+allergy = Tag.last
 Tag.create(name: "Large playground", font_awesome: "baseball")
 large_playground = Tag.last
 Tag.create(name: "LGBTQIA+ friendly", font_awesome: "rainbow")
-rainbow = Tag.last
 Tag.create(name: "Montessori", font_awesome: "graduation-cap")
 montessori = Tag.last
 Tag.create(name: "Music instruction", font_awesome: "music")
@@ -474,7 +473,6 @@ music = Tag.last
 Tag.create(name: "Nearby park", font_awesome: "tree")
 park = Tag.last
 Tag.create(name: "Vaccinated staff", font_awesome: "house-medical")
-medical = Tag.last
 Tag.create(name: "Halal food")
 Tag.create(name: "Kosher food")
 Tag.create(name: "English speaking")
