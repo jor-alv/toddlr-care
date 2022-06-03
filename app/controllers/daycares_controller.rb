@@ -26,15 +26,6 @@ class DaycaresController < ApplicationController
       @daycares = policy_scope(Daycare)
     end
 
-    @markers = @daycares.geocoded.map do |daycare|
-      {
-        lat: daycare.latitude,
-        lng: daycare.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { daycare: daycare }),
-        image_url: helpers.asset_url('map-marker-toddlr-fox.png')
-      }
-    end
-
     if params[:clear_filter] == "clear"
       @tag_scroll = false
       @daycares = policy_scope(Daycare)
@@ -50,6 +41,15 @@ class DaycaresController < ApplicationController
       @clear_filter = false
       @tag_scroll = false
       @daycares = Daycare.where("price <= ?", params[:price].to_i)
+    end
+
+    @markers = @daycares.geocoded.map do |daycare|
+      {
+        lat: daycare.latitude,
+        lng: daycare.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { daycare: daycare }),
+        image_url: helpers.asset_url('map-marker-toddlr-fox.png')
+      }
     end
   end
 
