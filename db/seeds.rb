@@ -380,7 +380,7 @@ puts 'Creating reviews...'
 
 # 1. review_1
 
-Review.create(daycare: le_wagon_daycare,
+Review.create(daycare: prison_break_daycare,
               client: claudette_smith,
               stars: 5,
               content: "This daycare has been my rock for the last four years. The educators are exceptional, caring, kind, helpful and knowledgeable. We are sad to say goodbye after four years of comfort. I didn’t know what to expect dropping my baby boy off there when he was ten months old but they surpassed all of my expectations and gained my trust.")
@@ -389,21 +389,39 @@ review_1 = Review.last
 
 # 2. review_2
 
-Review.create(daycare: le_wagon_daycare,
-              client: john_littlewood,
-              stars: 4,
-              content: "My son has been at this daycare since he was 18 months old and he absolutely loves it. The educators are warm and loving and you get a homey feeling when you walk in. The space is newly renovated and there are big bright windows with colourful art all over the walls.")
+Review.create(daycare: prison_break_daycare,
+              client: claire_harrison,
+              stars: 5,
+              content: "My son absolutely loved this daycare! The team is great and very caring. It was like a second home for him and I didn’t worry about whether he was being looked after or not because every day he was excited to go! Which is always a true sign of happiness. Their development and education are well looked after. My son didn’t want to leave! Thank you to all the educators who work so hard every day to make it fun for the kids!")
 
 review_2 = Review.last
 
 # 3. review_3
 
-Review.create(daycare: le_wagon_daycare,
-              client: yann_bouhadana,
-              stars: 3,
-              content: "3 of my kids went there and they really enjoyed their time within this public daycare. The staff is really kind, professional and competent. Thanks to the director, there always a focus to improve the wellbeing of the children.")
+Review.create(daycare: prison_break_daycare,
+              client: alice_lewis,
+              stars: 5,
+              content: "My son has been at this daycare since he was 18 months old and he absolutely loves it. The educators are warm and loving and you get a homey feeling when you walk in. The space is newly renovated and there are big bright windows with colourful art all over the walls.")
 
 review_3 = Review.last
+
+# 4. review_4
+
+Review.create(daycare: prison_break_daycare,
+              client: angelina_scott,
+              stars: 5,
+              content: "In just few months, I have seen the significant change of my child’s improvement in terms of her growth and development. She really learned a lot of different skills in preparation to her big school. I have peace of mind everyday that I leave my daughter to their care. With all of my heart, I am so satisfied and thankful to Prison Break Daycare!")
+
+review_4 = Review.last
+
+# 5. review_5
+
+Review.create(daycare: prison_break_daycare,
+  client: yann_bouhadana,
+  stars: 5,
+  content: "An amazing place! My son loves going there and I'm very impressed every day seeing all the stuff he learns, how he develops his skills and motricity, and all of this while having fun! Thank you to all the staff for such amazing work and for making my son a happy kid! I absolutely recommend Prison Break Daycare!")
+
+review_5 = Review.last
 
 # 4. review_4
 
