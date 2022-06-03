@@ -14,48 +14,6 @@ puts 'New seeds are being created...'
 
 # CREATING USERS
 
-# puts 'Creating users...'
-
-# 3.times do
-#   User.create!(email: Faker::Internet.email,
-#                first_name: Faker::Name.first_name,
-#                last_name: Faker::Name.last_name,
-#                password: "123456",
-#                bio: Faker::Hipster.paragraph,
-#                company_name: "#{Faker::Company.name} #{Faker::Company.suffix}",
-#                category: 2)
-#               end
-
-# 5.times do
-#   User.create!(email: Faker::Internet.email,
-#               first_name: Faker::Name.first_name,
-#               last_name: Faker::Name.last_name,
-#               password: "123456",
-#               category: 1)
-# end
-
-# parents = User.where(category: 1)
-# parents.each do |parent|
-#   Daycare.all.each do |daycare|
-#     Consultation.create!(start_time: DateTime.tomorrow,
-#                          client_id: parent.id,
-#                          daycare_id: daycare.id)
-#   end
-# end
-
-# # puts 'Creating daycares...'
-
-# User.all.each do |user|
-#   3.times do
-#     Daycare.create!(name: "#{Faker::Hipster.word.capitalize} Daycare",
-#                     description: Faker::Hipster.paragraph,
-#                     supplier_id: user.id,
-#                     number_of_openings: rand(1..5),
-#                     price: rand(100..500),
-#                     address: "#{Faker::Address.street_address}, #{Faker::Address.street_name}, #{Faker::Address.city}")
-#   end
-# end
-
 # Creating client users
 puts 'Creating client users...'
 
@@ -107,123 +65,128 @@ User.create(category: 1,
 
 john_littlewood = User.last
 
-# # 5. client_5
+# # 5. Claire Harrison
 
-# User.create(category: 1,
-#             first_name: '',
-#             last_name: '',
-#             company_name: '',
-#             email: "",
-#             bio: "")
+User.create(category: 1,
+            first_name: 'Claire',
+            last_name: 'Harrison',
+            company_name: '',
+            email: "claire_harrison@email.com",
+            password: '123456',
+            bio: "I have two boys and am hoping this app will help me find a daycare for them.")
 
-# client_5 = User.last
+claire_harrison = User.last
 
-# # 6. client_6
+# 6. Angelina Scott
 
-# User.create(category: 1,
-#             first_name: '',
-#             last_name: '',
-#             company_name: '',
-#             email: "",
-#             bio: "")
+User.create(category: 1,
+            first_name: 'Angelina',
+            last_name: 'Scott',
+            company_name: '',
+            email: "angelina_scott@email.com",
+            password: '123456',
+            bio: "This app looks great - I'm glad I found it!")
 
-# client_6 = User.last
+angelina_scott = User.last
 
-# # 7. client_7
+# 7. Alice Lewis
 
-# User.create(category: 1,
-#             first_name: '',
-#             last_name: '',
-#             company_name: '',
-#             email: "",
-#             bio: "")
+User.create(category: 1,
+            first_name: 'Alice',
+            last_name: 'Lewis',
+            company_name: '',
+            email: "alice_lewis@email.com",
+            password: '123456',
+            bio: "")
 
-# client_7 = User.last
+alice_lewis = User.last
 
 # Creating supplier users
 puts 'Creating supplier users...'
 
-# 8. Jorge Alvarez
+# 8. James Campbell
+
+User.create(category: 2,
+            first_name: 'James',
+            last_name: 'Campbell',
+            company_name: 'Campbell Daycare Centres, Inc.',
+            email: "james_campbell@email.com",
+            password: "123456",
+            bio: "I am a graduate of the University of Toronto with a Bachelor of Science in Business Administration. I have over 10 years of experience as a manager of daycare centres. I am here to make your life a lot easier!")
+
+james_campbell = User.last
+
+# 9. Jorge Alvarez
 
 User.create(category: 2,
             first_name: 'Jorge',
             last_name: 'Alvarez',
-            company_name: 'Prison Break Daycares',
+            company_name: '',
             email: "jorge_alvarez@email.com",
             password: "123456",
             bio: "Me and my wife have been teaching children for almost 40 years. Now we have the luxury to run our own daycare business, how neat!")
 
 jorge_alvarez = User.last
 
-# 9. james_campbell
+# 10. Sophia Owens
 
 User.create(category: 2,
-            first_name: 'James',
-            last_name: 'Campbell',
-            company_name: 'Shorties Daycares',
-            email: "james_campbell@email.com",
+            first_name: 'Sophia',
+            last_name: 'Owens',
+            company_name: '',
+            email: "sophia_owens@email.com",
             password: "123456",
-            bio: "My name is James and I'm here to make your life a lot easier!")
+            bio: "Hey I'm Sophia Owens and I run a home-based daycare in Montreal.")
 
-james_campbell = User.last
+sophia_owens = User.last
 
-# 10. hufflepuff_daycares
+# 11. Alexandra Watson
 
 User.create(category: 2,
-            first_name: 'Helga',
-            last_name: 'Hufflepuff',
-            company_name: 'Hufflepuff Daycares',
-            email: "hufflepuff_daycares@email.com",
+            first_name: 'Alexandra',
+            last_name: 'Watson',
+            company_name: '',
+            email: "alexandra_watson@email.com",
             password: "123456",
-            bio: "I have 4 kids and I fell in love with the whole daycare atmosphere, so here I am!")
+            bio: "My name is Alexandra Watson. I have 3 kids and I love teaching kids, so here I am!")
 
-hufflepuff_daycares = User.last
+alexandra_watson = User.last
 
-# 11. Le Wagon Daycares
+# 12. Madison Moore
 
 User.create(category: 2,
-            first_name: 'Stephane',
-            last_name: 'Lafontaine',
-            company_name: 'Le Wagon Daycares',
-            email: "le_wagon_daycares@email.com",
+            first_name: 'Madison',
+            last_name: 'Moore',
+            company_name: '',
+            email: "madison_moore@email.com",
             password: "123456",
-            bio: "All you need is code. Change your life, learn to code!")
+            bio: "My name is Madison Moore and I am the owner of Growing Sprouts Daycare. Previously, I was the Administrative Director at a five star, franchised, educational preschool for 10 years. I hold my Bachelor's Degree in Early Childhood Education.")
 
-le_wagon_daycares = User.last
+madison_moore = User.last
 
-# 12. Walmart Daycares
+# 13. Haley Spencer
 
 User.create(category: 2,
-            first_name: 'Emilie',
-            last_name: 'Ware',
-            company_name: 'Walmart Daycares',
-            email: "walmart_daycares@email.com",
+            first_name: 'Haley',
+            last_name: 'Spencer',
+            company_name: '',
+            email: "haley_spencer@email.com",
             password: "123456",
-            bio: "A premier early care and education provider which respects the child, encourages learning through exploration, and supports the family within a creative and nurturing environment.")
+            bio: "My name is Haley Spencer. I have 4 kids and I fell in love with the whole daycare atmosphere, so here I am!")
 
-walmart_daycares = User.last
+haley_spencer = User.last
 
-# 13. supplier_6
+# 14. Vanessa Lynch
 
-# User.create(category: 2,
-#             first_name: 'Stephane',
-#             last_name: 'Racine',
-#             company_name: 'Kiddy Klubhouses',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "Hey I'm mr.Racine and one thing I can love more then golf is educating the youth")
+User.create(category: 2,
+            first_name: 'Vanessa',
+            last_name: 'Lynch',
+            company_name: '',
+            email: "vanessa_lynch@email.com",
+            password: "123456",
+            bio: "Hi, my name is Vanessa Lynch and I am the owner of three daycare centres: Giraffe Daycare, Happy Trails Daycare and Teddy Bear Daycare.")
 
-# stephane = User.last
-
-# # 14. supplier_7
-
-# User.create(category: 2,
-#             first_name: '',
-#             last_name: '',
-#             company_name: 'Walmart Daycares',
-#             email: company_name.present? ? "contact@#{company_name.downcase}.com" : "#{first_name.downcase}_#{last_name.downcase}@email.com",
-#             bio: "Our curriculum is designed to foster a love of learning and the ability to ask questions, seek out answers and build self-confidence")
-
-# walmart = User.last
+vanessa_lynch = User.last
 
 # #
 # # CREATING DAYCARES
