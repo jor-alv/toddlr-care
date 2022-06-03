@@ -402,40 +402,89 @@ prison_break_daycare = Daycare.last
 
 puts 'Creating reviews...'
 
-# 1. review_1
+# 1. Prison Break Daycare reviews
 
 Review.create(daycare: prison_break_daycare,
               client: claudette_smith,
               stars: 5,
               content: "This daycare has been my rock for the last four years. The educators are exceptional, caring, kind, helpful and knowledgeable. We are sad to say goodbye after four years of comfort. I didn’t know what to expect dropping my baby boy off there when he was ten months old but they surpassed all of my expectations and gained my trust.")
 
-# 2. review_2
-
 Review.create(daycare: prison_break_daycare,
               client: claire_harrison,
               stars: 5,
               content: "My son absolutely loved this daycare! The team is great and very caring. It was like a second home for him and I didn’t worry about whether he was being looked after or not because every day he was excited to go! Which is always a true sign of happiness. Their development and education are well looked after. My son didn’t want to leave! Thank you to all the educators who work so hard every day to make it fun for the kids!")
-
-# 3. review_3
 
 Review.create(daycare: prison_break_daycare,
               client: alice_lewis,
               stars: 5,
               content: "My son has been at this daycare since he was 18 months old and he absolutely loves it. The educators are warm and loving and you get a homey feeling when you walk in. The space is newly renovated and there are big bright windows with colourful art all over the walls.")
 
-# 4. review_4
-
 Review.create(daycare: prison_break_daycare,
               client: angelina_scott,
               stars: 5,
               content: "In just few months, I have seen the significant change of my child’s improvement in terms of her growth and development. She really learned a lot of different skills in preparation to her big school. I have peace of mind everyday that I leave my daughter to their care. With all of my heart, I am so satisfied and thankful to Prison Break Daycare!")
 
-# 5. review_5
-
 Review.create(daycare: prison_break_daycare,
               client: yann_bouhadana,
               stars: 5,
               content: "An amazing place! My son loves going there and I'm very impressed every day seeing all the stuff he learns, how he develops his skills and motricity, and all of this while having fun! Thank you to all the staff for such amazing work and for making my son a happy kid! I absolutely recommend Prison Break Daycare!")
+
+# 2. Rest of the daycares reviews
+
+Review.create(daycare: happy_faces_daycare,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: little_learners_academy,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: growing_sprouts_daycare,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: bright_minds_academy,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: kids_castle_preschool,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: tiny_blessings_daycare,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: giraffe_daycare,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: little_apple_academy,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: teddy_bear_daycare,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: growing_tree_academy,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
+
+Review.create(daycare: happy_trails_daycare,
+              client: alice_lewis,
+              stars: 3,
+              content: "")
 
 #
 # CREATING CONSULTATIONS
@@ -464,7 +513,7 @@ puts 'Creating tags'
 Tag.create(name: "Allergy friendly", font_awesome: "house-carrot")
 allergy = Tag.last
 Tag.create(name: "Large playground", font_awesome: "baseball")
-large_playground = Tag.last
+playground = Tag.last
 Tag.create(name: "LGBTQIA+ friendly", font_awesome: "rainbow")
 Tag.create(name: "Montessori", font_awesome: "graduation-cap")
 montessori = Tag.last
@@ -597,7 +646,7 @@ DaycareTag.create(daycare: happy_trails_daycare,
 # 12. Prison Break Daycare tags
 
 DaycareTag.create(daycare: prison_break_daycare,
-                  tag: large_playground)
+                  tag: playground)
 
 DaycareTag.create(daycare: prison_break_daycare,
                   tag: park)
