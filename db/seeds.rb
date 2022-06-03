@@ -101,6 +101,30 @@ User.create(category: 1,
 
 alice_lewis = User.last
 
+# 7. Rowena Hogan
+
+User.create(category: 1,
+            first_name: 'Rowena',
+            last_name: 'Hogan',
+            company_name: '',
+            email: "rowena_hogan@email.com",
+            password: '123456',
+            bio: "")
+
+rowena_hogan = User.last
+
+# 7. Elizabeth Landry
+
+User.create(category: 1,
+            first_name: 'Elizabeth',
+            last_name: 'Landry',
+            company_name: '',
+            email: "elizabeth_landry@email.com",
+            password: '123456',
+            bio: "")
+
+elizabeth_landry = User.last
+
 # Creating supplier users
 puts 'Creating supplier users...'
 
@@ -385,16 +409,12 @@ Review.create(daycare: prison_break_daycare,
               stars: 5,
               content: "This daycare has been my rock for the last four years. The educators are exceptional, caring, kind, helpful and knowledgeable. We are sad to say goodbye after four years of comfort. I didn’t know what to expect dropping my baby boy off there when he was ten months old but they surpassed all of my expectations and gained my trust.")
 
-review_1 = Review.last
-
 # 2. review_2
 
 Review.create(daycare: prison_break_daycare,
               client: claire_harrison,
               stars: 5,
               content: "My son absolutely loved this daycare! The team is great and very caring. It was like a second home for him and I didn’t worry about whether he was being looked after or not because every day he was excited to go! Which is always a true sign of happiness. Their development and education are well looked after. My son didn’t want to leave! Thank you to all the educators who work so hard every day to make it fun for the kids!")
-
-review_2 = Review.last
 
 # 3. review_3
 
@@ -403,8 +423,6 @@ Review.create(daycare: prison_break_daycare,
               stars: 5,
               content: "My son has been at this daycare since he was 18 months old and he absolutely loves it. The educators are warm and loving and you get a homey feeling when you walk in. The space is newly renovated and there are big bright windows with colourful art all over the walls.")
 
-review_3 = Review.last
-
 # 4. review_4
 
 Review.create(daycare: prison_break_daycare,
@@ -412,169 +430,12 @@ Review.create(daycare: prison_break_daycare,
               stars: 5,
               content: "In just few months, I have seen the significant change of my child’s improvement in terms of her growth and development. She really learned a lot of different skills in preparation to her big school. I have peace of mind everyday that I leave my daughter to their care. With all of my heart, I am so satisfied and thankful to Prison Break Daycare!")
 
-review_4 = Review.last
-
 # 5. review_5
 
 Review.create(daycare: prison_break_daycare,
-  client: yann_bouhadana,
-  stars: 5,
-  content: "An amazing place! My son loves going there and I'm very impressed every day seeing all the stuff he learns, how he develops his skills and motricity, and all of this while having fun! Thank you to all the staff for such amazing work and for making my son a happy kid! I absolutely recommend Prison Break Daycare!")
-
-review_5 = Review.last
-
-# 4. review_4
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_4 = Review.last
-
-# 5. review_5
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_5 = Review.last
-
-# 6. review_6
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_6 = Review.last
-
-# 7. review_7
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_7 = Review.last
-
-# 8. review_8
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_8 = Review.last
-
-# 9. review_9
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_9 = Review.last
-
-# 10. review_10
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_10 = Review.last
-
-# 11. review_11
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_11 = Review.last
-
-# 12. review_12
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_12 = Review.last
-
-# 13. review_13
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_13 = Review.last
-
-# 14. review_14
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_14 = Review.last
-
-# 15. review_15
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_15 = Review.last
-
-# 16. review_16
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_16 = Review.last
-
-# 17. review_17
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_17 = Review.last
-
-# 18. review_18
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_18 = Review.last
-
-# 19. review_19
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_19 = Review.last
-
-# 20. review_20
-
-# Review.create(daycare: '',
-#               client: '',
-#               stars: '',
-#               content: '')
-#
-# review_20 = Review.last
+              client: yann_bouhadana,
+              stars: 5,
+              content: "An amazing place! My son loves going there and I'm very impressed every day seeing all the stuff he learns, how he develops his skills and motricity, and all of this while having fun! Thank you to all the staff for such amazing work and for making my son a happy kid! I absolutely recommend Prison Break Daycare!")
 
 #
 # CREATING CONSULTATIONS
@@ -583,161 +444,39 @@ puts 'Creating consultations...'
 
 # 1. consultation_1
 
-# Consultation.create(daycare: prison_break_daycare,
-#                     client: john_littlewood,
-#                     start_time: '',
-#                     status: '')
-
-# consultation_1 = Consultation.last
+Consultation.create(daycare: prison_break_daycare,
+                    client: john_littlewood,
+                    start_time: '',
+                    status: 1)
 
 # 2. consultation_2
 
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
+Consultation.create(daycare: prison_break_daycare,
+                    client: rowena_hogan,
+                    time: '',
+                    status: 1)
+
 #
-# consultation_2 = Consultation.last
+# CREATING TAGS
 
-# 3. consultation_3
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_3 = Consultation.last
-
-# 4. consultation_4
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_4 = Consultation.last
-
-# 5. consultation_5
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_5 = Consultation.last
-
-# 6. consultation_6
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_6 = Consultation.last
-
-# 7. consultation_7
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_7 = Consultation.last
-
-# 8. consultation_8
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_8 = Consultation.last
-
-# 9. consultation_9
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_9 = Consultation.last
-
-# 10. consultation_10
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_10 = Consultation.last
-
-# 11. consultation_11
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_11 = Consultation.last
-
-# 12. consultation_12
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_12 = Consultation.last
-
-# 13. consultation_13
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_13 = Consultation.last
-
-# 14. consultation_14
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_14 = Consultation.last
-
-# 15. consultation_15
-
-# Consultation.create(daycare: '',
-#                     client: '',
-#                     time: '',
-#                     status: '')
-#
-# consultation_15 = Consultation.last
-
-# FINAL CONFIRMATION
-
-# parents = User.where(category: 1)
-# parents.each do |parent|
-#   Daycare.all.each do |daycare|
-#     Consultation.create!(start_time: Date.tomorrow,
-#                         client_id: parent.id,
-#                         daycare_id: daycare.id,
-#                         status: rand(1...2))
-#   end
-# end
 puts 'Creating tags'
 
-Tag.create(name: "Vaccinated staff", font_awesome: "house-medical")
+Tag.create(name: "Allergy friendly", font_awesome: "house-carrot")
+allergy_friendly = Tag.last
 Tag.create(name: "Large playground", font_awesome: "baseball")
-Tag.create(name: "Nearby park", font_awesome: "tree")
-Tag.create(name: "Montessori", font_awesome: "graduation-cap")
-Tag.create(name: "Music instruction", font_awesome: "music")
+large_playground = Tag.last
 Tag.create(name: "LGBTQIA+ friendly", font_awesome: "rainbow")
+rainbow = Tag.last
+Tag.create(name: "Montessori", font_awesome: "graduation-cap")
+montessori = Tag.last
+Tag.create(name: "Music instruction", font_awesome: "music")
+music = Tag.last
+Tag.create(name: "Nearby park", font_awesome: "tree")
+park = Tag.last
+Tag.create(name: "Vaccinated staff", font_awesome: "house-medical")
+medical = Tag.last
 Tag.create(name: "Halal food")
 Tag.create(name: "Kosher food")
-Tag.create(name: "Allergy friendly", font_awesome: "house-carrot")
 Tag.create(name: "English speaking")
 Tag.create(name: "French speaking")
 Tag.create(name: "Spanish speaking")
@@ -746,7 +485,127 @@ Tag.create(name: "Mandarin speaking")
 Tag.create(name: "All-boys")
 Tag.create(name: "All-girls")
 Tag.create(name: "Co-ed")
-Tag.create(name: "Many teachers per class (at least 1:5")
+Tag.create(name: "Many teachers per class (at least 1:5)")
+
+#
+# CREATING DAYCARE_TAGS
+
+# 1. Happy Faces Daycare tags
+
+DaycareTag.create(daycare: happy_faces_daycare,
+                  tag: montessori)
+
+DaycareTag.create(daycare: happy_faces_daycare,
+                  tag: park)
+
+# 2. Little Learners Academy tags
+
+DaycareTag.create(daycare: little_learners_academy,
+                  tag: park)
+
+DaycareTag.create(daycare: little_learners_academy,
+                  tag: playground)
+
+DaycareTag.create(daycare: little_learners_academy,
+                  tag: allergy)
+
+# 3. Growing Sprouts Daycare tags
+
+DaycareTag.create(daycare: growing_sprouts_daycare,
+                  tag: allergy)
+
+DaycareTag.create(daycare: growing_sprouts_daycare,
+                  tag: playground)
+
+DaycareTag.create(daycare: growing_sprouts_daycare,
+                  tag: music)
+
+# 4. Bright Minds Academy tags
+
+DaycareTag.create(daycare: bright_minds_academy,
+                  tag: montessori)
+
+DaycareTag.create(daycare: bright_minds_academy,
+                  tag: park)
+
+# 5. Kids Castle Pre-School tags
+
+DaycareTag.create(daycare: kids_castle_preschool,
+                  tag: music)
+
+DaycareTag.create(daycare: kids_castle_preschool,
+                  tag: park)
+
+DaycareTag.create(daycare: kids_castle_preschool,
+                  tag: montessori)
+
+# 6. Tiny Blessings Daycare tags
+
+DaycareTag.create(daycare: tiny_blessings_daycare,
+                  tag: allergy)
+
+DaycareTag.create(daycare: tiny_blessings_daycare,
+                  tag: playground)
+
+# 7. Giraffe Daycare tags
+
+DaycareTag.create(daycare: giraffe_daycare,
+                  tag: montessori)
+
+DaycareTag.create(daycare: giraffe_daycare,
+                  tag: allergy)
+
+DaycareTag.create(daycare: giraffe_daycare,
+                  tag: music)
+
+# 8. Little Apple Academy tags
+
+DaycareTag.create(daycare: little_apple_academy,
+                  tag: park)
+
+DaycareTag.create(daycare: little_apple_academy,
+                  tag: playground)
+
+DaycareTag.create(daycare: little_apple_academy,
+                  tag: allergy)
+
+# 9. Teddy Bear Daycare tags
+
+DaycareTag.create(daycare: teddy_bear_daycare,
+                  tag: allergy)
+
+DaycareTag.create(daycare: teddy_bear_daycare,
+                  tag: park)
+
+# 10. Growing Tree Academy tags
+
+DaycareTag.create(daycare: growing_tree_academy,
+                  tag: music)
+
+DaycareTag.create(daycare: growing_tree_academy,
+                  tag: playground)
+
+DaycareTag.create(daycare: growing_tree_academy,
+                  tag: allergy)
+
+# 11. Happy Trails Daycare tags
+
+DaycareTag.create(daycare: happy_trails_daycare,
+                  tag: montessori)
+
+DaycareTag.create(daycare: happy_trails_daycare,
+                  tag: park)
+
+# 12. Prison Break Daycare tags
+
+DaycareTag.create(daycare: prison_break_daycare,
+                  tag: large_playground)
+
+DaycareTag.create(daycare: prison_break_daycare,
+                  tag: park)
+
+DaycareTag.create(daycare: prison_break_daycare,
+                  tag: music)
 
 puts 'All seeds have been successfully created...'
 
