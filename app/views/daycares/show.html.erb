@@ -222,7 +222,11 @@
             <div class="review-card mt-4">
               <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center review-card">
-                  <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" class="card-trip-user avatar-bordered" />
+                  <% if review.client.photos.present?  %>
+                    <img src="<%= cl_image_path(review.client.photos[0].key)%>" alt="" class="card-trip-user avatar-bordered">
+                  <% else %>
+                    <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" alt="" class="card-trip-user avatar-bordered" />
+                  <% end %>
                   <div class="flex-column d-flex justify-content-center">
                     <h3 class="mt-1"><strong><%= link_to "#{review.client.first_name} #{review.client.last_name}", client_profile_path(review.client) %></strong></h3>
 
