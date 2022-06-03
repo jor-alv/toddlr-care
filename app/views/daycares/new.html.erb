@@ -19,12 +19,12 @@ fieldset {display: flex; flex-wrap: wrap;}
       <%= f.input :opening_date %>
       <div class="line-break-form"></div>
       <div class="row">
-        <div class="d-flex flex-column flex-wrap-1 tags-form-column">
+        <div class="d-flex flex-column flex-wrap-1 tags-form-column ">
           <%= f.association :tags, as: :check_boxes, collection_check_boxes: @tags, prompt: "Select relevant tags"%>
         </div>
       </div>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Create Daycare", class: "btn btn-primary" %>
+      <%= f.submit "Create Daycare", class: "btn btn-primary confirm-btn" %>
     <% end %>
     </div>
   </div>
