@@ -1,18 +1,28 @@
+<style>
+fieldset {display: flex; flex-wrap: wrap;}
+</style>
+
 <div class="container-form my-5">
 <div class="row">
 <div class="d-flex justify-content-center">
-<div class="col col-6">
+<div class="col col-4 new-daycare-form">
   <h1>New Daycare</h1>
     <%= simple_form_for(@daycare) do |f| %>
       <%= f.input :name %>
       <%= f.input :address %>
       <%= f.input :email %>
       <%= f.input :phone_number %>
+      <div class="line-break-form"></div>
       <%= f.input :description %>
       <%= f.input :price %>
       <%= f.input :number_of_openings %>
       <%= f.input :opening_date %>
-      <%= f.association :tags, as: :check_boxes, collection_check_boxes: @tags, prompt: "Select relevant tags"%>
+      <div class="line-break-form"></div>
+      <div class="row">
+        <div class="d-flex flex-column flex-wrap-1 tags-form-column">
+          <%= f.association :tags, as: :check_boxes, collection_check_boxes: @tags, prompt: "Select relevant tags"%>
+        </div>
+      </div>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Create Daycare", class: "btn btn-primary" %>
     <% end %>
@@ -20,3 +30,13 @@
   </div>
   </div>
 </div>
+
+<script>
+const tags = document.querySelector("legend")
+tags.classList.add("col-12")
+const optionDivs = document.querySelectorAll(".form-check")
+console.log(optionDivs);
+optionDivs.forEach((option)=>{
+  option.classList.add("col-6")
+})
+</script>
